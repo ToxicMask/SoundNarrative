@@ -1,8 +1,15 @@
 
 
 
+- Game Manager
+	- Sistema para Trocar Scena / Manter Base
+	- Objetos da Cena
+	- HUD
+	- Sistema de Inventario
 
-- Interface:
+
+
+- Interface - HUD:
 	- Gravador
 	   * Clicar no botão:
 		Play: Play Tape
@@ -11,7 +18,7 @@
 	
 
 
-#######Completed#############
+####### Completed #############
 
 - Classe: Objeto Clicavel
 
@@ -21,7 +28,6 @@
 	Subclasse Draggable object:
 		- Mouse está pressionado agora
 		- Mouse está solto agora
-
-
-- Revanp do Mouse Drag
-- Smmoth drag
+		-------------------------------
+		- Revanp do Mouse Drag
+		- Smmoth drag
