@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nodes/Objects/GameObjects/ClickableObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/GameObjects/DragableObject.gd" type="Script" id=2]
+
+[node name="DragableObject" instance=ExtResource( 1 )]
+modulate = Color( 0.2, 0.866667, 0.227451, 1 )
+script = ExtResource( 2 )
+return_to_origin = false
