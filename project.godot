@@ -30,6 +30,15 @@ config/name="EditingAudioGame"
 run/main_scene="res://Nodes/Scenes/TEST_SCENE_0.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

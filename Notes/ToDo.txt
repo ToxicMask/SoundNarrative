@@ -1,13 +1,6 @@
 
 
-- Classe: Objeto Clicavel
 
-	- Objeto detecta se mouse está dentro.
-	- Objeto detecta clique
-
-	Subclasse Draggable object:
-		- Mouse está pressionado agora
-		- Mouse está solto agora
 
 - Interface:
 	- Gravador
@@ -17,3 +10,18 @@
 		Stop: Reset Tape
 	
 
+
+#######Completed#############
+
+- Classe: Objeto Clicavel
+
+	- Objeto detecta se mouse está dentro.
+	- Objeto detecta clique
+
+	Subclasse Draggable object:
+		- Mouse está pressionado agora
+		- Mouse está solto agora
+
+
+- Revanp do Mouse Drag
+- Smmoth drag
