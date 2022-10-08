@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameSystems/Game_Manager.gd" type="Script" id=1]
+
+[node name="TEST_SCENE_1" type="Node2D"]
+
+[node name="Game_Manager" type="Node2D" parent="."]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Current_Scene" type="Node2D" parent="Game_Manager"]
