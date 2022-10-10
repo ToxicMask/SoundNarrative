@@ -37,7 +37,7 @@ func _process(delta):
 	# Process Drag
 	if mouse_drag:
 		emit_signal("mouse_move")
-		self.global_position =  lerp(self.position, get_viewport().get_mouse_position(), 20* delta)
+		self.global_position =  lerp(self.position, get_viewport().get_mouse_position(), 50* delta)
 	pass
 
 func release_object():

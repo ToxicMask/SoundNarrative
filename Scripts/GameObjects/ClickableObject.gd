@@ -12,7 +12,6 @@ var mouse_pressed := false
 
 
 func _ready():
-
 	var _err= null 
 	# Connect input event to here
 	_err = self.connect("input_event", self, "_process_input")
@@ -21,7 +20,6 @@ func _ready():
 	pass
 
 func _process_input(_viewport, event, _shape):
-	
 	# Mouse Click Event
 	if event is InputEventMouseButton:
 		if event.is_pressed(): 

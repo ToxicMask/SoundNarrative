@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="EditingAudioGame"
-run/main_scene="res://Nodes/Scenes/TEST_SCENE_0.tscn"
+run/main_scene="res://Nodes/Scenes/TEST_SCENE_1.tscn"
 config/icon="res://icon.png"
 
 [debug]
