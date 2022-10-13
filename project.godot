@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "DragableObject",
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/DragableObject.gd"
+}, {
+"base": "Node2D",
+"class": "TapeRecorder",
+"language": "GDScript",
+"path": "res://Scripts/GameObjects/TapeRecorder.gd"
 } ]
 _global_script_class_icons={
 "ClickableObject": "",
-"DragableObject": ""
+"DragableObject": "",
+"TapeRecorder": ""
 }
 
 [application]
