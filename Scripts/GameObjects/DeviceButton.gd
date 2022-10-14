@@ -1,18 +1,23 @@
 extends ClickableObject
 
-var hold_pressed = false
 
+signal button_pressed
+signal button_released
+
+var hold_pressed = false
 
 func _process_input(_viewport, event, _shape):
 	._process_input(_viewport, event, _shape)
 	if mouse_pressed and not hold_pressed:
-		_play_tape()
+		_press_button()
 	pass
 
-func _play_tape():
-	print("PLAY: TAPE")
+func _press_button():
 	self.modulate = Color.darkgray
 	hold_pressed = true
-	yield (get_tree().create_timer(1), "timeout")
+	emit_signal("button_pressed")
+
+func _realese_button():
 	self.modulate = Color.white
 	hold_pressed = false
+	emit_signal("button_released")
