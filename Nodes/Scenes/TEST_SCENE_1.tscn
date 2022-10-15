@@ -20,21 +20,36 @@ __meta__ = {
 position = Vector2( -352, -166 )
 script = ExtResource( 3 )
 
+[node name="Sprite" parent="TapeRecorder/PlayButton" index="0"]
+frame = 1
+
 [node name="PauseButton" parent="TapeRecorder" instance=ExtResource( 1 )]
 position = Vector2( -288, -166 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="TapeRecorder/PauseButton" index="0"]
+frame = 2
 
 [node name="StopButton" parent="TapeRecorder" instance=ExtResource( 1 )]
 position = Vector2( -224, -166 )
 script = ExtResource( 3 )
 
+[node name="Sprite" parent="TapeRecorder/StopButton" index="0"]
+frame = 3
+
 [node name="GoBackButton" parent="TapeRecorder" instance=ExtResource( 1 )]
 position = Vector2( -160, -166 )
 script = ExtResource( 3 )
 
+[node name="Sprite" parent="TapeRecorder/GoBackButton" index="0"]
+frame = 4
+
 [node name="GoFowardButton" parent="TapeRecorder" instance=ExtResource( 1 )]
 position = Vector2( -96, -166 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="TapeRecorder/GoFowardButton" index="0"]
+frame = 5
 
 [node name="Backdrop" type="Sprite" parent="TapeRecorder"]
 show_behind_parent = true
@@ -54,3 +69,9 @@ text = "00:00"
 [node name="TapeAudioPlayer" type="AudioStreamPlayer" parent="TapeRecorder"]
 stream = ExtResource( 6 )
 script = ExtResource( 5 )
+
+[editable path="TapeRecorder/PlayButton"]
+[editable path="TapeRecorder/PauseButton"]
+[editable path="TapeRecorder/StopButton"]
+[editable path="TapeRecorder/GoBackButton"]
+[editable path="TapeRecorder/GoFowardButton"]
