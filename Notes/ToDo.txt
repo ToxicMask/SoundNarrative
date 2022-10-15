@@ -12,7 +12,8 @@
 - Interface - HUD:
 	- Gravador
 	   * Clicar no botão:
-		Selecionar Tape
+		Classe do Tape
+		Selecionar e Trocar Tape
 	
 
 
@@ -36,3 +37,4 @@
 		Play: Play Tape
 		Pause: Pause Audio 
 		Stop: Reset Tape
+		
