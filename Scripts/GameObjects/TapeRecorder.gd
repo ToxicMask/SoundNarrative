@@ -11,19 +11,32 @@ onready var tape_node := $TapeAudioPlayer
 
 enum {PLAYING, PAUSED, GOBACK, GOFOWARD, OFF}
 var current_tape_state = OFF
-
-#var is_playing = false
 var current_tapetime : float = 0.0
+
+enum {SHOW, HIDE}
+var current_hud_state = HIDE
+var show_position = Vector2(1024, 600)
+var hide_position = Vector2(1024, 810)
 
 
 """
 Callbacks
+	Input -> Show / Hide in HUD
 	Ready -> Prepare connections
 	Process ->  Update Tape Time
 """
 
+func _input(_event):
+	if Input.is_action_just_pressed("ui_hud_audio"):
+		if current_hud_state == SHOW:
+			_hide_hud()
+		else:
+			_show_hud()
+	pass
 
 func _ready():
+	# Configure Hide HUD
+	self._hide_hud()
 	# ERROR VAR
 	var _err = null
 	# Buttons Connection
@@ -148,7 +161,6 @@ func _gofoward_tape():
 """
 State Control Functions
 """
-
 func _end_tape():
 	# In case the tape ended on its on
 	if current_tape_state == PLAYING:
@@ -159,11 +171,27 @@ func _end_tape():
 		print("END")
 	pass
 	
+"""
+HUD FUNCTIONS
+"""
+func _show_hud():
+	current_hud_state = SHOW
+	self.position = show_position
+	pass
+
+func _hide_hud():
+	current_hud_state = HIDE
+	self.position = hide_position
+	pass
+
+func _update_timestamp_display():
+	$TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
+	pass
+
 
 """
 Miscelaneus
 """
-
 func _release_all_buttons():
 	play_button._realese_button()
 	pause_button._realese_button()
@@ -172,7 +200,3 @@ func _release_all_buttons():
 	gofoward_button._realese_button()
 	pass
 
-
-func _update_timestamp_display():
-	$TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
-	pass

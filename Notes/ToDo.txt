@@ -12,9 +12,6 @@
 - Interface - HUD:
 	- Gravador
 	   * Clicar no botão:
-		Play: Play Tape
-		Pause: Pause Audio 
-		Stop: Reset Tape
 		Selecionar Tape
 	
 
@@ -32,3 +29,10 @@
 		-------------------------------
 		- Revanp do Mouse Drag
 		- Smmoth drag
+
+- Interface - HUD:
+	- Gravador
+	   * Clicar no botão:
+		Play: Play Tape
+		Pause: Pause Audio 
+		Stop: Reset Tape
