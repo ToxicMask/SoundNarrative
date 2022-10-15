@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Images/recorder_backdrop_temp0.png" type="Texture" id=1]
+[ext_resource path="res://Nodes/Objects/GameObjects/Device_Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/GameObjects/DeviceButton.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameObjects/TapeAudioPlayer.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/GameObjects/TapeRecorder.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Audio/593320__mosart1955__evil-laugh.mp3" type="AudioStream" id=6]
+
+[node name="TapeRecorder" type="Node2D" groups=["MessageEmitter"]]
+position = Vector2( 1024, 600 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlayButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( -352, -166 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="PlayButton" index="0"]
+frame = 1
+
+[node name="PauseButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( -288, -166 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="PauseButton" index="0"]
+frame = 2
+
+[node name="StopButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( -224, -166 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="StopButton" index="0"]
+frame = 3
+
+[node name="GoBackButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( -160, -166 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="GoBackButton" index="0"]
+frame = 4
+
+[node name="GoFowardButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( -96, -166 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="GoFowardButton" index="0"]
+frame = 5
+
+[node name="Backdrop" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 0, 76 )
+scale = Vector2( 1.28, 1 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -400, -300 )
+
+[node name="TimeStamp_Label" type="Label" parent="."]
+margin_left = -280.0
+margin_top = -57.0
+margin_right = -240.0
+margin_bottom = -43.0
+text = "00:00"
+
+[node name="TapeAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+script = ExtResource( 4 )
+
+[editable path="PlayButton"]
+[editable path="PauseButton"]
+[editable path="StopButton"]
+[editable path="GoBackButton"]
+[editable path="GoFowardButton"]

@@ -48,6 +48,7 @@ func _ready():
 
 	# Tape Node
 	_err = tape_node.connect("finished", self, "_end_tape")
+	_err = tape_node.connect("audio_message", self, "_emit_message")
 	pass
 
 func _process(delta):
@@ -188,6 +189,13 @@ func _update_timestamp_display():
 	$TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
 	pass
 
+
+"""
+Message Functions
+"""
+
+func _emit_message(msg_key):
+	get_tree().call_group("MessageListener", "_listen_message", msg_key)
 
 """
 Miscelaneus
