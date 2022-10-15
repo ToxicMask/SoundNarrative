@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WHITE_BLOCK_128x128.png-5a4d08b1ff090c85bdae0533aaf49523.stex"
+path="res://.import/WHITE_128x128.png-9df427dde5e23429d03f01eb322f20ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/WHITE_BLOCK_128x128.png"
-dest_files=[ "res://.import/WHITE_BLOCK_128x128.png-5a4d08b1ff090c85bdae0533aaf49523.stex" ]
+source_file="res://Assets/Images/WHITE_128x128.png"
+dest_files=[ "res://.import/WHITE_128x128.png-9df427dde5e23429d03f01eb322f20ca.stex" ]
 
 [params]
 

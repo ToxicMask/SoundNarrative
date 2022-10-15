@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/recorder_backdrop_temp0.png-e5560a7bf4819def7c55bc38fd5adc8b.stex"
+path="res://.import/recorder_backdrop_temp0.png-94b852600791f0c927e512e14d7b647b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/recorder_backdrop_temp0.png"
-dest_files=[ "res://.import/recorder_backdrop_temp0.png-e5560a7bf4819def7c55bc38fd5adc8b.stex" ]
+source_file="res://Assets/Images/recorder_backdrop_temp0.png"
+dest_files=[ "res://.import/recorder_backdrop_temp0.png-94b852600791f0c927e512e14d7b647b.stex" ]
 
 [params]
 

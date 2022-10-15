@@ -32,7 +32,6 @@ func _process_input(_viewport, event, _shape):
 			mouse_pressed = false
 			if DEBUG:
 				print(name, " Just Released")
-
 	pass
 
 func _process_mouse_inside():
