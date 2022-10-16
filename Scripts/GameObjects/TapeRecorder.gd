@@ -124,7 +124,7 @@ func _stop_tape():
 	current_tape_state = OFF
 	current_tapetime  = 0.0
 	#Control Audio
-	tape_node.stop()
+	tape_node._stop_audio()
 	#Clear Buttons
 	_release_all_buttons()
 	# Update Display
