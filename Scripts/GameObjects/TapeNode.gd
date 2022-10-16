@@ -1,26 +1,29 @@
 extends AudioStreamPlayer
 
-signal audio_message(msg_key)
+# Inner Class
+class TapeContent:
 
-class tape_content:
-	func _init():
+	var audio_player : AudioStreamPlayer = null
+
+	var content_queue := []
+	var play_queue := []
+
+	var current_
+
+	func _init(_audio_player):
+		print("NEW TAPE")
+		audio_player = _audio_player
 		pass
-	
+
 	func _play_content(start_pos : float):
 		print("PLAY CONTENT:")
 		print(start_pos)
-
-var custom_tape_content = []
-
-func _play_audio(time_start: float = 0.0):
-	print("PLAYTAPE: %s" % [time_start] )
+		pass
 	
-	if custom_tape_content.empty():
-		self.play(time_start)
-		emit_signal("audio_message", "I HEARD THAT!")
-	else:
-		_play_custom_audio()
+	func _stop_content():
+		pass
+	
+	
+# Objects
+var tape_content = null
 
-func _play_custom_audio(time_start: float = 0.0):
-	print("CREATE THE DAMN CODE", time_start)
-	emit_signal("audio_message", "GRELLO!")

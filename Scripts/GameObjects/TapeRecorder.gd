@@ -47,7 +47,7 @@ func _ready():
 	_err = gofoward_button.connect("button_pressed", self, "_gofoward_tape")
 
 	# Tape Node
-	_err = tape_node.connect("finished", self, "_end_tape")
+	_err = tape_node.connect("tape_finished", self, "_end_tape")
 	_err = tape_node.connect("audio_message", self, "_emit_message")
 	pass
 
@@ -114,7 +114,7 @@ func _pause_tape():
 	current_tape_state = PAUSED
 	
 	#Stop tape
-	tape_node.stop()
+	tape_node._stop_audio()
 	print("PAUSE")
 	pass
 
