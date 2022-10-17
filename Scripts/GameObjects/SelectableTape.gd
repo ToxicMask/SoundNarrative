@@ -22,4 +22,5 @@ func _get_tape_info():
 func _update_display():
 	tape_info = tape_info as TapeInfo
 	$NameLabel.text = tape_info.name
+	$Sprite.modulate = tape_info.tape_color
 

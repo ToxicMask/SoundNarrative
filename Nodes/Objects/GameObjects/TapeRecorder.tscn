@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Images/recorder_backdrop_temp0.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/Device_Button.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Scripts/GameObjects/TapeRecorder.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Images/placeholder_playbuttons_32.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Objects/TapeTestLaugh0.tres" type="Resource" id=7]
+[ext_resource path="res://Assets/Objects/WoldemortTest2.tres" type="Resource" id=8]
+[ext_resource path="res://Assets/Objects/EmptyTape.tres" type="Resource" id=9]
+[ext_resource path="res://Assets/Objects/AlienTest1.tres" type="Resource" id=10]
+[ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=11]
 
 [node name="TapeRecorder" type="Node2D" groups=["MessageEmitter"]]
 position = Vector2( 1024, 600 )
@@ -51,6 +55,12 @@ position = Vector2( -88, -168 )
 [node name="Sprite" parent="EjectButton" index="0"]
 frame = 6
 
+[node name="TapeSprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.843137 )
+position = Vector2( -296, -80 )
+scale = Vector2( 2, 0.375 )
+texture = ExtResource( 11 )
+
 [node name="Backdrop" type="Sprite" parent="."]
 show_behind_parent = true
 position = Vector2( 16, 16 )
@@ -60,9 +70,9 @@ centered = false
 offset = Vector2( -400, -300 )
 
 [node name="TimeStamp_Label" type="Label" parent="."]
-margin_left = -312.0
+margin_left = -496.0
 margin_top = -80.0
-margin_right = -272.0
+margin_right = -456.0
 margin_bottom = -66.0
 text = "00:00"
 
@@ -91,9 +101,25 @@ frame = 6
 [node name="SelectionHUD" type="Node2D" parent="."]
 position = Vector2( -1024, -600 )
 
-[node name="SelectableTape0" parent="SelectionHUD" instance=ExtResource( 3 )]
+[node name="SelectableTape0" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
 position = Vector2( 128, 64 )
 tape_info = ExtResource( 7 )
+
+[node name="SelectableTape1" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
+position = Vector2( 320, 64 )
+tape_info = ExtResource( 10 )
+
+[node name="SelectableTape2" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
+position = Vector2( 512, 64 )
+tape_info = ExtResource( 8 )
+
+[node name="SelectableTape3" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
+position = Vector2( 704, 64 )
+tape_info = ExtResource( 9 )
+
+[node name="SelectableTape4" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
+position = Vector2( 896, 64 )
+tape_info = ExtResource( 9 )
 
 [node name="Backdrop" type="Panel" parent="SelectionHUD"]
 self_modulate = Color( 0.913725, 1, 0.788235, 1 )
@@ -123,6 +149,10 @@ frame = 6
 
 [connection signal="pressed" from="RevealButton" to="." method="_toggle_hud"]
 [connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape0" to="." method="_insert_new_tape"]
+[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape1" to="." method="_insert_new_tape"]
+[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape2" to="." method="_insert_new_tape"]
+[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape3" to="." method="_insert_new_tape"]
+[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape4" to="." method="_insert_new_tape"]
 [connection signal="pressed" from="SelectionHUD/RevealButton" to="." method="_hide_selection"]
 
 [editable path="PlayButton"]

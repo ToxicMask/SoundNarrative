@@ -6,3 +6,4 @@ export(String) var name
 export(String) var description
 export(Array, AudioStream) var content_array 
 export(Array, String) var msg_array 
+export (Color, RGB) var tape_color

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/593320__mosart1955__evil-laugh.mp3-f34987b63b8101e010d85d82a4572ced.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Placeholder/593320__mosart1955__evil-laugh.mp3"
+dest_files=[ "res://.import/593320__mosart1955__evil-laugh.mp3-f34987b63b8101e010d85d82a4572ced.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

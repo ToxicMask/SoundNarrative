@@ -48,6 +48,10 @@ func _ready():
 
 	# Tape Node
 	_err = tape_node.connect("audio_finished", self, "_end_tape")
+	var first_tape = get_tree().get_nodes_in_group("SelectionTape")[0]
+	if first_tape:
+		self._insert_new_tape(first_tape._get_tape_info())
+
 	pass
 
 func _process(delta):
@@ -160,6 +164,7 @@ func _insert_new_tape(new_tape_info):
 	print(new_tape_info.name, "@")
 	tape_node._set_selected_tape(new_tape_info)
 	_hide_selection()
+	$TapeSprite.modulate = new_tape_info.tape_color
 	pass
 
 func _end_tape():

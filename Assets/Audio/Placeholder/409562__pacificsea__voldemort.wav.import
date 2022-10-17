@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/409562__pacificsea__voldemort.wav-33ee59eac3b1681bab42807d893d5272.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Placeholder/409562__pacificsea__voldemort.wav"
+dest_files=[ "res://.import/409562__pacificsea__voldemort.wav-33ee59eac3b1681bab42807d893d5272.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
