@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/DragableObject.gd"
 }, {
+"base": "Node2D",
+"class": "Main",
+"language": "GDScript",
+"path": "res://Scripts/GameSystems/Main.gd"
+}, {
+"base": "CanvasLayer",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://Scripts/GameSystems/MainMenu.gd"
+}, {
 "base": "ClickableObject",
 "class": "SelectionTape",
 "language": "GDScript",
@@ -42,6 +52,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ClickableObject": "",
 "DragableObject": "",
+"Main": "",
+"MainMenu": "",
 "SelectionTape": "",
 "TapeInfo": "",
 "TapeObject": "",
@@ -51,8 +63,9 @@ _global_script_class_icons={
 [application]
 
 config/name="EditingAudioGame"
-run/main_scene="res://Nodes/Scenes/TEST_SCENE_1.tscn"
-config/icon="res://icon.png"
+config/description="Narrative"
+run/main_scene="res://Nodes/Scenes/Main.tscn"
+config/icon="res://Assets/Images/recorder_backdrop_temp0.png"
 
 [debug]
 
@@ -77,6 +90,9 @@ ui_hud_audio={
 
 [layer_names]
 
+2d_render/layer_1="WORLDSPACE"
+2d_render/layer_2="HUD"
+2d_render/layer_3="IN_HAND"
 2d_physics/layer_1="WORLDSPACE"
 2d_physics/layer_2="HUD"
 2d_physics/layer_3="IN_HAND"

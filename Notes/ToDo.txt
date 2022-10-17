@@ -7,13 +7,12 @@
 	- HUD
 	- Sistema de Inventario
 
+-Tela de edição de Tape
+	- Tela dedicada
+	- Arrastar
+	- Salvar dados da fita editada em arquivo JSON
+	- Carregar fita editavel na tela do gravador
 
-
-- Interface - HUD:
-	- Gravador
-	   * Clicar no botão:
-		Classe do Tape
-		Selecionar e Trocar Tape
 	
 
 
@@ -37,4 +36,6 @@
 		Play: Play Tape
 		Pause: Pause Audio 
 		Stop: Reset Tape
+		Classe do Tape
+		Selecionar e Trocar Tape
 		
