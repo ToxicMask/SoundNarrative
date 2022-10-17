@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/GameObjects/TapeInfo.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/593320__mosart1955__evil-laugh.mp3" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "TEST0"
+description = "For testing!"
+content_array = [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ]
+msg_array = [ "Hello!", "", "Bye!" ]

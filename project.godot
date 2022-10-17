@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/DragableObject.gd"
 }, {
+"base": "ClickableObject",
+"class": "SelectionTape",
+"language": "GDScript",
+"path": "res://Scripts/GameObjects/SelectableTape.gd"
+}, {
+"base": "Resource",
+"class": "TapeInfo",
+"language": "GDScript",
+"path": "res://Scripts/GameObjects/TapeInfo.gd"
+}, {
 "base": "Reference",
 "class": "TapeObject",
 "language": "GDScript",
@@ -32,6 +42,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ClickableObject": "",
 "DragableObject": "",
+"SelectionTape": "",
+"TapeInfo": "",
 "TapeObject": "",
 "TapeRecorder": ""
 }

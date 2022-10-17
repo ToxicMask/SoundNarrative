@@ -6,10 +6,10 @@ extends AudioStreamPlayer
 signal audio_finished
 
 # Preloads
-onready var tape_sample = preload("res://Assets/Audio/593320__mosart1955__evil-laugh.mp3")
+#onready var tape_sample = preload("res://Assets/Audio/593320__mosart1955__evil-laugh.mp3")
 
 # Selected Tape Object
-onready var selected_tape_object = TapeObject.new(self, [tape_sample, tape_sample], ["Hehe!", "HAHE2!"])
+onready var selected_tape_object = TapeObject.new(self, [], [])
 
 
 # Control tapes
@@ -33,3 +33,7 @@ func _emit_message(msg_key):
 
 func _get_selected_tape_length() -> float:
 	return selected_tape_object._get_tape_length()
+
+func _set_selected_tape(tape_info):
+	var new_tape = TapeObject.new(self, tape_info.content_array, tape_info.msg_array)
+	selected_tape_object = new_tape

@@ -21,3 +21,10 @@ func _realese_button():
 	self.modulate = Color.white
 	hold_pressed = false
 	emit_signal("button_released")
+
+func _set_disable_hitbox(_disable : bool = true):
+	$ClickArea.disabled = _disable
+	if _disable:
+		self.modulate = Color.darkgray
+	else:
+		self.modulate = Color.white
