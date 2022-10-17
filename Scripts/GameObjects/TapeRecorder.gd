@@ -47,13 +47,12 @@ func _ready():
 	_err = gofoward_button.connect("button_pressed", self, "_gofoward_tape")
 
 	# Tape Node
-	_err = tape_node.connect("tape_finished", self, "_end_tape")
-	_err = tape_node.connect("audio_message", self, "_emit_message")
+	_err = tape_node.connect("audio_finished", self, "_end_tape")
 	pass
 
 func _process(delta):
 	# Update timetape
-	var tape_length : float = tape_node.stream.get_length()
+	var tape_length : float = tape_node._get_selected_tape_length()
 	match (current_tape_state):
 		PLAYING:
 			current_tapetime += delta
@@ -87,7 +86,7 @@ func _play_tape():
 	current_tape_state =  PLAYING
 
 	# Reset Tape 
-	var tape_length : float = tape_node.stream.get_length()
+	var tape_length : float = tape_node._get_selected_tape_length()
 	if current_tapetime >= tape_length:
 		_end_tape()
 		return
@@ -100,9 +99,7 @@ func _play_tape():
 	
 	# Play Audio in time
 	tape_node._play_audio(current_tapetime)
-	print("PLAY")
 	pass
-
 
 func _pause_tape():
 	# Clear Buttons
@@ -115,9 +112,7 @@ func _pause_tape():
 	
 	#Stop tape
 	tape_node._stop_audio()
-	print("PAUSE")
 	pass
-
 
 func _stop_tape():
 	#Control State
@@ -129,7 +124,6 @@ func _stop_tape():
 	_release_all_buttons()
 	# Update Display
 	_update_timestamp_display()
-	print("STOP")
 	pass
 
 func _goback_tape():
@@ -142,7 +136,7 @@ func _goback_tape():
 	current_tape_state = GOBACK
 
 	# Stop Audio
-	tape_node.stop()
+	tape_node._stop_audio()
 	pass
 
 func _gofoward_tape():
@@ -155,7 +149,7 @@ func _gofoward_tape():
 	current_tape_state = GOFOWARD
 
 	# Stop audio
-	tape_node.stop()
+	tape_node._stop_audio()
 	pass
 
 
@@ -169,9 +163,9 @@ func _end_tape():
 		current_tapetime  = 0.0
 		_release_all_buttons()
 		_update_timestamp_display()
-		print("END")
 	pass
-	
+
+
 """
 HUD FUNCTIONS
 """
@@ -189,13 +183,6 @@ func _update_timestamp_display():
 	$TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
 	pass
 
-
-"""
-Message Functions
-"""
-
-func _emit_message(msg_key):
-	get_tree().call_group("MessageListener", "_listen_message", msg_key)
 
 """
 Miscelaneus
