@@ -3,7 +3,7 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/ClickableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/DragableObject.tscn" type="PackedScene" id=2]
 
-[node name="TEST_SCENE_0" type="Node2D" groups=["WorldScene"]]
+[node name="TEST_SCENE_0" type="Node2D" groups=["DeleteOnChangeScene"]]
 __meta__ = {
 "_edit_lock_": true
 }

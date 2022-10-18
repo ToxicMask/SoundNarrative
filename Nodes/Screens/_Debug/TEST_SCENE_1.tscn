@@ -3,7 +3,7 @@
 [ext_resource path="res://Nodes/Objects/_Debug/DebugListener.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/TapeRecorder.tscn" type="PackedScene" id=2]
 
-[node name="TEST_SCENE_1" type="Node2D" groups=["WorldScene"]]
+[node name="TEST_SCENE_1" type="Node2D" groups=["DeleteOnChangeScene"]]
 
 [node name="TapeRecorder" parent="." instance=ExtResource( 2 )]
 

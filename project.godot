@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "TapeRecorder",
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/TapeRecorder.gd"
+}, {
+"base": "Node2D",
+"class": "WorldScreen",
+"language": "GDScript",
+"path": "res://Scripts/GameSystems/WorldScreen.gd"
 } ]
 _global_script_class_icons={
 "ClickableObject": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "SelectionTape": "",
 "TapeInfo": "",
 "TapeObject": "",
-"TapeRecorder": ""
+"TapeRecorder": "",
+"WorldScreen": ""
 }
 
 [application]
