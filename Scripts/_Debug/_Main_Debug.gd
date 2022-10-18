@@ -1,9 +1,38 @@
 extends Node2D
 
 
-var active : bool
+var active : bool = false
+var main_parent : Main = null
 
 func _ready():
-	pass # Replace with function body.
+	if not get_parent() is Main or not OS.is_debug_build():
+		print( self.get_path() , " Deleted -> NOT CHILD OF MAIN")
+		self.queue_free()
+	else:
+		main_parent = get_parent()
 
 
+func _input(event):
+	# Input Event Key
+	if not event is InputEventKey:
+		return
+
+
+	# Just Pressed
+	if event.is_pressed() and (not event.is_echo()):
+		# Set Active Debug
+		if  event is InputEventWithModifiers:
+			# F12 + Ctrl+ Alt
+			if event.scancode == KEY_F12 and event.alt:
+				active = !active
+				print("DEBUG ACTIVE: ", active)
+		
+		if active:
+			if event.scancode == KEY_1:
+				print("CHANGE SCENE: TEST0")
+				main_parent._change_world_scene("TEST0")
+			elif event.scancode == KEY_2:
+				print("CHANGE SCENE: TEST1")
+				main_parent._change_world_scene("TEST1")
+		pass
+	pass

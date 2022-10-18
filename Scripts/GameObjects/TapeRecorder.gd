@@ -161,7 +161,6 @@ func _gofoward_tape():
 State Control Functions
 """
 func _insert_new_tape(new_tape_info):
-	print(new_tape_info.name, "@")
 	tape_node._set_selected_tape(new_tape_info)
 	_hide_selection()
 	$TapeSprite.modulate = new_tape_info.tape_color
