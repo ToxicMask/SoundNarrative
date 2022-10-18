@@ -1,4 +1,4 @@
-extends "res://Scripts/GameObjects/ClickableObject.gd"
+extends ClickableObject
 
 class_name DragableObject
 

@@ -1,16 +1,11 @@
 
-
-
-- Game Manager
-	- Sistema para Trocar Scena / Manter Base
-	- Objetos da Cena
-	- HUD
+- Game Manager (Main)
 	- Sistema de Inventario
 
 -Tela de edição de Tape
 	- Tela dedicada
 	- Arrastar
-	- Salvar dados da fita editada em arquivo JSON
+	- Salvar dados da fita editada em Node DontDeleteOnMain
 	- Carregar fita editavel na tela do gravador
 
 	
@@ -38,4 +33,12 @@
 		Stop: Reset Tape
 		Classe do Tape
 		Selecionar e Trocar Tape
+
+
+- Game Manager (Main)
+	- Sistema para Trocar Scena / Manter Base
+	- Objetos da Cena
+	- HUD
+
+
 		

@@ -6,7 +6,7 @@ var main_parent : Main = null
 
 func _ready():
 	if not get_parent() is Main or not OS.is_debug_build():
-		print( self.get_path() , " Deleted -> NOT CHILD OF MAIN")
+		print( self.get_path() , " Deleted")
 		self.queue_free()
 	else:
 		main_parent = get_parent()
