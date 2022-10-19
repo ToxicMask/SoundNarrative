@@ -13,8 +13,12 @@ Change WorldScenes & Menus
 ManageHud Elements
 
 """
+# Game Systems
+export (PackedScene) var keep_data_packed : PackedScene
+
 # Menus
 export (PackedScene) var main_menu_packed : PackedScene
+
 # HUDs
 export (PackedScene) var tape_recorder_packed: PackedScene
 
@@ -33,10 +37,51 @@ var current_world_scene_key := ""
 
 # Callbacks
 func _ready():
+	_add_keep_data()
 	_add_start_menu()
 	_change_world_scene("MainMenu")
 	pass
 
+
+"""
+OS Operations
+"""
+
+func _start_new_game():
+	_change_world_scene("TEST1")
+	pass
+
+func _quit_app():
+	get_tree().quit()
+	pass
+
+
+"""
+Add Children
+"""
+
+func _add_start_menu():
+	var instance =  main_menu_packed.instance()
+	var _err = null
+	_err = instance.connect("new_game", self, "_start_new_game")
+	_err = instance.connect("close_app", self, "_quit_app")
+	add_child(instance)
+	pass
+
+func _add_tape_recorder_hud():
+	var instance =  tape_recorder_packed.instance()
+	var _err = null
+	add_child(instance)
+	pass
+	
+func _add_keep_data():
+	var new_instance = keep_data_packed.instance()
+	add_child(new_instance)
+	pass
+
+"""
+Scene Managment
+"""
 
 func _change_world_scene(world_key : String):
 	if world_scene_dict.has(world_key):
@@ -49,32 +94,3 @@ func _change_world_scene(world_key : String):
 		print( "@%s::%s is not in Dict." % [get_path(), world_key] )
 	pass
 
-
-func _start_new_game():
-	var menu_node = get_node_or_null("MainMenu")
-	if menu_node:
-		menu_node.queue_free()
-	_change_world_scene("TEST1")
-	pass
-
-func _quit_app():
-	get_tree().quit()
-	pass
-
-
-
-func _add_start_menu():
-	var instance =  main_menu_packed.instance()
-	var _err = null
-	_err = instance.connect("new_game", self, "_start_new_game")
-	_err = instance.connect("close_app", self, "_quit_app")
-	add_child(instance)
-	pass
-
-
-func _add_tape_recorder_hud():
-	var instance =  tape_recorder_packed.instance()
-	var _err = null
-	add_child(instance)
-	pass
-	

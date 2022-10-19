@@ -28,14 +28,15 @@ func _input(event):
 				print("DEBUG ACTIVE: ", active)
 		
 		if active:
-			if event.scancode == KEY_1:
-				print("CHANGE SCENE: TEST0")
-				main_parent._change_world_scene("TEST0")
-			elif event.scancode == KEY_2:
-				print("CHANGE SCENE: TEST1")
-				main_parent._change_world_scene("TEST1")
-			elif event.scancode == KEY_3:
-				print("CHANGE SCENE: EDIT")
-				main_parent._change_world_scene("EditTapeScreen")
+			match(event.scancode):
+				KEY_1:
+					print("CHANGE SCENE: TEST0")
+					main_parent._change_world_scene("TEST0")
+				KEY_2:
+					print("CHANGE SCENE: TEST1")
+					main_parent._change_world_scene("TEST1")
+				KEY_3:
+					print("CHANGE SCENE: EDIT")
+					main_parent._change_world_scene("EditTapeScreen")
 		pass
 	pass
