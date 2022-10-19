@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/GameSystems/StartGameScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/BLACK_128x128.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GameSystems/NewGameManager.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Objects/Tapes/TapeTestLaugh0.tres" type="Resource" id=6]
+[ext_resource path="res://Assets/Objects/Tapes/AlienTest1.tres" type="Resource" id=7]
+[ext_resource path="res://Assets/Objects/Tapes/WoldemortTest2.tres" type="Resource" id=8]
+
+[node name="StartGameScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="IntroScreen" type="CanvasLayer" parent="."]
+
+[node name="FullRect" type="Control" parent="IntroScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/FullRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="FullRectMargin" type="MarginContainer" parent="IntroScreen/FullRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 40
+custom_constants/margin_bottom = 40
+
+[node name="Center" type="CenterContainer" parent="IntroScreen/FullRect/FullRectMargin"]
+margin_top = 40.0
+margin_right = 1024.0
+margin_bottom = 560.0
+
+[node name="IntoText" type="Label" parent="IntroScreen/FullRect/FullRectMargin/Center"]
+margin_left = 311.0
+margin_top = 202.0
+margin_right = 713.0
+margin_bottom = 318.0
+rect_min_size = Vector2( 300, 100 )
+text = "Este é um jogo point and Click
+
+Use o mouse para explorar e interagir com o ambiente
+
+
+
+Boa Sorte"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="CenterBottom" type="VBoxContainer" parent="IntroScreen/FullRect/FullRectMargin"]
+margin_top = 40.0
+margin_right = 1024.0
+margin_bottom = 560.0
+alignment = 2
+
+[node name="NextButton" type="Button" parent="IntroScreen/FullRect/FullRectMargin/CenterBottom"]
+margin_top = 500.0
+margin_right = 1024.0
+margin_bottom = 520.0
+focus_mode = 0
+text = "COMEÇAR"
+flat = true
+icon_align = 1
+
+[node name="NewGameManager" type="Node" parent="."]
+script = ExtResource( 3 )
+tape_files = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+
+[node name="KeepDataController" type="Node" parent="NewGameManager"]
+script = ExtResource( 4 )
+
+[connection signal="pressed" from="IntroScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="." method="_next_scene"]

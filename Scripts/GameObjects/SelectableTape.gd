@@ -5,7 +5,6 @@ export(Resource) var tape_info
 
 signal insert_tape_selection (tape_info)
 
-	
 
 func _ready():
 	_update_display()

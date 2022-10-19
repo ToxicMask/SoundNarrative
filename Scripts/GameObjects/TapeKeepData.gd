@@ -1,5 +1,5 @@
 extends Node
-class_name EditTapeKeepData
+class_name TapeKeepData
 
 var tape_info : TapeInfo = TapeInfo.new()
 
@@ -10,5 +10,5 @@ func _set_tape_info(_name: String = "Edited Tape",_description : String = "", _c
 	new_info.content_array = _content_array
 	new_info.msg_array = _msg_array
 	new_info.tape_color = _tape_color
-	return new_info
+	tape_info = new_info
 

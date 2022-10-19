@@ -26,16 +26,22 @@ export (PackedScene) var tape_recorder_packed: PackedScene
 # World Scenes
 export (PackedScene) var test0_world : PackedScene
 export (PackedScene) var test1_world : PackedScene
+export (PackedScene) var start_world : PackedScene
+export (PackedScene) var game1_world : PackedScene
 export (PackedScene) var edit_world : PackedScene
 onready var world_scene_dict: Dictionary = {
 	"TEST0": test0_world,
 	"TEST1": test1_world,
+	"StartGame": start_world,
+	"World1": game1_world,
 	"EditTapeScreen": edit_world,
 }
 var current_world_scene_key := ""
 
 
-# Callbacks
+"""
+Callbacks
+"""
 func _ready():
 	_add_keep_data()
 	_add_start_menu()
@@ -48,7 +54,7 @@ OS Operations
 """
 
 func _start_new_game():
-	_change_world_scene("TEST1")
+	_change_world_scene("StartGame")
 	pass
 
 func _quit_app():
@@ -79,6 +85,7 @@ func _add_keep_data():
 	add_child(new_instance)
 	pass
 
+
 """
 Scene Managment
 """
@@ -91,6 +98,6 @@ func _change_world_scene(world_key : String):
 		var new_world = world_scene_dict[current_world_scene_key].instance() 
 		add_child(new_world)
 	else:
-		print( "@%s::%s is not in Dict." % [get_path(), world_key] )
+		print( "@%s::%s is not in Dictionary." % [get_path(), world_key] )
 	pass
 
