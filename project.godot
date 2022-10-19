@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/DragableObject.gd"
 }, {
+"base": "Node",
+"class": "EditTapeKeepData",
+"language": "GDScript",
+"path": "res://Scripts/GameObjects/EditTapeKeepData.gd"
+}, {
 "base": "WorldScreen",
 "class": "EditTapeWorldScreen",
 "language": "GDScript",
@@ -33,6 +38,11 @@ _global_script_classes=[ {
 "class": "KeepDataManager",
 "language": "GDScript",
 "path": "res://Scripts/GameSystems/KeepDataManager.gd"
+}, {
+"base": "Node",
+"class": "KeepDataReceiver",
+"language": "GDScript",
+"path": "res://Scripts/GameObjects/KeepDataReceiver.gd"
 }, {
 "base": "Node2D",
 "class": "Main",
@@ -72,9 +82,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ClickableObject": "",
 "DragableObject": "",
+"EditTapeKeepData": "",
 "EditTapeWorldScreen": "",
 "EditedTapeInfo": "",
 "KeepDataManager": "",
+"KeepDataReceiver": "",
 "Main": "",
 "MainMenu": "",
 "SelectionTape": "",

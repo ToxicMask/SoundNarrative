@@ -7,8 +7,14 @@ Serves to Keep Data Between Change Scenes
 """
 
 
-func _set_data(data_node: Node):
+func _set_data(data_node: Node, data_id : String):
+
+	if data_node.is_inside_tree():
+		print("ERROR: NODE INSIDE TREE")
+		return
+
 	# Create new instance if not exist
+	data_node.name = data_id
 	var _node = get_node_or_null(data_node.name)
 	if _node:
 		remove_child(_node)

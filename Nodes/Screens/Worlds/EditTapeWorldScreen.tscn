@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/WorldScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/GameSystems/EditTapeWorldScreen.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/GameObjects/EditTapeKeepData.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameObjects/KeepDataReceiver.gd" type="Script" id=4]
 
 [node name="EditTapeScreen" groups=["KeepDataReceiver"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="KeepDataReceiver" type="Node" parent="." index="0"]
+script = ExtResource( 4 )
+receiver_id = "Custom_Tape"
+
+[node name="EditTapeKeepData" type="Node2D" parent="." index="1"]
+script = ExtResource( 3 )
