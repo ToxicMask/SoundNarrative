@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Screens/_Debug/_MainDebug.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/TapeRecorder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_0.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/GameSystems/Main.gd" type="Script" id=6]
-[ext_resource path="res://Nodes/Screens/Worlds/EditTapeWorldScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Nodes/Objects/GameSystems/KeepDataManager.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Nodes/Screens/Worlds/StartGameScreen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Nodes/Screens/Worlds/World1Screen.tscn" type="PackedScene" id=10]
@@ -20,6 +19,5 @@ test0_world = ExtResource( 5 )
 test1_world = ExtResource( 1 )
 start_world = ExtResource( 9 )
 game1_world = ExtResource( 10 )
-edit_world = ExtResource( 7 )
 
 [node name="_MainDebug" parent="." instance=ExtResource( 2 )]

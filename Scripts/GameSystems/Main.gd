@@ -21,6 +21,7 @@ export (PackedScene) var main_menu_packed : PackedScene
 
 # HUDs
 export (PackedScene) var tape_recorder_packed: PackedScene
+export (PackedScene) var edit_tape_packed: PackedScene
 
 
 # World Scenes
@@ -28,13 +29,11 @@ export (PackedScene) var test0_world : PackedScene
 export (PackedScene) var test1_world : PackedScene
 export (PackedScene) var start_world : PackedScene
 export (PackedScene) var game1_world : PackedScene
-export (PackedScene) var edit_world : PackedScene
 onready var world_scene_dict: Dictionary = {
 	"TEST0": test0_world,
 	"TEST1": test1_world,
 	"StartGame": start_world,
 	"World1": game1_world,
-	"EditTapeScreen": edit_world,
 }
 var current_world_scene_key := ""
 
@@ -76,6 +75,12 @@ func _add_start_menu():
 
 func _add_tape_recorder_hud():
 	var instance =  tape_recorder_packed.instance()
+	var _err = null
+	add_child(instance)
+	pass
+
+func _add_edit_tape_hud():
+	var instance =  edit_tape_packed.instance()
 	var _err = null
 	add_child(instance)
 	pass

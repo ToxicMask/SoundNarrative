@@ -5,9 +5,12 @@ export(Resource) var tape_info
 
 signal insert_tape_selection (tape_info)
 
+func _enter_tree():
+	_update_display()
+	pass
+
 
 func _ready():
-	_update_display()
 	var _err = self.connect("mouse_click", self, "_emit_tape_selection")
 	pass
 

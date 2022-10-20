@@ -17,7 +17,7 @@ func _input(event):
 		if event.is_pressed() and not event.is_echo():
 			match (event.scancode):
 				KEY_Q:
-					$KeepDataController._get_data("CUSTOM_DATA")
+					$KeepDataController._get_data("TAPE_CUSTOM")
 					pass
 				KEY_W:
 					var new_tape = TapeKeepData.new()

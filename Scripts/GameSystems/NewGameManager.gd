@@ -1,18 +1,26 @@
 extends Node
 class_name NewGameManager
 
-export (Array, Resource) var tape_files =  []
+
+var keep_data_array : Array = []
 
 func _ready():
-	_set_new_game_data()
+	_prepare_new_game_data()
+	pass
+
+func _prepare_new_game_data():
+	var new_node = TapeInventoryKeepData.new()
+	new_node.name = "TapeInventoryKeepData"
+	new_node.unlocked_tape_id = ["Evil Laugh"]
+	new_node.has_custom_tape = true
+	new_node.custom_tape_info = TapeInfo.new()
+	new_node.custom_tape_info.name = "Custom Tape"
+	keep_data_array.append(new_node)
 	pass
 
 func _set_new_game_data():
-	
-	for i in range(tape_files.size()):
-		var data_node = TapeKeepData.new()
-		var tape_info = tape_files[i]
-		if tape_info:
-			data_node.tape_info = tape_info
-			$KeepDataController._save_data(data_node, "TAPE_%d" %[i])
+	# Add Prepared data
+	for i in range(keep_data_array.size()):
+		var keep_node = keep_data_array[i] as Node
+		$KeepDataController._save_data(keep_node, keep_node.name)
 	pass

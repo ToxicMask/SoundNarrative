@@ -1,11 +1,8 @@
 
-- Game Manager (Main)
-	- Sistema de Inventario
 
 -Tela de edição de Tape
 	- Tela dedicada
-	- Arrastar
-	- Salvar dados da fita editada em Node DontDeleteOnMain
+	- Arrastar partes da fita em ordem
 	- Carregar fita editavel na tela do gravador
 
 	
@@ -39,6 +36,7 @@
 	- Sistema para Trocar Scena / Manter Base
 	- Objetos da Cena
 	- HUD
+	- Manter os Dados entre Cenas
 
 
 		
