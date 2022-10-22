@@ -1,11 +1,18 @@
 extends Node2D
 class_name KeepDataManager
 
-"""
-KeepData - Container
-Serves to Keep Data Between Change Scenes
-"""
 
+#KeepData - Container
+#	Serves to Keep Data Between Changes Scenes
+#	Preference to be child of "Main"
+
+func _init():
+	self.name = "KeepDataManager"
+	pass
+
+func _enter_tree():
+	add_to_group("KeepDataManager")
+	pass
 
 func _set_data(data_node: Node, data_id : String):
 

@@ -1,20 +1,16 @@
 extends Node2D
 class_name Main
 
-"""
-Execute Function of Game Manager
 
-Uses to Start and End The Game
+#Execute Function of Game Manager
+#	Uses to Start and End The Game
+#	Set Play Variablens ()
+#	Change WorldScreens & Menus
 
-Set Play Variablens ()
 
-Change WorldScenes & Menus
 
-ManageHud Elements
-
-"""
 # Game Systems
-export (PackedScene) var keep_data_packed : PackedScene
+#pass
 
 # Menus
 export (PackedScene) var main_menu_packed : PackedScene
@@ -86,7 +82,7 @@ func _add_edit_tape_hud():
 	pass
 	
 func _add_keep_data():
-	var new_instance = keep_data_packed.instance()
+	var new_instance = KeepDataManager.new()
 	add_child(new_instance)
 	pass
 

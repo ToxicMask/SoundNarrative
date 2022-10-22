@@ -1,5 +1,5 @@
-extends WorldScreen
-class_name EditTapeWorldScreen
+extends Node2D
+class_name EditTapeWorldMenu
 
 """
 Debugger Input

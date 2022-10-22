@@ -1,6 +1,7 @@
 extends Node
 class_name KeepDataController
-	
+
+# Node to control interactions with Keep Data Node on Main
 
 signal update_data_on_receiver(data_node)
 
