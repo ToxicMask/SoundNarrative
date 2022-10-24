@@ -24,10 +24,10 @@ func _ready():
 func _prepare_new_game_data():
 	var new_node = TapeInventoryKeepData.new()
 	new_node.name = "TapeInventoryKeepData"
-	new_node.unlocked_tape_id = ["Evil Laugh"]
+	new_node.unlocked_tape_id = []
 	new_node.has_custom_tape = false
 	new_node.custom_tape_info = TapeInfo.new()
-	new_node.custom_tape_info.name = "Custom Tape"
+	new_node.custom_tape_info.name = "Custom_Tape"
 	keep_data_array.append(new_node)
 	pass
 

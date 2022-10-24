@@ -100,9 +100,26 @@ hframes = 4
 vframes = 2
 frame = 6
 
-[node name="SelectionHUD" type="Node2D" parent="."]
-position = Vector2( -1024, -600 )
+[node name="SelectionHUD" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource( 12 )
+
+[node name="MouseKeeper" type="Panel" parent="SelectionHUD"]
+modulate = Color( 1, 1, 1, 0.498039 )
+show_behind_parent = true
+margin_left = -56.0
+margin_top = 128.0
+margin_right = 1080.0
+margin_bottom = 648.0
+mouse_filter = 1
+
+[node name="Backdrop" type="Panel" parent="SelectionHUD"]
+self_modulate = Color( 0.913725, 1, 0.788235, 1 )
+show_behind_parent = true
+margin_right = 1025.0
+margin_bottom = 136.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
 
 [node name="SelectableTape0" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
 position = Vector2( 128, 64 )
@@ -124,16 +141,9 @@ position = Vector2( 704, 64 )
 tape_info = ExtResource( 9 )
 
 [node name="CustomTape" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 896, 64 )
 tape_info = ExtResource( 9 )
-
-[node name="Backdrop" type="Panel" parent="SelectionHUD"]
-self_modulate = Color( 0.913725, 1, 0.788235, 1 )
-show_behind_parent = true
-margin_right = 1025.0
-margin_bottom = 136.0
-mouse_filter = 2
-mouse_default_cursor_shape = 2
 
 [node name="RevealButton" type="Button" parent="SelectionHUD"]
 margin_left = 957.0

@@ -84,7 +84,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/TapeRecorder.gd"
 }, {
-"base": "Node2D",
+"base": "CanvasLayer",
 "class": "TapeSelectionHUD",
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/TapeSelectionHUD.gd"

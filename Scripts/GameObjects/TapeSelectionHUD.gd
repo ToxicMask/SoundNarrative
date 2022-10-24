@@ -1,10 +1,27 @@
-extends Node2D
+extends CanvasLayer
 class_name TapeSelectionHUD
 
+"""
+Node Responsable for managing the revealed tapes in UI
+
+Gets data and update tapes when receiving signal from controller
+
+Also display options to change tape
+
+"""
 
 func _ready():
 	# Update Unlocked Tapes
-	$KeepDataController._get_data("TapeInventoryKeepData")
+	_try_update_data()
+
+	# Updates once the selection is visible
+	var _err = self.connect("visibility_changed", self, "_try_update_data")
+	pass
+
+func _try_update_data():
+	print("UPDATE!")
+	if self.visible:
+		$KeepDataController._get_data("TapeInventoryKeepData")
 	pass
 
 func _update_tape_data(data_node: Node):
@@ -19,10 +36,10 @@ func _update_tape_data(data_node: Node):
 				c = c as SelectionTape
 				var tape_name = c.tape_info.name
 				if unlocked_list.has(tape_name) and tape_name != "CustomTape":
-					print("SHOW ", c)
+					#print("SHOW ", c)
 					c.show()
 				else:
-					print("HIDE ", c)
+					#print("HIDE ", c)
 					c.hide()
 		
 		if data_node.has_custom_tape:
@@ -33,6 +50,6 @@ func _update_tape_data(data_node: Node):
 		else:
 			var custom = self.get_node("CustomTape") as SelectionTape
 			custom.hide()
-			print("HIDE ", custom)
+			#print("HIDE ", custom)
 
 	pass

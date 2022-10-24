@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/_Debug/TEST_SCENE_2.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GameSystems/NewGameManager.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/GameSystems/KeepDataManager.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/TapeRecorder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Screens/Menus/EditTapeScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/Objects/GameObjects/PickUpTape.tscn" type="PackedScene" id=6]
 
 [node name="TEST_SCENE_2" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,5 +22,18 @@ __meta__ = {
 }
 
 [node name="TapeRecorder" parent="." instance=ExtResource( 4 )]
+
+[node name="PickUpTape" parent="." instance=ExtResource( 6 )]
+position = Vector2( 212, 276 )
+tape_id = "Evil Laugh"
+
+[node name="PickUpTape2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 534, 275 )
+tape_id = "Alien Sound"
+
+[node name="PickUpTape3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 822, 250 )
+tape_id = "CUSTOM_TAPE"
+custom_tape = true
 
 [connection signal="ready" from="NewGameManager" to="NewGameManager" method="_set_new_game_data"]
