@@ -48,9 +48,8 @@ func _ready():
 
 	# Tape Node
 	_err = tape_node.connect("audio_finished", self, "_end_tape")
-	var first_tape = get_tree().get_nodes_in_group("SelectionTape")[0]
-	if first_tape:
-		self._insert_new_tape(first_tape._get_tape_info())
+	# Fist Tape Insertion
+	_insert_first_tape()
 
 	pass
 
@@ -225,13 +224,19 @@ func _update_timestamp_display():
 """
 Miscelaneus
 """
+func _insert_first_tape():
+	var first_tape = get_tree().get_nodes_in_group("SelectionTape")[0]
+	if first_tape:
+		self._insert_new_tape(first_tape._get_tape_info())
+	pass
 
 func _disable_all_buttons(disable : bool = true):
 	play_button._set_disable_hitbox(disable)
 	pause_button._set_disable_hitbox(disable)
 	stop_button._set_disable_hitbox(disable)
 	goback_button._set_disable_hitbox(disable)
-	gofoward_button._set_disable_hitbox(disable)	
+	gofoward_button._set_disable_hitbox(disable)
+	pass
 
 func _release_all_buttons():
 	play_button._realese_button()

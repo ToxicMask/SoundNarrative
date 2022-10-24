@@ -6,7 +6,9 @@ Debugger Input
 """
 
 func _ready():
+	add_to_group("KeepDataReceiver")
 	var _err= $KeepDataController.connect("update_data_on_receiver", self, "_report")
+	pass
 
 func _report(arg):
 	print(arg)

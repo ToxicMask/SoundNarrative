@@ -19,13 +19,13 @@ func _ready():
 	pass
 
 func _try_update_data():
-	print("UPDATE!")
+	#print("UPDATE!")
 	if self.visible:
 		$KeepDataController._get_data("TapeInventoryKeepData")
 	pass
 
 func _update_tape_data(data_node: Node):
-	print("TAPE RECEIVED ", data_node.name)
+	#print("TAPE RECEIVED ", data_node.name)
 
 	if data_node is TapeInventoryKeepData:
 		data_node = data_node as TapeInventoryKeepData
