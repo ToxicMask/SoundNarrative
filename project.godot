@@ -130,6 +130,10 @@ settings/fps/force_fps=60
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[global]
+
+BG=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

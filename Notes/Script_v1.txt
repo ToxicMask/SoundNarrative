@@ -1,0 +1,30 @@
+" Black Noise v2"
+
+Storyline
+Cientista e seu Ajudante anomalia no espaço-som. Descobre que pode fazer desejos. Cientista convida repórter para documentar. 
+Cientista usa a anomalia e faz o ajudante desaparecer. Cientista decide repetir a ação em si e desaprecer para encontrar o ajudante.
+Reporter chega no laboratorio do cientista e usa fitacassete para burlar sua segurança.
+Reporter tem a oportunidade de destruir a maquina ou usar uma das suas fitas para manipular a realidade --> Final do Jogador.
+
+
+Estrutura
+- Jogo principalmente linear até ter um final com varias bifurcações (No Max. 5).
+
+Personagens
+- Dr. OTTO: Cientista muito dedicado e obssesivo com adquirir crédito, sendo agressivo se questionado.
+- Assistente PETER Rocha: Assistente precavido e ingenuo, preza pela segurança e bem estar do doutor.
+- Reporter MILLER: Um reporter famoso por sua divulgação de grandes escandalos, mesmo sendo mudo.
+
+Argumento #1
+
+MILLER recebe uma carta do professor OTTO. 
+A carta diz que OTTO fez uma grande descoberta, mas que  deve manter sigi-lo até o momento certo devido a sua importancia.
+MILLER pede ajuda de OTTO para divuldar esta invenção e o convida para seu laboratório particular, na propriedade Verlagen.
+-- Elipse Ambiguoa --
+Miller dirige até a propriedade de OTTO, e entra no laboratório pela porta da frente. O laboratório está destruido, e tem uma porta fechada por um painel eletronico. MILLER encontra um toca-fitas.
+A fita é da VOZ de OTTO, OTTO narra que está fazendo uma pesquisa sobre fenomes estranhos que acontecem na região, envolvendo vozes e sons estranhos escutados apenas por aparelhos eletronicos..
+OTTO reclama que aós sua ultima pesquisa ter sido roubada por um brecha na segurança, ele será mais cuidadoso do que nunca.
+PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é 8756. {Senha  da porta}
+
+{Desafio: Encontrar a senha da porta}
+Miller entra na segunda camada do laboratório.

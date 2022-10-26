@@ -75,5 +75,5 @@ frame = 6
 script = ExtResource( 8 )
 receiver_id = "TapeSelection"
 
-[connection signal="pressed" from="RevealButton" to="." method="emit_signal" binds= [ "hide_selection_hud" ]]
+[connection signal="pressed" from="RevealButton" to="." method="hide"]
 [connection signal="update_data_on_receiver" from="KeepDataController" to="." method="_update_tape_data"]

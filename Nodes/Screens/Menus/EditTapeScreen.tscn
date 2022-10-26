@@ -22,9 +22,9 @@ receiver_id = "Edit_Screen"
 script = ExtResource( 3 )
 
 [node name="Background" type="Sprite" parent="." index="2"]
-modulate = Color( 0.337255, 0.337255, 0.337255, 1 )
-position = Vector2( 562, 196 )
-scale = Vector2( 6.63799, 3.76376 )
+modulate = Color( 0.61, 0.61, 0.61, 1 )
+position = Vector2( 547.5, 196 )
+scale = Vector2( 5.64935, 3.76376 )
 texture = ExtResource( 5 )
 
 [node name="TransferArea" type="Node2D" parent="." index="3"]
@@ -46,3 +46,4 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="SelectionHUD" parent="." index="4" instance=ExtResource( 7 )]
+visible = false

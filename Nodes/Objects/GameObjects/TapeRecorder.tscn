@@ -95,6 +95,7 @@ vframes = 2
 frame = 6
 
 [node name="SelectionHUD" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [connection signal="pressed" from="RevealButton" to="." method="_toggle_hud"]
 

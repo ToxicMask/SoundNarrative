@@ -1,8 +1,10 @@
 
 
 -Tela de edição de Tape
-	- Tela dedicada
+	- Ter Partes pré-selecionadas
 	- Arrastar partes da fita em ordem
+	-Ter Area de trasnferencia
+	- Tocar a fita editada
 	- Carregar fita editavel na tela do gravador
 
 	
@@ -37,6 +39,10 @@
 	- Objetos da Cena
 	- HUD
 	- Manter os Dados entre Cenas
+
+-Tela de edição de Tape
+	- Tela dedicada
+
 
 
 		

@@ -51,9 +51,9 @@ func _ready():
 
 	# Tape Selection
 	selection_hud._connect_insert_tape(self, "_insert_new_tape")
-	_err = selection_hud.connect("hide_selection_hud", self, "_hide_selection")
+	_err = selection_hud.connect("visibility_changed", self, "_check_hide_selection")
 	# Fist Tape Insertion
-	_insert_first_tape()
+	#_insert_first_tape()
 
 	pass
 
@@ -206,7 +206,8 @@ func _hide_hud():
 
 func _show_selection():
 	current_tape_state = EJECTED
-	selection_hud.show()
+	if not selection_hud.visible:
+		selection_hud.show()
 	self._stop_tape()
 	_disable_all_buttons(true)
 	$Backdrop.self_modulate = Color.gray
@@ -214,7 +215,8 @@ func _show_selection():
 
 func _hide_selection():
 	current_tape_state = OFF
-	selection_hud.hide()
+	if selection_hud.visible:
+		selection_hud.hide()
 	eject_button._realese_button()
 	_disable_all_buttons(false)
 	$Backdrop.self_modulate = Color.white
@@ -228,6 +230,11 @@ func _update_timestamp_display():
 """
 Miscelaneus
 """
+
+func _check_hide_selection():
+	if not selection_hud.visible:
+		_hide_selection()
+
 func _insert_first_tape():
 	var first_tape = get_tree().get_nodes_in_group("SelectionTape")[0]
 	if first_tape:

@@ -10,8 +10,6 @@ Also display options to change tape
 
 """
 
-signal hide_selection_hud
-
 func _ready():
 	# Update Unlocked Tapes
 	_try_update_data()
@@ -24,7 +22,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.is_pressed() and not event.is_echo():
 			if event.scancode == KEY_I:
-				emit_signal("hide_selection_hud")
+				self.hide()
 	pass
 
 func _try_update_data():
@@ -45,6 +43,8 @@ func _connect_insert_tape(receiver_node : Node, receiver_method : String):
 
 func _update_tape_data(data_node: Node):
 	#print("TAPE RECEIVED ", data_node.name)
+	if not self.visible:
+		return
 
 	if data_node is TapeInventoryKeepData:
 		data_node = data_node as TapeInventoryKeepData
