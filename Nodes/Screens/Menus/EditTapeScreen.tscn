@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Screens/Worlds/WorldScreen.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/GameSystems/EditTapeWorldScreen.gd" type="Script" id=4]
 [ext_resource path="res://Misc/ref0.jpg" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/WHITE_128x128.png" type="Texture" id=6]
+[ext_resource path="res://Nodes/Screens/Menus/SelectionHUD.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 30 )
@@ -43,3 +44,5 @@ self_modulate = Color( 0.137255, 0.129412, 0.129412, 1 )
 scale = Vector2( 2.5, 0.46875 )
 texture = ExtResource( 6 )
 centered = false
+
+[node name="SelectionHUD" parent="." index="4" instance=ExtResource( 7 )]

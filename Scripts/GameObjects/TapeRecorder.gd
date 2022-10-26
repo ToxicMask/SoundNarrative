@@ -48,6 +48,10 @@ func _ready():
 
 	# Tape Node
 	_err = tape_node.connect("audio_finished", self, "_end_tape")
+
+	# Tape Selection
+	selection_hud._connect_insert_tape(self, "_insert_new_tape")
+	_err = selection_hud.connect("hide_selection_hud", self, "_hide_selection")
 	# Fist Tape Insertion
 	_insert_first_tape()
 
@@ -84,7 +88,7 @@ Button Functions
 
 func _play_tape():
 	# Control Condition
-	if current_tape_state ==  PLAYING:
+	if current_tape_state == PLAYING:
 		return
 	current_tape_state =  PLAYING
 

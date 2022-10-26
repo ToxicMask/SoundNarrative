@@ -1,18 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/recorder_backdrop_temp0.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/Device_Button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Nodes/Objects/GameObjects/SelectableTape.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/Screens/Menus/SelectionHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/GameObjects/TapeAudioPlayer.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/GameObjects/TapeRecorder.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Images/placeholder_playbuttons_32.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Objects/Tapes/TapeTestLaugh0.tres" type="Resource" id=7]
-[ext_resource path="res://Assets/Objects/Tapes/WoldemortTest2.tres" type="Resource" id=8]
-[ext_resource path="res://Assets/Objects/Tapes/EmptyTape.tres" type="Resource" id=9]
-[ext_resource path="res://Assets/Objects/Tapes/AlienTest1.tres" type="Resource" id=10]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=11]
-[ext_resource path="res://Scripts/GameObjects/TapeSelectionHUD.gd" type="Script" id=12]
-[ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=13]
 
 [node name="TapeRecorder" type="Node2D" groups=["MessageEmitter"]]
 position = Vector2( 1024, 600 )
@@ -100,81 +94,9 @@ hframes = 4
 vframes = 2
 frame = 6
 
-[node name="SelectionHUD" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource( 12 )
-
-[node name="MouseKeeper" type="Panel" parent="SelectionHUD"]
-modulate = Color( 1, 1, 1, 0.498039 )
-show_behind_parent = true
-margin_left = -56.0
-margin_top = 128.0
-margin_right = 1080.0
-margin_bottom = 648.0
-mouse_filter = 1
-
-[node name="Backdrop" type="Panel" parent="SelectionHUD"]
-self_modulate = Color( 0.913725, 1, 0.788235, 1 )
-show_behind_parent = true
-margin_right = 1025.0
-margin_bottom = 136.0
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-
-[node name="SelectableTape0" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
-position = Vector2( 128, 64 )
-tape_info = ExtResource( 7 )
-
-[node name="SelectableTape1" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 320, 64 )
-tape_info = ExtResource( 10 )
-
-[node name="SelectableTape2" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 512, 64 )
-tape_info = ExtResource( 8 )
-
-[node name="SelectableTape3" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 704, 64 )
-tape_info = ExtResource( 9 )
-
-[node name="CustomTape" parent="SelectionHUD" groups=["SelectionTape"] instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 896, 64 )
-tape_info = ExtResource( 9 )
-
-[node name="RevealButton" type="Button" parent="SelectionHUD"]
-margin_left = 957.0
-margin_top = 136.0
-margin_right = 1021.0
-margin_bottom = 168.0
-focus_mode = 0
-enabled_focus_mode = 0
-
-[node name="RevelSprite" type="Sprite" parent="SelectionHUD/RevealButton"]
-modulate = Color( 0.972549, 0.952941, 0.807843, 1 )
-scale = Vector2( 2, 1 )
-texture = ExtResource( 6 )
-centered = false
-offset = Vector2( -2, -2 )
-hframes = 4
-vframes = 2
-frame = 6
-
-[node name="KeepDataController" type="Node" parent="SelectionHUD"]
-script = ExtResource( 13 )
-receiver_id = "TapeSelection"
+[node name="SelectionHUD" parent="." instance=ExtResource( 3 )]
 
 [connection signal="pressed" from="RevealButton" to="." method="_toggle_hud"]
-[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape0" to="." method="_insert_new_tape"]
-[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape1" to="." method="_insert_new_tape"]
-[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape2" to="." method="_insert_new_tape"]
-[connection signal="insert_tape_selection" from="SelectionHUD/SelectableTape3" to="." method="_insert_new_tape"]
-[connection signal="insert_tape_selection" from="SelectionHUD/CustomTape" to="." method="_insert_new_tape"]
-[connection signal="pressed" from="SelectionHUD/RevealButton" to="." method="_hide_selection"]
-[connection signal="update_data_on_receiver" from="SelectionHUD/KeepDataController" to="SelectionHUD" method="_update_tape_data"]
 
 [editable path="PlayButton"]
 [editable path="PauseButton"]

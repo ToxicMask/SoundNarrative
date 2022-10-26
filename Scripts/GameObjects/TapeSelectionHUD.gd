@@ -10,6 +10,8 @@ Also display options to change tape
 
 """
 
+signal hide_selection_hud
+
 func _ready():
 	# Update Unlocked Tapes
 	_try_update_data()
@@ -18,11 +20,28 @@ func _ready():
 	var _err = self.connect("visibility_changed", self, "_try_update_data")
 	pass
 
+func _input(event):
+	if event is InputEventKey:
+		if event.is_pressed() and not event.is_echo():
+			if event.scancode == KEY_I:
+				emit_signal("hide_selection_hud")
+	pass
+
 func _try_update_data():
 	#print("UPDATE!")
 	if self.visible:
 		$KeepDataController._get_data("TapeInventoryKeepData")
 	pass
+
+func _connect_insert_tape(receiver_node : Node, receiver_method : String):
+	var _err = null
+	# Check each Selection Tape Child
+	for c in get_children():
+		if c is SelectionTape:
+			c = c as SelectionTape
+			_err = c.connect("insert_tape_selection", receiver_node, receiver_method)
+	pass
+	
 
 func _update_tape_data(data_node: Node):
 	#print("TAPE RECEIVED ", data_node.name)
