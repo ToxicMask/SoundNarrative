@@ -21,10 +21,29 @@ MILLER recebe uma carta do professor OTTO.
 A carta diz que OTTO fez uma grande descoberta, mas que  deve manter sigi-lo até o momento certo devido a sua importancia.
 MILLER pede ajuda de OTTO para divuldar esta invenção e o convida para seu laboratório particular, na propriedade Verlagen.
 -- Elipse Ambiguoa --
-Miller dirige até a propriedade de OTTO, e entra no laboratório pela porta da frente. O laboratório está destruido, e tem uma porta fechada por um painel eletronico. MILLER encontra um toca-fitas.
-A fita é da VOZ de OTTO, OTTO narra que está fazendo uma pesquisa sobre fenomes estranhos que acontecem na região, envolvendo vozes e sons estranhos escutados apenas por aparelhos eletronicos..
+MILLER dirige até a propriedade de OTTO, e entra no laboratório pela porta da frente. 
+
+# Cena 1: Secretaria Interior
+A secretaria está vazia e tem uma porta fechada por um painel eletronico. MILLER encontra um toca-fitas.
+
+@FITA 1
+A fita é da VOZ de OTTO, OTTO narra que está fazendo uma pesquisa sobre fenomenos estranhos que acontecem na região, envolvendo vozes e sons estranhos escutados apenas por aparelhos eletronicos..
 OTTO reclama que aós sua ultima pesquisa ter sido roubada por um brecha na segurança, ele será mais cuidadoso do que nunca.
 PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é 8756. {Senha  da porta}
 
-{Desafio: Encontrar a senha da porta}
+{Desafio: Encontrar a senha da porta e digitar no painel.}
 Miller entra na segunda camada do laboratório.
+
+# Cena 2: Inteiror do laboratório
+O laboratório está cheio de microfones, cabos, amplificadores e saidas de sons espalhados pelas salas.
+Uma porta bloqueia o acesso ao laboratório, com um sistema de reconhecimento de voz.
+Explorando o laboratório, MILLER encontra uma fita de OTTO, na frente de um identificador de voz ativado.
+Tocando a fita, o identificador vai ser ativado.
+
+@Fita2
+
+
+
+
+
+
