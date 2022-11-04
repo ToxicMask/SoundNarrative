@@ -10,10 +10,14 @@ Reporter tem a oportunidade de destruir a maquina ou usar uma das suas fitas par
 Estrutura
 - Jogo principalmente linear até ter um final com varias bifurcações (No Max. 5).
 
+
+
 Personagens
 - Dr. OTTO: Cientista muito dedicado e obssesivo com adquirir crédito, sendo agressivo se questionado.
 - Assistente PETER Rocha: Assistente precavido e ingenuo, preza pela segurança e bem estar do doutor.
 - Reporter MILLER: Um reporter famoso por sua divulgação de grandes escandalos, mesmo sendo mudo.
+
+
 
 Argumento #1
 
@@ -29,21 +33,77 @@ A secretaria está vazia e tem uma porta fechada por um painel eletronico. MILLE
 @FITA 1
 A fita é da VOZ de OTTO, OTTO narra que está fazendo uma pesquisa sobre fenomenos estranhos que acontecem na região, envolvendo vozes e sons estranhos escutados apenas por aparelhos eletronicos..
 OTTO reclama que aós sua ultima pesquisa ter sido roubada por um brecha na segurança, ele será mais cuidadoso do que nunca.
-PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é 8756. {Senha  da porta}
+PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é *875*. {Senha  da porta}
+FIM DA FITA
 
 {Desafio: Encontrar a senha da porta e digitar no painel.}
 Miller entra na segunda camada do laboratório.
 
-# Cena 2: Inteiror do laboratório
-O laboratório está cheio de microfones, cabos, amplificadores e saidas de sons espalhados pelas salas.
+# Cena 2: Camada Exterior do laboratório
+O laboratório está com alguns microfones instalados.
 Uma porta bloqueia o acesso ao laboratório, com um sistema de reconhecimento de voz.
 Explorando o laboratório, MILLER encontra uma fita de OTTO, na frente de um identificador de voz ativado.
-Tocando a fita, o identificador vai ser ativado.
+Tocando a fita, o identificador vai ser ativado com a mensagem "Abra".
 
 @Fita2
+Otto diz que os sinais interceptados são dificeis de entender. OTTO criou uma tecnologia capaz de interpretar esses sinais.
+Ele até mesmo usou essa tecnologia para incrementar a segurança do laboratorio, com travas por segurança de voz. 
+Só dizer "Abra" { Mensagem-Chave }
+Peter pergunta por que não vender essa tecnologia?
+OTTO responde que seu material de pesquisa tem maior potencial, melhor mostrar tudo de uma vez do que arriscar.
+FIM DA FITA
+
+{Desafio: Tocar a fita no painel de ativação de Voz}
+Miller entra na segunda Camada do Laboratório.
+
+# Cena 3: Camada Interior do Laboratório
+O laboratório está com  cheio de microfones, cabos, amplificadores e saidas de sons espalhados pelas salas.
+O Jogador vê uma porta trancacada, a porta precisa de uma combinação de 3 numeros, ditas por voz. Os numeros precisam ser ditos na ordem certa, se não a seguencia reseta.
+Uma anotação grudada no detector de voz es ta escito: "LEMBRETE: 198 por VOZ"
+Uma segunda anotação diz: "LEMBRETE: JOGAR FORA OS LEMBRETES DE SENHA"
+Um som  de faiscas ecoa no laboratório, MILLER se aprofunda no laboratório e encontra uma anomalia no espaço-tempo de tras de um vidro, cercada por um maquinario. A anomalia diz "DOUTOR... SOCORRO..." em intervalos regulares.
+A Terceira fita é encontrada.
+
+@Fita3
+0...1...2...3...4...5...6...7...8...9... *Zap*
+OTTO diz ter conseguido isolar uma dessas anomalias, elas não só emitem sons como também parecem responder.
+PETER diz que chamou MILLER para uma entrevista, OTTO não gosta disso, ele manda PETER esconder a atração princiapal no Porão.
+PETER pergunta a senha de novo.
+OTTO se irrita e desliga o gravador.
+FIM DA FITA
 
 
+{Desafio: Tocar o senha na sequencia especifica.}
+MILLER abre a porta e desce as escadas
 
 
+A anomalia liga e desliga as luzes sob commando.
 
+@Fita 4
+OTTO diz: "ACENDA A LUZ" { Mensagem-Chave }, *as luzes acendem".
+PETER fica surpreso.
+OTTO diz: "DESLIQUE A LUZ" { Mensagem-Chave }, *as luzes apagam*
+PETER está surpreso e pergunta como ele conectou a anomalia nas luzes.
+OTTO ri e responde que ele não conectou. Ligando os interpretadores com as anomalias, OTTO modulou as anomalias para obedecerem apenas sua voz.
+PETER pergunta o que isso significa.
+OTTO responde que precisa programar mais palavras.
+FIM DA FITA
+
+@Fita 5
+PETER e OTTO brigam.
+PETER questiona OTTO para programar palavras violentas. OTTO diz que precisa testar os limites de sua criação.
+PETER diz que as anomalias não são sua criação e que ele não sabe como funcionam.
+OTTO insulta PETER e diz: "SUMA DAQUI!"
+PETER começa a desaparecer e suas ultimas palavras são: "DOUTOR... SOCORRO..."
+OTTO se assusta e começa a chamar por PETER.
+FIM DA FITA
+
+
+@Fita 6
+OTTO confessa que o que aconteceu com PETER foi sua culpa.
+OTTO admite ter programado algumas palavras, mesmo não sabendo o que aconteceria (inclunido SUMA).
+OTTO diz que ainda consegue ouvir a voz de PETER.
+OTTO diz que vai tentar encontrar PETER e implora para destruirem sua maquina se encontrar esta fita.
+OTTO se despede.
+FIM DA FITA
 
