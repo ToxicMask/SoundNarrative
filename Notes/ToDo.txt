@@ -1,12 +1,5 @@
 
 
--Tela de edição de Tape
-	- Ter Partes pré-selecionadas
-	- Arrastar partes da fita em ordem
-	-Ter Area de trasnferencia
-	- Tocar a fita editada
-	- Carregar fita editavel na tela do gravador
-
 	
 
 
@@ -43,6 +36,14 @@
 -Tela de edição de Tape
 	- Tela dedicada
 
+- Terminar roteiro v1
 
 
+######### CANCELLED #######
+-Tela de edição de Tape
+	- Ter Partes pré-selecionadas
+	- Arrastar partes da fita em ordem
+	-Ter Area de trasnferencia
+	- Tocar a fita editada
+	- Carregar fita editavel na tela do gravador
 		
