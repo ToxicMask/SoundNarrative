@@ -11,7 +11,6 @@ Estrutura
 - Jogo principalmente linear até ter um final com varias bifurcações (No Max. 5).
 
 
-
 Personagens
 - Dr. OTTO: Cientista muito dedicado e obssesivo com adquirir crédito, sendo agressivo se questionado.
 - Assistente PETER Rocha: Assistente precavido e ingenuo, preza pela segurança e bem estar do doutor.
@@ -115,10 +114,10 @@ Com o Interpretador montado, Miller pode interagir com qualquer anomalia solta c
 MILLER entra na Aréa Instavel do Laboratório.
 
 
+
 #Cena 5: Area Instavel do Laboratório
 MILLER entra na area instavel. O laboratório está cheio de anomalias.
 Tem uma porta Reforçada com anomalia de SUMIR. Dentro da sala ao lado, tem uma caixa fechada (aberta com click), com uma fita dentro.
-
 
 @Fita 5
 PETER e OTTO brigam por causa de um "Interpretador Universal".
@@ -133,6 +132,8 @@ FIM DA FITA
 MILLER adentro o corredor.
 Passando no corredor, MILLER escuta vozes de PETER e OTTO.
 MILLER entra em uma porta escrita CAUTION!
+
+
 
 #Cena 6
 
@@ -152,7 +153,6 @@ FIM DA FITA
 
 {Desafio: Decidir destino do disposito}
 
-
 Finais:
 
 	1. Apertar botão --> Destruir a maquina. OTTO e PETER continuam desaparecidos.
@@ -162,6 +162,8 @@ Finais:
 	3. Dizer Destruir --> A maquina é destruida junto com o laboratório.
 	4. Acender --> Uma luz surge da Anomalia trazendo conhecimento oculto.
 	5. Numero --> Uma combinação secreta faz OTTO e PETER reaparecerem
+
+
 
 FIM DE JOGO
 

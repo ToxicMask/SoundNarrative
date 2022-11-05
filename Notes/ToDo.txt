@@ -1,6 +1,16 @@
 
 
-	
+Design Documento
+	- Progressão de Escolha / Narrativa
+	- Documentação das escolhas / Desafios
+	- Roteiro com falas	
+
+
+Exploração de Cena
+	- Fazer Sistema de navegação de cenario
+	- Fazer Objetos clicaveis para navegação
+	- Fazer layouts de cada cena
+
 
 
 ####### Completed #############
@@ -14,8 +24,8 @@
 		- Mouse está pressionado agora
 		- Mouse está solto agora
 		-------------------------------
-		- Revanp do Mouse Drag
-		- Smmoth drag
+		- Revamp do Mouse Drag
+		- Smooth drag
 
 - Interface - HUD:
 	- Gravador
