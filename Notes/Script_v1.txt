@@ -12,110 +12,112 @@ Estrutura
 
 
 Personagens
-- Dr. OTTO: Cientista muito dedicado e obssesivo com adquirir crédito, sendo agressivo se questionado.
+- Pr. OTTO das Dores: Cientista muito dedicado e obssesivo com adquirir crédito, sendo agressivo se questionado.
 - Assistente PETER Rocha: Assistente precavido e ingenuo, preza pela segurança e bem estar do doutor.
-- Reporter MILLER: Um reporter famoso por sua divulgação de grandes escandalos, mesmo sendo mudo.
+- Reporter MILLER: Um reporter famoso por sua divulgação de grandes descobertas, mesmo sendo mudo.
 
 
 
 Argumento #1
 
 # Cena PROLOGO
-MILLER recebe uma carta do professor OTTO. 
+MILLER recebe uma carta de PETER, um representante do professor OTTO das Dores. 
 A carta diz que OTTO fez uma grande descoberta, mas que  deve manter sigi-lo até o momento certo devido a sua importancia.
 MILLER pede ajuda de OTTO para divuldar esta invenção e o convida para seu laboratório particular, na propriedade Verlagen.
--- Elipse Ambiguoa --
 MILLER dirige até a propriedade de OTTO, e entra no laboratório pela porta da frente. 
 
 
 
 # Cena 1: Secretaria Interior
-A secretaria está vazia e tem uma porta fechada por um painel eletronico. MILLER encontra um toca-fitas.
+A secretaria está vazia e tem uma porta fechada por um painel eletronico que pede 3 numeros. 
+MILLER encontra um toca-fitas.
 
 @FITA 1
 A fita é da VOZ de OTTO, OTTO narra que está fazendo uma pesquisa sobre fenomenos estranhos que acontecem na região, envolvendo vozes e sons estranhos escutados apenas por aparelhos eletronicos..
-OTTO reclama que aós sua ultima pesquisa ter sido roubada por um brecha na segurança, ele será mais cuidadoso do que nunca.
-PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é *875*. {Senha  da porta}
+OTTO reclama que após sua ultima pesquisa ter sido roubada por um brecha na segurança, ele será mais cuidadoso do que nunca.
+PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é *903*. {Senha  da porta}
 FIM DA FITA
 
 {Desafio: Encontrar a senha da porta e digitar no painel.}
-Miller entra na segunda camada do laboratório.
+A porta se abre.
+Miller entra na Camada Exterior do Laboratório.
 
 
 
 # Cena 2: Camada Exterior do laboratório
-O laboratório está com alguns microfones instalados.
+O laboratório está com alguns microfones instalados nas paredes.
 Uma porta bloqueia o acesso ao laboratório, com um sistema de reconhecimento de voz.
 Explorando o laboratório, MILLER encontra uma fita de OTTO, na frente de um identificador de voz ativado.
 Tocando a fita, o identificador vai ser ativado com a mensagem "Abra".
 
 @Fita2
-Otto diz que os sinais interceptados são dificeis de entender. OTTO criou uma tecnologia capaz de interpretar esses sinais.
-Ele até mesmo usou essa tecnologia para incrementar a segurança do laboratorio, com travas por segurança de voz. 
+OTTO diz que os sinais interceptados são dificeis de entender. OTTO criou uma tecnologia capaz de interpretar esses sinais.
+OTTO até mesmo usou essa tecnologia para incrementar a segurança do laboratorio, com travas por segurança de voz. 
 Só dizer "Abra" { Mensagem-Chave }
-Peter pergunta por que não vender essa tecnologia?
-OTTO responde que seu material de pesquisa tem maior potencial, melhor mostrar tudo de uma vez do que arriscar.
+PETER pergunta por que não vender essa tecnologia?
+OTTO responde que seu material de pesquisa tem maior potencial, melhor mostrar tudo de uma vez do que arriscar uma brecha.
 FIM DA FITA
 
 {Desafio: Tocar a fita no painel de ativação de Voz}
-Miller entra na segunda Camada do Laboratório.
+Miller entra na Camada Interior do Laboratório
 
 
 
 # Cena 3: Camada Interior do Laboratório
 O laboratório está com  cheio de microfones, cabos, amplificadores e saidas de sons espalhados pelas salas.
 O Jogador vê uma porta trancacada, a porta precisa de uma combinação de 3 numeros, ditas por voz. Os numeros precisam ser ditos na ordem certa, se não a seguencia reseta.
-Uma anotação grudada no detector de voz es ta escito: "LEMBRETE: 198 por VOZ"
+Uma anotação grudada no detector de voz es ta escito: "LEMBRETE: 175 por VOZ"
 Uma segunda anotação diz: "LEMBRETE: JOGAR FORA OS LEMBRETES DE SENHA"
-Um som  de faiscas ecoa no laboratório, MILLER se aprofunda no laboratório e encontra uma anomalia no espaço-tempo de tras de um vidro, cercada por um maquinario. A anomalia diz "DOUTOR... SOCORRO..." em intervalos regulares.
+Um som  de faiscas ecoa no laboratório, MILLER se aprofunda no laboratório e encontra uma anomalia no espaço-tempo de trás de um vidro, cercada por um maquinario. A anomalia diz "DOUTOR... SOCORRO..." em intervalos regulares.
 A Terceira fita é encontrada.
 
 @Fita3
-0...1...2...3...4...5...6...7...8...9... { Mensagem-Chave }
+0...1...2...3...4...5...6...7...8...9... {Mensagem-Chave}
 *Zap* 
 OTTO diz ter conseguido isolar uma dessas anomalias, elas não só emitem sons como também parecem responder.
-PETER diz que chamou MILLER para uma entrevista, OTTO não gosta disso, ele manda PETER esconder a atração princiapal no Porão.
-PETER pergunta a senha de novo.
+PETER diz que chamou MILLER para uma entrevista, OTTO está desconfiado de MILLER. 
+OTTO manda PETER esconder as 'anomalias capturadas' no Porão do Laboratório.
+PETER pergunta a senha.
 OTTO se irrita e desliga o gravador.
 FIM DA FITA
 
 {Desafio: Tocar o senha na sequencia especifica.}
-MILLER abre a porta e desce as escadas
+MILLER abre a porta e desce as escadas para o Porão do Laboratório.
 
 
 
-#Cena 4: Porão do Laboratório
-Descendo as escadas, MILLER encontra uma sala com varias maquinas, cada maquina tem uma placa e contem uma anomalia:
-	1. A anomalia "Numero" faz um numero de maças aparecer.
-	2. A anomalia "SUMA" faz uma maça ficar invisivel..
-	3. anomalia "Abrir" abre uma cofre.
-	4. anomalia "Destruir" é destruida se ativada.
+# Cena 4: Porão do Laboratório
+Descendo as escadas, MILLER encontra uma sala com varias maquinas, cada maquina tem uma placa e contem uma anomalia. Cada anomalia tem um interpretador acoplado que emtende::
+	1. A anomalia "NUMERO" faz um numero de maçãs aparecer.
+	2. A anomalia "SUMA" faz uma maçã ficar invisivel..
+	3. anomalia "ABRIR" abre uma cofre.
+	4. anomalia "DESTRUIR" é destruida se ativada.
 	5. anomalia "LUZES" liga e desliga as luzes sob commando. Tem uma fita, perto da maquina.
 
 @Fita 4
-OTTO diz: "ACENDA A LUZ" { Mensagem-Chave }, *as luzes acendem".
+OTTO diz: "LUZES" {Mensagem-Chave}, *as luzes acendem*.
 PETER fica surpreso.
-OTTO diz: "DESLIQUE A LUZ" { Mensagem-Chave }, *as luzes apagam*
+OTTO diz: "LUZES" {Mensagem-Chave}, *as luzes apagam*
 PETER está surpreso e pergunta como ele conectou a anomalia nas luzes.
 OTTO ri e responde que ele não conectou. Ligando os interpretadores com as anomalias, OTTO modulou as anomalias para obedecerem apenas sua voz.
+OTTO afirma qua ainda não fez uso total das anomalias.
 PETER pergunta o que isso significa.
 OTTO responde que precisa programar mais palavras.
 FIM DA FITA
 
-Indo mais a fundo no corredor, MILLER vai encontrar uma porta reenforçada com uma anomalia, que vai sussurar "ABRA" em intervalos regulares.
-
-Indo mais a frente do corredor, MILLER vai encontrar uma mesa com peças de um Interpretador universal. Miller pode montar esse interpretador.
-Esquemas e instruções do Interpretador Universal estão espalhados pela mesa. Interpretador permite interagir com anomalias.
+Indo mais a fundo no corredor, MILLER vai encontrar uma porta reenforçada, com uma anomalia que vai sussurar "ABRA" em intervalos regulares.
+Indo mais a frente do corredor, MILLER vai encontrar uma mesa com peças de um 'Interpretador universal'. Miller pode montar esse interpretador.
+Esquemas e instruções do Interpretador Universal estão espalhados pela mesa. Interpretador permite interagir com anomalias via Voz.
 
 {Desafio: Montar o Interpretador}
-Com o Interpretador montado, Miller pode interagir com qualquer anomalia solta com o interpretador Universal.
+Com o Interpretador montado, Miller pode interagir com qualquer anomalia que sussura um comando.
 
-{Desafio: Abrir a porta usando a Anomalia}
-MILLER entra na Aréa Instavel do Laboratório.
+{Desafio: Abrir a porta usando a Interpretador na Anomalia}
+MILLER entra na Área Instavel do Laboratório.
 
 
 
-#Cena 5: Area Instavel do Laboratório
+# Cena 5: Área Instavel do Laboratório
 MILLER entra na area instavel. O laboratório está cheio de anomalias.
 Tem uma porta Reforçada com anomalia de SUMIR. Dentro da sala ao lado, tem uma caixa fechada (aberta com click), com uma fita dentro.
 
@@ -129,15 +131,15 @@ OTTO se assusta e começa a chamar por PETER.
 FIM DA FITA
 
 {Desafio: SUMIR a porta usando a Anomalia}
-MILLER adentro o corredor.
+MILLER entra no último corredor.
 Passando no corredor, MILLER escuta vozes de PETER e OTTO.
-MILLER entra em uma porta escrita CAUTION!
+MILLER através de uma porta escrita 'PERIGO', entra na Sala da Origem.
 
 
 
-#Cena 6
-
-Dentro da Sala tem Uma grande Anomalia e um botão de destruição.
+#Cena 6: Sala da Origem
+Dentro da Sala tem uma 'Grande Anomalia', por trás de uma porta e um botão de destruição ao lado.
+MILLER pode abrir a porta para revelar a 'Anomalia Original' ou abrir o case do botão de auto-destruição.
 Uma fita está na frente da maquina.
 
 
@@ -146,7 +148,7 @@ OTTO diz ter se trancado lá.
 OTTO confessa que o que aconteceu com PETER foi sua culpa.
 OTTO admite ter programado algumas palavras, mesmo não sabendo o que aconteceria (inclunido SUMA).
 OTTO diz que ainda consegue ouvir a voz de PETER.
-OTTO diz que vai usar a maior das anomalias para desaparecer e encontrar PETER.
+OTTO diz que vai usar a 'Anomalia Original' para desaparecer e encontrar PETER.
 OTTO implora para DESTRUIR {} sua maquina se encontrar esta fita.
 OTTO se despede.
 FIM DA FITA
@@ -161,7 +163,7 @@ Finais:
 	2. Dizer SUMIR --> MILLER é absorvido pela anomalia.
 	3. Dizer Destruir --> A maquina é destruida junto com o laboratório.
 	4. Acender --> Uma luz surge da Anomalia trazendo conhecimento oculto.
-	5. Numero --> Uma combinação secreta faz OTTO e PETER reaparecerem
+	5. Numero --> Uma combinação secreta faz OTTO e PETER reaparecerem.
 
 
 
