@@ -1,0 +1,43 @@
+"Black Noise"
+
+Genero: Investigação Point-And-Click
+
+@ Tipos de Desafio:
+	- Investigar por Lore (Eventos Narrativos)
+	- Procurar por Pistas (Informação para o Progresso)
+	- Coletar Chaves (Itens-Chave para o Progresso)
+	- Manipular reprodução de Audio (Solucionar Puzzles)
+
+@ Progressão:
+	- Estrutura majoritariamente linear, com 5 finais bifurcados da ultima cena.
+
+	- Desafios Lineares (Escolhas Horizontais e Verticais):
+		- Desafios Faceis e um Ultimo Médio nas primeiras 3 Cenas, até entrar no Porão do Laboratório.
+		- Desafios Faceis, Médios e um Ultimo desafio Dificil
+
+	- Final Bifurcado (Escolha Horizontal):
+		- Realizar um Clique.
+		- Reproduzir uma mensagem entre 5 mensagens validas (SEGREDO).
+@ Termos:
+	- Diff: FACIL, MEDIO, DIFICIL
+	- VIA CLIQUE: Requer Input do mouse via Click
+	- VIA DRAG: Requer Input do mouse via Drag
+	- VIA VOZ: Requer mensagens transmitidas por Audio (Tape Recorder)
+	- VIA INTERPRETADOR: Requer ter o Item 'Interpretador Universal'.
+	- PISTA VISUAL: Requer informação presente em recurso visual ou efeito grafico.
+	- PISTA SOM: Requer pista em recurso sonóro.
+	- PISTA TEXT: Requer pista presente em recurso textual dentro da cena. 
+
+
+@ Desafios por cena:
+
+# Cena 0:
+	* Realizar intruções do Tutorial* {FACIL, VIA CLIQUE, PISTA VISUAL, PISTA TEXT}
+	* Clicar na chave para prosseguir * {FACIL, VIA CLIQUE, PISTA VISUAL}
+
+# Cena 1:
+	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Encontrar FITA1* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Abrir Porta com Senha (Painel de Senha)* {FACIL-MEDIO, VIA CLIQUE, PISTA VISUAL}
+		Senha: 451
+

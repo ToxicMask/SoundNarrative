@@ -18,9 +18,8 @@ Personagens
 
 
 
-Argumento #1
-
-# Cena PROLOGO
+Argumento
+# Cena 0: PROLOGO
 MILLER recebe uma carta de PETER, um representante do professor OTTO das Dores. 
 A carta diz que OTTO fez uma grande descoberta, mas que  deve manter sigi-lo até o momento certo devido a sua importancia.
 MILLER pede ajuda de OTTO para divuldar esta invenção e o convida para seu laboratório particular, na propriedade Verlagen.
@@ -35,7 +34,7 @@ MILLER encontra um toca-fitas.
 @FITA 1
 A fita é da VOZ de OTTO, OTTO narra que está fazendo uma pesquisa sobre fenomenos estranhos que acontecem na região, envolvendo vozes e sons estranhos escutados apenas por aparelhos eletronicos..
 OTTO reclama que após sua ultima pesquisa ter sido roubada por um brecha na segurança, ele será mais cuidadoso do que nunca.
-PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é *903*. {Senha  da porta}
+PETER pergunta ao fundo qual é a senha da porta, OTTO diz que a senha é *147*. {Senha  da porta}
 FIM DA FITA
 
 {Desafio: Encontrar a senha da porta e digitar no painel.}
@@ -64,9 +63,9 @@ Miller entra na Camada Interior do Laboratório
 
 
 # Cena 3: Camada Interior do Laboratório
-O laboratório está com  cheio de microfones, cabos, amplificadores e saidas de sons espalhados pelas salas.
+O laboratório está com  cheio de microfones, cabos, amplificadores e saidas de sons espalhados pelas salas. {SENHA: 903}
 O Jogador vê uma porta trancacada, a porta precisa de uma combinação de 3 numeros, ditas por voz. Os numeros precisam ser ditos na ordem certa, se não a seguencia reseta.
-Uma anotação grudada no detector de voz es ta escito: "LEMBRETE: 175 por VOZ"
+Uma anotação grudada no detector de voz es ta escito: "LEMBRETE: 903 por VOZ"
 Uma segunda anotação diz: "LEMBRETE: JOGAR FORA OS LEMBRETES DE SENHA"
 Um som  de faiscas ecoa no laboratório, MILLER se aprofunda no laboratório e encontra uma anomalia no espaço-tempo de trás de um vidro, cercada por um maquinario. A anomalia diz "DOUTOR... SOCORRO..." em intervalos regulares.
 A Terceira fita é encontrada.
