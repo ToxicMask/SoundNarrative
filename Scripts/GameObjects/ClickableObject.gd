@@ -1,5 +1,10 @@
 extends KinematicBody2D
 
+"""
+Abstract Clickable Object
+
+"""
+
 class_name ClickableObject
 
 const DEBUG = false
@@ -12,6 +17,10 @@ var mouse_pressed := false
 
 
 func _ready():
+	_set_signal_std_connections()
+	pass
+
+func _set_signal_std_connections():
 	var _err= null 
 	# Connect input event to here
 	_err = self.connect("input_event", self, "_process_input")
