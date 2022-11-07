@@ -19,7 +19,7 @@ Genero: Investigação Point-And-Click
 		- Realizar um Clique.
 		- Reproduzir uma mensagem entre 5 mensagens validas (SEGREDO).
 @ Termos:
-	- Diff: FACIL, MEDIO, DIFICIL
+	- Diff: FACIL, MEDIO, DIFICIL, OPCIONAL
 	- VIA CLIQUE: Requer Input do mouse via Click
 	- VIA DRAG: Requer Input do mouse via Drag
 	- VIA VOZ: Requer mensagens transmitidas por Audio (Tape Recorder)
@@ -38,6 +38,51 @@ Genero: Investigação Point-And-Click
 # Cena 1:
 	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
 	* Encontrar FITA1* {FACIL, VIA CLIQUE, PISTA VISUAL}
-	* Abrir Porta com Senha (Painel de Senha)* {FACIL-MEDIO, VIA CLIQUE, PISTA VISUAL}
-		Senha: 451
+	* Abrir Porta com Senha (Painel de Senha)* {FACIL-MEDIO, VIA CLIQUE, PISTA SOM}
+		Senha: "451"
+
+# Cena 2:
+	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Encontrar FITA2* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Abrir Porta com Reconhecimento de Voz FITA2* {FACIL-MEDIO, VIA VOZ, PISTA SOM}
+		Senha: "ABRA"
+
+# Cena 3:
+	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Encontrar Anotação de Senha* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Encontrar FITA3* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Remixar reprodução da fita {MEDIO, VIA CLIQUE, PISTA SOM}
+	* Abrir Porta com Reconhecimento de Voz FITA3* {MEDIO, VIA VOZ, PISTA TEXT, PISTA SOM}
+		Senha: "903"
+
+# Cena 4:
+	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Interagir com maquinas diversas * { OPCIONAL, VIA VOZ, PISTA TEXT}
+		Interação: "NUMERO"
+		Interação: "SUMA" 
+		Interação: "ABRIR" 
+		Interação: "DESTRUIR" 
+		Interação: "LUZES"
+	* Encontrar FITA4* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Montar o Interpretador Universal [Item-Chave] {MEDIO, VIA DRAG, PISTA TEXT, PISTA SONORA}
+	* Abrir Porta com Anomalia de Voz FITA2* {MEDIO, VIA VOZ, PISTA TEXT, PISTA SOM}
+		Senha: "Abrir"
+
+# Cena 5:
+	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Encontrar FITA5* {MEDIO, VIA CLIQUE, PISTA VISUAL}
+	* Abrir Porta com Anomalia de Voz FITA5* {MEDIO, VIA VOZ, PISTA SOM}
+		Senha: "Suma"
+
+# Cena 6:
+	* Navegar cenario* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Encontrar FITA5* {FACIL, VIA CLIQUE, PISTA VISUAL}
+	* Escolher Final"
+		- Destruir maquina {FACIL, VIA CLIQUE, PISTA SOM}
+		- Interagir com Maquina via Voz:
+			- "SUMA", "DESTRUIR", "ACENDA" {FACIL, VIA VOZ, PISTA SOM}
+			- "Numero {DIFICIL, VIA VOZ, PISTA SOM, PISTA TEXT}
+
+FIM DE JOGO
+
 
