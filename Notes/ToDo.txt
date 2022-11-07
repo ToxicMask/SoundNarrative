@@ -1,10 +1,5 @@
 
 
-Design Documento
-	- Progressão de Escolha / Narrativa
-	- Documentação das escolhas / Desafios
-	- Roteiro com falas	
-
 
 Exploração de Cena
 	- Fazer Sistema de navegação de cenario
@@ -46,7 +41,11 @@ Exploração de Cena
 -Tela de edição de Tape
 	- Tela dedicada
 
-- Terminar roteiro v1
+Design Notes
+	- Terminar roteiro v1
+	- Progressão de Escolha / Narrativa
+	- Documentação das escolhas / Desafios
+	- Roteiro com falas
 
 
 ######### CANCELLED #######

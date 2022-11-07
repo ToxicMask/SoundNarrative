@@ -1,28 +1,35 @@
-"Black Noise v2"
+Titulo: 
+"Voz do Vazio"
+"Voz no Ruido"
+"Grito Mudo"
+"Colina dos Sussuros"
 
-Storyline
+
+--> Storyline
 Cientista e seu Ajudante anomalia no espaço-som. Descobre que pode fazer desejos. Cientista convida repórter para documentar. 
 Cientista usa a anomalia e faz o ajudante desaparecer. Cientista decide repetir a ação em si e desaprecer para encontrar o ajudante.
 Reporter chega no laboratorio do cientista e usa fitacassete para burlar sua segurança.
 Reporter tem a oportunidade de destruir a maquina ou usar uma das suas fitas para manipular a realidade --> Final do Jogador.
 
 
-Estrutura
+--> Estrutura
 - Jogo principalmente linear até ter um final com varias bifurcações (No Max. 5).
 
 
-Personagens
+--> Personagens
 - Pr. OTTO das Dores: Cientista muito dedicado e obssesivo com adquirir crédito, sendo agressivo se questionado.
 - Assistente PETER Rocha: Assistente precavido e ingenuo, preza pela segurança e bem estar do doutor.
 - Reporter MILLER: Um reporter famoso por sua divulgação de grandes descobertas, mesmo sendo mudo.
 
 
 
-Argumento
+--> Argumento
+
 # Cena 0: PROLOGO
 MILLER recebe uma carta de PETER, um representante do professor OTTO das Dores. 
-A carta diz que OTTO fez uma grande descoberta, mas que  deve manter sigi-lo até o momento certo devido a sua importancia.
+A carta diz que OTTO fez uma grande descoberta, mas que deve manter sigi-lo até o momento certo devido a sua importancia.
 MILLER pede ajuda de OTTO para divuldar esta invenção e o convida para seu laboratório particular, na propriedade Verlagen.
+MILLER tem um livro chamado "2357, a sequencia que revela os segredos do mundo".
 MILLER dirige até a propriedade de OTTO, e entra no laboratório pela porta da frente. 
 
 
@@ -161,8 +168,10 @@ Finais:
 	--- Tirar o Lacre ---
 	2. Dizer SUMIR --> MILLER é absorvido pela anomalia.
 	3. Dizer Destruir --> A maquina é destruida junto com o laboratório.
-	4. Acender --> Uma luz surge da Anomalia trazendo conhecimento oculto.
-	5. Numero --> Uma combinação secreta faz OTTO e PETER reaparecerem.
+	5. Número (2357) --> Uma combinação secreta revela um conhecimento oculto.
+
+	-- Voltar no mapa --
+	6. Clicar no Carro --> Miller vai embora e publica as fitas na impreensa.
 
 FIM DE JOGO
 

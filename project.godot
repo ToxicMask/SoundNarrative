@@ -116,8 +116,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="EditingAudioGame"
-config/description="Narrative"
+config/name="Colina dos Sussuros"
+config/description="Narrativa envolvendo a reprodução e manipução de arquivos sonoros.
+
+O jornalista Miller, investiga o Laboratório de Dr. Otto, usando de seu Gravador de bolso para descobrir a verdade por trás de anomalias sonoras que ocorrem nas Colinas dos Sussuros."
 run/main_scene="res://Nodes/Screens/Main.tscn"
 config/icon="res://Assets/Images/recorder_backdrop_temp0.png"
 

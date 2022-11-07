@@ -33,6 +33,7 @@ Genero: Investigação Point-And-Click
 
 # Cena 0:
 	* Realizar intruções do Tutorial* {FACIL, VIA CLIQUE, PISTA VISUAL, PISTA TEXT}
+	* Ler Livro 2357 { OPCIONAL , VIA CLIQUE, PISTA VISUAL, PISTA TEXT}
 	* Clicar na chave para prosseguir * {FACIL, VIA CLIQUE, PISTA VISUAL}
 
 # Cena 1:
@@ -80,8 +81,9 @@ Genero: Investigação Point-And-Click
 	* Escolher Final"
 		- Destruir maquina {FACIL, VIA CLIQUE, PISTA SOM}
 		- Interagir com Maquina via Voz:
-			- "SUMA", "DESTRUIR", "ACENDA" {FACIL, VIA VOZ, PISTA SOM}
-			- "Numero {DIFICIL, VIA VOZ, PISTA SOM, PISTA TEXT}
+			- "SUMA", "DESTRUIR"{FACIL, VIA VOZ, PISTA SOM}
+			- "Sequencia de Número: '2357' {DIFICIL, VIA VOZ, PISTA SOM, PISTA TEXT}
+		- Ir embora. {FACIL, VIA CLIQUE, PISTA VISUAL, PISTA TEXT}
 
 FIM DE JOGO
 
