@@ -10,8 +10,6 @@ func _ready():
 	var _err= $KeepDataController.connect("update_data_on_receiver", self, "_report")
 	pass
 
-func _report(arg):
-	print(arg)
 
 func _input(event):
 

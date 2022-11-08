@@ -69,6 +69,4 @@ func _update_tape_data(data_node: Node):
 		else:
 			var custom = self.get_node("CustomTape") as SelectionTape
 			custom.hide()
-			#print("HIDE ", custom)
-
 	pass

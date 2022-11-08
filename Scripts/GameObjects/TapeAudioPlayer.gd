@@ -5,8 +5,6 @@ extends AudioStreamPlayer
 # Signals
 signal audio_finished
 
-# Preloads
-#onready var tape_sample = preload("res://Assets/Audio/593320__mosart1955__evil-laugh.mp3")
 
 # Selected Tape Object
 onready var selected_tape_object = TapeObject.new(self, [], [])

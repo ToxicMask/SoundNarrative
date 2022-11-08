@@ -41,5 +41,5 @@ margin_top = 300.0
 margin_right = 512.0
 margin_bottom = 300.0
 
-[connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/PlayButton" to="." method="_start_new_game"]
+[connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/QuitButton" to="." method="_close_app"]

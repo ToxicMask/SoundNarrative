@@ -16,25 +16,6 @@ export (PackedScene) var tape_recorder_packed: PackedScene
 
 
 # World Scenes
-"""
-export (PackedScene) var test0_world : PackedScene
-export (PackedScene) var test1_world : PackedScene
-export (PackedScene) var start_world : PackedScene
-export (PackedScene) var game1_world : PackedScene
-
-TEST0: test0_world,
-TEST1: test1_world,
-StartGame: start_world,
-World1: game1_world,
-func _add_start_menu():
-	var instance =  main_menu_packed.instance()
-	var _err = null
-	_err = instance.connect(new_game, self, _start_new_game)
-	_err = instance.connect(close_app, self, _quit_app)
-	add_child(instance)
-	pass
-"""
-
 export (Dictionary) var world_scene_dict: Dictionary
 var current_world_scene_key := ""
 

@@ -38,8 +38,7 @@ func _drag_movement_input():
 	if (mouse_drag == false) and (mouse_pressed == true):
 		mouse_drag = true
 		Input.set_default_cursor_shape(Input.CURSOR_MOVE)
-		if DEBUG:
-			print("Drag")
+	pass
 
 	# Process Released drag
 	if mouse_drag and not mouse_pressed:

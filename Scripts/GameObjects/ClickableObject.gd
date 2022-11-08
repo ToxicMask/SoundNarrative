@@ -7,8 +7,6 @@ Abstract Clickable Object
 
 class_name ClickableObject
 
-const DEBUG = false
-
 signal mouse_click (_event)
 
 
@@ -35,12 +33,8 @@ func _process_input(_viewport, event, _shape):
 			if not mouse_pressed:
 				mouse_pressed = true
 				emit_signal("mouse_click", event)
-				if DEBUG:
-					print(name," Just Clicked")
 		elif !event.is_pressed() and mouse_pressed: # Released
 			mouse_pressed = false
-			if DEBUG:
-				print(name, " Just Released")
 	pass
 
 func _process_mouse_inside():
