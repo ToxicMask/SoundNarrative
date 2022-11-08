@@ -145,6 +145,7 @@ settings/fps/force_fps=60
 
 [display]
 
+mouse_cursor/custom_image="res://Assets/Images/PH_CURSOR.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

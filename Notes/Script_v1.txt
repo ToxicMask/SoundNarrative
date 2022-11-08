@@ -143,7 +143,7 @@ MILLER através de uma porta escrita 'PERIGO', entra na Sala da Origem.
 
 
 
-#Cena 6: Sala da Origem
+# Cena 6: Sala da Origem
 Dentro da Sala tem uma 'Grande Anomalia', por trás de uma porta e um botão de destruição ao lado.
 MILLER pode abrir a porta para revelar a 'Anomalia Original' ou abrir o case do botão de auto-destruição.
 Uma fita está na frente da maquina.

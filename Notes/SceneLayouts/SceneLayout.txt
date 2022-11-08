@@ -1,0 +1,39 @@
+
+# Cena 0:Escritório de MILLER - Inteior - Noite - Chovendo
+
+@ Cena0x1:
+- Escrivaninha
+- Luminaria
+- Carta
+
+- SETA UI: Intrução para clicar na Carta
+
+
+@ Cena0x2:
+- Carta
+
+@ Cena0x3:
+- Escrivaninha
+- Luminaria
+-Chave do Carro
+
+- SETA UI: Intrução para clicar na Fita
+
+
+# Cena 1: Secretaria Interior - Inteior / Exterior - Noite
+
+@ Cena1x1 - Lado de fora do laboratório
+@ Cena1x2 - Secretaria
+@ Cena1x3 - Escrivaninha - Secretaria
+@ Cena1x4 - Porta Trancada + Painel de senha
+
+# Cena 2: Camada Exterior do laboratório - Interior 
+
+# Cena 3: Camada Interior do Laboratório
+
+# Cena 4: Porão do Laboratório
+
+# Cena 5: Área Instavel do Laboratório
+
+# Cena 6: Sala da Origem
+
