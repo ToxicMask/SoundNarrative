@@ -52,6 +52,7 @@ Exploração de Cena
 
 ######### CANCELLED #######
 -Tela de edição de Tape
+	- Tela dedicada
 	- Ter Partes pré-selecionadas
 	- Arrastar partes da fita em ordem
 	-Ter Area de trasnferencia

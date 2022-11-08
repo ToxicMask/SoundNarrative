@@ -27,7 +27,7 @@ Reporter tem a oportunidade de destruir a maquina ou usar uma das suas fitas par
 
 # Cena 0: PROLOGO
 MILLER recebe uma carta de PETER, um representante do professor OTTO das Dores. 
-A carta diz que OTTO fez uma grande descoberta, mas que deve manter sigi-lo até o momento certo devido a sua importancia.
+A carta diz que OTTO fez uma grande descoberta, mas que deve manter sigilo até o momento certo devido a sua importancia.
 MILLER pede ajuda de OTTO para divuldar esta invenção e o convida para seu laboratório particular, na propriedade Verlagen.
 MILLER tem um livro chamado "2357, a sequencia que revela os segredos do mundo".
 MILLER dirige até a propriedade de OTTO, e entra no laboratório pela porta da frente. 
@@ -35,7 +35,7 @@ MILLER dirige até a propriedade de OTTO, e entra no laboratório pela porta da 
 
 
 # Cena 1: Secretaria Interior
-A secretaria está vazia e tem uma porta fechada por um painel eletronico que pede 3 numeros. 
+A secretaria está vazia e tem uma porta fechada por um painel eletronico que pede 3 números. 
 MILLER encontra um toca-fitas.
 
 @FITA 1
