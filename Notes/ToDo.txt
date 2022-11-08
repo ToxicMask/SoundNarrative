@@ -2,8 +2,6 @@
 
 
 Exploração de Cena
-	- Fazer Sistema de navegação de cenario
-	- Fazer Objetos clicaveis para navegação
 	- Fazer layouts de cada cena
 
 
@@ -46,6 +44,10 @@ Design Notes
 	- Progressão de Escolha / Narrativa
 	- Documentação das escolhas / Desafios
 	- Roteiro com falas
+
+Exploração de Cena
+	- Fazer Sistema de navegação de cenario
+	- Fazer Objetos clicaveis para navegação
 
 
 ######### CANCELLED #######

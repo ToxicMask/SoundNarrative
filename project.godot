@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameSystems/StartGameScreen.gd"
 }, {
+"base": "Node2D",
+"class": "SubWorld",
+"language": "GDScript",
+"path": "res://Scripts/GameSystems/SubWorld.gd"
+}, {
 "base": "Resource",
 "class": "TapeInfo",
 "language": "GDScript",
@@ -90,6 +95,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/GameObjects/TapeSelectionHUD.gd"
 }, {
 "base": "Node2D",
+"class": "WorldNavigation",
+"language": "GDScript",
+"path": "res://Scripts/GameSystems/WorldNavigation.gd"
+}, {
+"base": "Node2D",
 "class": "WorldScreen",
 "language": "GDScript",
 "path": "res://Scripts/GameSystems/WorldScreen.gd"
@@ -105,12 +115,14 @@ _global_script_class_icons={
 "NewGameManager": "",
 "SelectionTape": "",
 "StarGameScreen": "",
+"SubWorld": "",
 "TapeInfo": "",
 "TapeInventoryKeepData": "",
 "TapeKeepData": "",
 "TapeObject": "",
 "TapeRecorder": "",
 "TapeSelectionHUD": "",
+"WorldNavigation": "",
 "WorldScreen": ""
 }
 

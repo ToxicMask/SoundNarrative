@@ -9,10 +9,13 @@
 [ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Nodes/Screens/Worlds/StartGameScreen.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Nodes/Screens/Worlds/World1Screen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Nodes/Screens/Worlds/World1/World1Screen.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
 tape_recorder_packed = ExtResource( 4 )
 world_scene_dict = {
 "Dummy": ExtResource( 1 ),

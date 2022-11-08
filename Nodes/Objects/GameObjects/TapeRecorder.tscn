@@ -10,6 +10,7 @@
 
 [node name="TapeRecorder" type="Node2D" groups=["MessageEmitter"]]
 position = Vector2( 1024, 600 )
+z_index = 10
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true

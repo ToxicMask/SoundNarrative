@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameObjects/NavButton.gd" type="Script" id=1]
+
+[node name="NavButton" type="Button"]
+margin_right = 84.0
+margin_bottom = 49.0
+focus_mode = 0
+shortcut_in_tooltip = false
+action_mode = 0
+button_mask = 3
+enabled_focus_mode = 0
+text = "Inspect"
+icon_align = 1
+script = ExtResource( 1 )
