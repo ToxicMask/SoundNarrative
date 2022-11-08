@@ -36,7 +36,7 @@ func _input(event):
 					print("CHANGE SCENE: TEST1")
 					main_parent._change_world_scene("TEST1")
 				KEY_3:
-					print("CHANGE SCENE: EDIT")
-					main_parent._change_world_scene("EditTapeScreen")
+					print("CHANGE SCENE: TEST2")
+					main_parent._change_world_scene("TEST2")
 		pass
 	pass

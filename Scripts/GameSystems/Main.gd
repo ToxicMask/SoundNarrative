@@ -10,27 +10,32 @@ class_name Main
 
 
 # Game Systems
-#pass
-
-# Menus
-export (PackedScene) var main_menu_packed : PackedScene
 
 # HUDs
 export (PackedScene) var tape_recorder_packed: PackedScene
-export (PackedScene) var edit_tape_packed: PackedScene
 
 
 # World Scenes
+"""
 export (PackedScene) var test0_world : PackedScene
 export (PackedScene) var test1_world : PackedScene
 export (PackedScene) var start_world : PackedScene
 export (PackedScene) var game1_world : PackedScene
-onready var world_scene_dict: Dictionary = {
-	"TEST0": test0_world,
-	"TEST1": test1_world,
-	"StartGame": start_world,
-	"World1": game1_world,
-}
+
+TEST0: test0_world,
+TEST1: test1_world,
+StartGame: start_world,
+World1: game1_world,
+func _add_start_menu():
+	var instance =  main_menu_packed.instance()
+	var _err = null
+	_err = instance.connect(new_game, self, _start_new_game)
+	_err = instance.connect(close_app, self, _quit_app)
+	add_child(instance)
+	pass
+"""
+
+export (Dictionary) var world_scene_dict: Dictionary
 var current_world_scene_key := ""
 
 
@@ -39,7 +44,6 @@ Callbacks
 """
 func _ready():
 	_add_keep_data()
-	_add_start_menu()
 	_change_world_scene("MainMenu")
 	pass
 
@@ -58,30 +62,21 @@ func _quit_app():
 
 
 """
-Add Children
+Add Direct Children
 """
 
-func _add_start_menu():
-	var instance =  main_menu_packed.instance()
-	var _err = null
-	_err = instance.connect("new_game", self, "_start_new_game")
-	_err = instance.connect("close_app", self, "_quit_app")
-	add_child(instance)
-	pass
-
 func _add_tape_recorder_hud():
+	if self.has_node("TapeRecorder"):
+		return
 	var instance =  tape_recorder_packed.instance()
 	var _err = null
 	add_child(instance)
 	pass
 
-func _add_edit_tape_hud():
-	var instance =  edit_tape_packed.instance()
-	var _err = null
-	add_child(instance)
-	pass
 	
 func _add_keep_data():
+	if self.has_node("KeepDataManager"):
+		return
 	var new_instance = KeepDataManager.new()
 	add_child(new_instance)
 	pass
@@ -92,9 +87,9 @@ Scene Managment
 """
 
 func _change_world_scene(world_key : String):
+	get_tree().call_group("DeleteOnChangeScene","queue_free")
 	if world_scene_dict.has(world_key):
 		#print("NEW_SCENE: ", world_key)
-		get_tree().call_group("DeleteOnChangeScene","queue_free")
 		current_world_scene_key = world_key
 		var new_world = world_scene_dict[current_world_scene_key].instance() 
 		add_child(new_world)

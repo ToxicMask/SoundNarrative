@@ -1,16 +1,14 @@
 extends CanvasLayer
 class_name MainMenu
 
-signal new_game
-signal close_app
 
 
 func _start_new_game():
-	emit_signal("new_game")
+	get_tree().call_group("Main", "_start_new_game")
 	pass
 
 func _close_app():
-	emit_signal("close_app")
+	get_tree().call_group("Main", "_quit_app")
 	pass
 
 

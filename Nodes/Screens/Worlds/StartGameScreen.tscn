@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/StartGameScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/BLACK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/GameSystems/NewGameManager.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/GameObjects/TapeInventoryKeepData.gd" type="Script" id=5]
 
 [node name="StartGameScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -70,8 +69,5 @@ script = ExtResource( 3 )
 [node name="KeepDataController" type="Node" parent="NewGameManager"]
 script = ExtResource( 4 )
 receiver_id = "NewGameManager"
-
-[node name="TapeInventoryKeepData" type="Node" parent="."]
-script = ExtResource( 5 )
 
 [connection signal="pressed" from="IntroScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="." method="_next_scene"]

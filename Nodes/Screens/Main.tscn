@@ -1,23 +1,27 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Nodes/Screens/Worlds/DummyScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Objects/_Debug/_MainDebug.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Screens/Menus/MainMenuScreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/TapeRecorder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_0.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/GameSystems/Main.gd" type="Script" id=6]
-[ext_resource path="res://Nodes/Screens/Menus/EditTapeScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodes/Screens/_Debug/TEST_SCENE_1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Nodes/Screens/Worlds/StartGameScreen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Nodes/Screens/Worlds/World1Screen.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource( 6 )
-main_menu_packed = ExtResource( 3 )
 tape_recorder_packed = ExtResource( 4 )
-edit_tape_packed = ExtResource( 7 )
-test0_world = ExtResource( 5 )
-test1_world = ExtResource( 1 )
-start_world = ExtResource( 9 )
-game1_world = ExtResource( 10 )
+world_scene_dict = {
+"Dummy": ExtResource( 1 ),
+"MainMenu": ExtResource( 3 ),
+"Scene1": ExtResource( 10 ),
+"StartGame": ExtResource( 9 ),
+"TEST0": ExtResource( 5 ),
+"TEST1": ExtResource( 8 ),
+"TEST2": ExtResource( 7 )
+}
 
 [node name="_MainDebug" parent="." instance=ExtResource( 2 )]
