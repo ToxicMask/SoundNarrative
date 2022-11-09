@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Render/Render.000.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float timeScale : hint_range( 0, 10) = 1;
+uniform float scaleA : hint_range(0, 1) = 0;
+uniform float scaleB : hint_range(0, 1) = 0;
+uniform vec4 modulateA : hint_color = vec4(0, 0, 0, 1);
+uniform vec4 modulateB : hint_color = vec4(0, 0, 0, 1);
+uniform vec4 modulateC : hint_color = vec4(0, 0, 0, 1);
+
+
+void fragment() {
+	
+	vec2 offset = vec2(0,0);
+	offset.x = sin(TIME * timeScale) * 0.5;
+	offset.y = sin(TIME * timeScale) * 0.5;
+	
+	vec4 pixel = texture(TEXTURE, UV + offset);
+	
+	if (UV.x < scaleA){
+		COLOR = pixel * modulateA;
+	}
+	else if (UV.y < scaleB){
+		COLOR = pixel * modulateB;
+	}
+	else{
+		COLOR = pixel * modulateC;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/timeScale = 0.1
+shader_param/scaleA = 0.5
+shader_param/scaleB = 0.5
+shader_param/modulateA = Color( 0.745098, 0.2, 0.2, 1 )
+shader_param/modulateB = Color( 0.360784, 0.376471, 0.8, 1 )
+shader_param/modulateC = Color( 0.364706, 0.811765, 0.392157, 1 )
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform sampler2D distortionTexture;
+uniform float distortionScale : hint_range(0.0, 0.1, 0.01);
+const vec4 mask1 = vec4(1);
+
+void fragment() {
+	
+	vec4 distColor = texture(distortionTexture, UV);
+	vec2 distUV = SCREEN_UV + distColor.r * distortionScale;
+	vec4 screenColor = texture(SCREEN_TEXTURE, distUV);
+	vec4 pixel = texture(TEXTURE, UV);
+	
+	if (pixel == mask1){
+		COLOR = screenColor;
+	}
+	else{
+		COLOR = vec4(0.85, 0.3, 0.1, 1);
+	}
+	
+	//COLOR = distColor;
+	
+}"
+
+[sub_resource type="OpenSimplexNoise" id=5]
+octaves = 9
+period = 9.7
+persistence = 0.98
+lacunarity = 0.65
+
+[sub_resource type="NoiseTexture" id=6]
+noise = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/distortionScale = 0.06
+shader_param/distortionTexture = SubResource( 6 )
+
+[node name="TEST_SCENE_SHADER" type="Node2D"]
+
+[node name="Shade1" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Shade2" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 618, 251 )
+texture = ExtResource( 2 )
