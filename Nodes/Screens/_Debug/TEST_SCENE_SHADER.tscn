@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Render/Render.000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
@@ -35,12 +35,12 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/timeScale = 0.1
-shader_param/scaleA = 0.5
-shader_param/scaleB = 0.5
-shader_param/modulateA = Color( 0.745098, 0.2, 0.2, 1 )
-shader_param/modulateB = Color( 0.360784, 0.376471, 0.8, 1 )
-shader_param/modulateC = Color( 0.364706, 0.811765, 0.392157, 1 )
+shader_param/timeScale = 0.0
+shader_param/scaleA = 0.466
+shader_param/scaleB = 0.252
+shader_param/modulateA = Color( 1, 1, 1, 1 )
+shader_param/modulateB = Color( 0.607843, 0.607843, 0.607843, 1 )
+shader_param/modulateC = Color( 0.290196, 0.290196, 0.290196, 1 )
 
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
@@ -81,14 +81,82 @@ shader = SubResource( 3 )
 shader_param/distortionScale = 0.06
 shader_param/distortionTexture = SubResource( 6 )
 
+[sub_resource type="Shader" id=9]
+code = "shader_type canvas_item;
+
+uniform float seed : hint_range(0.0, 1.0) = 0;
+uniform float tintFactor : hint_range(0.0, 1.0, 0.05) = 0;
+uniform int noiseFactor : hint_range(0, 1, 1) = 0;
+uniform float noiseBright : hint_range(0.0, 1.0) = 0;
+uniform vec4 tint : hint_color;
+
+
+float random (vec2 uv) {
+    return fract(sin(dot(uv.xy,
+        vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+
+void fragment() {
+	vec2 _UV = vec2(UV.x, float(seed));
+	vec4 texturePixel = texture(TEXTURE, _UV);
+	vec4 screenPixel = texture(SCREEN_TEXTURE, SCREEN_UV);
+	vec4 whiteNoise = vec4(vec3(random(UV * TIME / 1.0)), 1);
+	vec4 grayscale = vec4( vec3((screenPixel.r + screenPixel.g + screenPixel.b) / 3.0), 1);
+	
+	vec4 mixColor = vec4(1);
+	
+	// Tint Factor
+	mixColor = mix(screenPixel , grayscale * tint, tintFactor);
+	// Noise Factor
+	if (noiseFactor ==1){
+		mixColor = (step((whiteNoise * (1.0-noiseBright)), mixColor));
+	}
+	//mixColor = smoothstep() mix(mixColor , whiteNoise * mixColor, noiseFactor);
+	
+	// Set Color
+	COLOR = mixColor;
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
+shader_param/seed = 0.0
+shader_param/tintFactor = 1.0
+shader_param/noiseFactor = 1
+shader_param/noiseBright = 0.673
+shader_param/tint = Color( 0.894118, 0.498039, 0.207843, 1 )
+
+[sub_resource type="OpenSimplexNoise" id=11]
+persistence = 0.319
+
+[sub_resource type="NoiseTexture" id=12]
+width = 1024
+height = 600
+seamless = true
+noise = SubResource( 11 )
+
 [node name="TEST_SCENE_SHADER" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Shade1" type="Sprite" parent="."]
 material = SubResource( 2 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Shade2" type="Sprite" parent="."]
+visible = false
 material = SubResource( 4 )
-position = Vector2( 618, 251 )
+position = Vector2( 179, 332 )
 texture = ExtResource( 2 )
+
+[node name="Shade3" type="Sprite" parent="."]
+material = SubResource( 10 )
+texture = SubResource( 12 )
+centered = false

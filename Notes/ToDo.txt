@@ -2,9 +2,15 @@
 
 
 Exploração de Cena
+	- Preencher descrição de Cenas e Subcenas por Layout
 	- Fazer layouts de cada cena
 
-
+Efeitos Visuais
+	- Shaders de Tranisição de Cena
+	- Shaders de Anomalia
+	- Shader de Sumir - Anomalia
+	- Shader de Destruir - Anomalia
+	
 
 ####### Completed #############
 
