@@ -1,71 +1,20 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Render/Render.000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-uniform float timeScale : hint_range( 0, 10) = 1;
-uniform float scaleA : hint_range(0, 1) = 0;
-uniform float scaleB : hint_range(0, 1) = 0;
-uniform vec4 modulateA : hint_color = vec4(0, 0, 0, 1);
-uniform vec4 modulateB : hint_color = vec4(0, 0, 0, 1);
-uniform vec4 modulateC : hint_color = vec4(0, 0, 0, 1);
-
-
-void fragment() {
-	
-	vec2 offset = vec2(0,0);
-	offset.x = sin(TIME * timeScale) * 0.5;
-	offset.y = sin(TIME * timeScale) * 0.5;
-	
-	vec4 pixel = texture(TEXTURE, UV + offset);
-	
-	if (UV.x < scaleA){
-		COLOR = pixel * modulateA;
-	}
-	else if (UV.y < scaleB){
-		COLOR = pixel * modulateB;
-	}
-	else{
-		COLOR = pixel * modulateC;
-	}
-}"
+[ext_resource path="res://Resources/Shaders/TelevisionShader.gdshader" type="Shader" id=3]
+[ext_resource path="res://Resources/Shaders/DistortionGlassShader.gdshader" type="Shader" id=4]
+[ext_resource path="res://Resources/Shaders/RGBSlider.gdshader" type="Shader" id=5]
+[ext_resource path="res://Resources/Shaders/TextureNoiseTransition.gdshader" type="Shader" id=6]
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = ExtResource( 5 )
 shader_param/timeScale = 0.0
 shader_param/scaleA = 0.466
 shader_param/scaleB = 0.252
 shader_param/modulateA = Color( 1, 1, 1, 1 )
 shader_param/modulateB = Color( 0.607843, 0.607843, 0.607843, 1 )
 shader_param/modulateC = Color( 0.290196, 0.290196, 0.290196, 1 )
-
-[sub_resource type="Shader" id=3]
-code = "shader_type canvas_item;
-
-uniform sampler2D distortionTexture;
-uniform float distortionScale : hint_range(0.0, 0.1, 0.01);
-const vec4 mask1 = vec4(1);
-
-void fragment() {
-	
-	vec4 distColor = texture(distortionTexture, UV);
-	vec2 distUV = SCREEN_UV + distColor.r * distortionScale;
-	vec4 screenColor = texture(SCREEN_TEXTURE, distUV);
-	vec4 pixel = texture(TEXTURE, UV);
-	
-	if (pixel == mask1){
-		COLOR = screenColor;
-	}
-	else{
-		COLOR = vec4(0.85, 0.3, 0.1, 1);
-	}
-	
-	//COLOR = distColor;
-	
-}"
 
 [sub_resource type="OpenSimplexNoise" id=5]
 octaves = 9
@@ -77,65 +26,40 @@ lacunarity = 0.65
 noise = SubResource( 5 )
 
 [sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
-shader_param/distortionScale = 0.06
+shader = ExtResource( 4 )
+shader_param/distortionScale = 0.03
 shader_param/distortionTexture = SubResource( 6 )
 
-[sub_resource type="Shader" id=9]
-code = "shader_type canvas_item;
-
-uniform float seed : hint_range(0.0, 1.0) = 0;
-uniform float tintFactor : hint_range(0.0, 1.0, 0.05) = 0;
-uniform int noiseFactor : hint_range(0, 1, 1) = 0;
-uniform float noiseBright : hint_range(0.0, 1.0) = 0;
-uniform vec4 tint : hint_color;
-
-
-float random (vec2 uv) {
-    return fract(sin(dot(uv.xy,
-        vec2(12.9898,78.233))) * 43758.5453123);
-}
-
-
-void fragment() {
-	vec2 _UV = vec2(UV.x, float(seed));
-	vec4 texturePixel = texture(TEXTURE, _UV);
-	vec4 screenPixel = texture(SCREEN_TEXTURE, SCREEN_UV);
-	vec4 whiteNoise = vec4(vec3(random(UV * TIME / 1.0)), 1);
-	vec4 grayscale = vec4( vec3((screenPixel.r + screenPixel.g + screenPixel.b) / 3.0), 1);
-	
-	vec4 mixColor = vec4(1);
-	
-	// Tint Factor
-	mixColor = mix(screenPixel , grayscale * tint, tintFactor);
-	// Noise Factor
-	if (noiseFactor ==1){
-		mixColor = (step((whiteNoise * (1.0-noiseBright)), mixColor));
-	}
-	//mixColor = smoothstep() mix(mixColor , whiteNoise * mixColor, noiseFactor);
-	
-	// Set Color
-	COLOR = mixColor;
-}
-
-"
-
-[sub_resource type="ShaderMaterial" id=10]
-shader = SubResource( 9 )
-shader_param/seed = 0.0
-shader_param/tintFactor = 1.0
-shader_param/noiseFactor = 1
-shader_param/noiseBright = 0.673
-shader_param/tint = Color( 0.894118, 0.498039, 0.207843, 1 )
-
 [sub_resource type="OpenSimplexNoise" id=11]
-persistence = 0.319
+seed = -1
+period = 0.1
+persistence = 0.0
+lacunarity = 0.1
 
 [sub_resource type="NoiseTexture" id=12]
-width = 1024
-height = 600
+width = 32
+height = 32
 seamless = true
 noise = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 3 )
+shader_param/seed = 0.0
+shader_param/noiseFactor = 0.3
+shader_param/noiseBright = 0.0
+shader_param/tint = Color( 1, 1, 1, 1 )
+shader_param/noiseTexture = SubResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = ExtResource( 6 )
+shader_param/interFactor = 0.0
+
+[sub_resource type="Gradient" id=15]
+interpolation_mode = 1
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 15 )
+width = 1024
 
 [node name="TEST_SCENE_SHADER" type="Node2D"]
 __meta__ = {
@@ -152,11 +76,25 @@ __meta__ = {
 
 [node name="Shade2" type="Sprite" parent="."]
 visible = false
+modulate = Color( 0.490196, 0.901961, 0.901961, 1 )
 material = SubResource( 4 )
-position = Vector2( 179, 332 )
+position = Vector2( 755, 68 )
 texture = ExtResource( 2 )
 
 [node name="Shade3" type="Sprite" parent="."]
+visible = false
 material = SubResource( 10 )
-texture = SubResource( 12 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Shade4" type="Sprite" parent="."]
+material = SubResource( 14 )
+scale = Vector2( 1, 600 )
+texture = SubResource( 16 )
+centered = false
+
+[node name="Shade5" type="Sprite" parent="."]
+material = SubResource( 14 )
+scale = Vector2( 1, 600 )
+texture = SubResource( 16 )
 centered = false
