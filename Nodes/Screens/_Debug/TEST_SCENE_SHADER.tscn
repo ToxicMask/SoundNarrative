@@ -45,7 +45,8 @@ noise = SubResource( 11 )
 
 [sub_resource type="ShaderMaterial" id=10]
 shader = ExtResource( 3 )
-shader_param/seed = 0.0
+shader_param/staticOffset = 0.0
+shader_param/grayscaleFactor = true
 shader_param/noiseFactor = 0.3
 shader_param/noiseBright = 0.0
 shader_param/tint = Color( 1, 1, 1, 1 )
@@ -72,6 +73,7 @@ __meta__ = {
 }
 
 [node name="Shade1" type="Sprite" parent="."]
+visible = false
 material = SubResource( 2 )
 texture = ExtResource( 1 )
 centered = false
@@ -87,7 +89,6 @@ position = Vector2( 755, 68 )
 texture = ExtResource( 2 )
 
 [node name="Shade3" type="Sprite" parent="."]
-visible = false
 material = SubResource( 10 )
 texture = ExtResource( 1 )
 centered = false
@@ -100,6 +101,7 @@ texture = SubResource( 16 )
 centered = false
 
 [node name="Shade5" type="Sprite" parent="."]
+visible = false
 material = SubResource( 14 )
 scale = Vector2( 1, 600 )
 texture = SubResource( 16 )
