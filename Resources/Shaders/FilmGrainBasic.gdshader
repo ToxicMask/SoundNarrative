@@ -1,18 +1,35 @@
 shader_type canvas_item;
 
-uniform float amount = 0;
+uniform bool active = true;
+uniform float amount = 0.3;
 
+// Return 0 to 1
 float rand(vec2 co){
-    return fract(cos(dot(co.xy ,vec2(4.5465465,37.3423))) * 7657.2367);
+    return fract(cos(dot(co.xy ,vec2(4.5465465,37.918283))) * 7657.2367);
+}
+
+// Return -1 to 1
+float rand_rang(vec2 co){
+	float rand_product = rand(co); 
+    return (rand_product * 2.0) -1.0;
 }
 
 void fragment() {
-	float rng = rand(UV+ abs(sin(TIME)));
-	vec2 offsetUV = vec2( 0, - fract(TIME * rng) ) ;
+	
 	vec4 screenPixel = texture(SCREEN_TEXTURE, SCREEN_UV);
 	vec4 finalPixel = vec4(1);
 	
-	finalPixel = screenPixel + (rng * amount);
+	// set active or not
+	if (active){
+		float rng = rand_rang(UV + abs(sin(TIME)));
+		vec2 offsetUV = vec2( 0, - fract(TIME * rng) ) ;
+		
+		finalPixel = screenPixel + (rng *  amount);
+	
+	}
+	else {
+		finalPixel = screenPixel;
+	}
 	
 	COLOR = finalPixel;
 }

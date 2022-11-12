@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Shaders/FilmGrainBasic.gdshader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 1 )
+shader_param/active = true
+shader_param/amount = 0.03
+
+[node name="FilmGrainOverlay" type="ColorRect"]
+material = SubResource( 19 )
+anchor_right = 1.0
+anchor_bottom = 1.0
