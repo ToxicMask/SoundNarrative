@@ -1,33 +1,59 @@
-
-# Cena 0:Escritório de MILLER - Inteior - Noite - Chovendo
-
-@ Cena0x1:
-- Escrivaninha
-- Luminaria
-- Carta
-
-- SETA UI: Intrução para clicar na Carta
+### SCENE LAYOUTS ###
+Descrição basica para montar os layouts
 
 
-@ Cena0x2:
-- Carta
 
-@ Cena0x3:
-- Escrivaninha
-- Luminaria
--Chave do Carro
+# Cena 0: Escritório de MILLER - Inteior - Noite - Chovendo
 
-- SETA UI: Intrução para clicar na Fita
+	@ Cena0x1: Escrivaninha com Luminaria iluminando Carta
+		- SETA UI: Intrução para clicar na Carta
+
+	@ Cena0x2: Close na Carta - Dark Void
+		- Texto UI: Carta de Peter convidando Miller
+		- Contem Fita 0
+		- Introdução para a mecanica de Tocar fitas
+		- Sinal da fita zero libera proxima cena
+
+	@ Cena0x3: Escrivaninha com Luminaria iluminando Chave do Carro
+		- SETA UI: Intrução para clicar na Fita
+
+	@ Cena0x4: Escrivaninha com Luminaria iluminando Chave do Carro e Livro
+		- Highlight da chave do carro.
+
+	@ Cena0x5: Close no Livro "112357" - Dark Void
+		- SETA UI: Go back
 
 
 # Cena 1: Secretaria Interior - Inteior / Exterior - Noite
 
-@ Cena1x1 - Lado de fora do laboratório
-@ Cena1x2 - Secretaria
-@ Cena1x3 - Escrivaninha - Secretaria
-@ Cena1x4 - Porta Trancada + Painel de senha
+	@ Cena1x1 - Lado de fora do laboratório
+		- Highlight na porta do laboratório
 
-# Cena 2: Camada Exterior do laboratório - Interior 
+	@ Cena1x2 - Secretaria do Laboratório Com Porta Trancada
+		- Highlight na escrivaninha e Tranca da porta
+
+	@ Cena1x3 - Escrivaninha - Secretaria
+		- Highlight na gaveta com a Fita 1
+		- Mapa do Primeiro Andar, mapa do segunda andar borrado
+
+	@ Cena1x4 - Porta Trancada + Painel de senha
+		- Foco principal na tranca, com foco secundario na porta trancada
+
+
+
+# Cena 2: Camada Exterior do laboratório - Interior
+
+	@ Cena2x1 - Porta de segurança da Camada Exteior
+		- Porta com Trava Sonora na direita, foco principal. cabos indo da porta até o canto direito, foco secundario.
+		- Espaço negativo para o corredor da esquerda.
+
+	@ Cena2x2 - Canto com area de trabalho sonora, foco na escrivaninha.
+		- Detalhe secundariomicrofones presos na parede
+
+	@ Cena2x3 - Escrivaniha de trabalho sonoro
+		- cabos de sons, gravadores, equipamentos de sons espalhados na mesa.
+		- Equipamentos sonoros escondem a fita 2.
+	
 
 # Cena 3: Camada Interior do Laboratório
 
