@@ -30,11 +30,15 @@ func _ready():
 
 
 """
-OS Operations
+Scene // OS Operations
 """
 
 func _start_new_game():
 	_change_world_scene("StartGame")
+	pass
+
+func _go_to_credits():
+	_change_world_scene("Credits")
 	pass
 
 func _quit_app():
