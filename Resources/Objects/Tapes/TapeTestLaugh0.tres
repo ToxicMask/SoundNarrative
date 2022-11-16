@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/GameObjects/TapeInfo.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/Placeholder/593320__mosart1955__evil-laugh.mp3" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Evil Laugh"
+description = "Test0"
+content_array = [ ExtResource( 2 ) ]
+msg_array = [ "HAHA" ]
+tape_color = Color( 0.964706, 0.243137, 0.243137, 1 )

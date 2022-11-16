@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Assets/Render/Render.000.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Render/_RenderDropzone/Render.000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Shaders/TelevisionShader.gdshader" type="Shader" id=3]
 [ext_resource path="res://Resources/Shaders/DistortionGlass.gdshader" type="Shader" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Resources/Shaders/TextureSlideTransition.gdshader" type="Shader" id=7]
 [ext_resource path="res://Nodes/Objects/GameObjects/VisualEffects/FilmGrainOverlay.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Images/Textures/Anomaly0.png" type="Texture" id=9]
+
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )

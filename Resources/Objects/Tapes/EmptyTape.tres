@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameObjects/TapeInfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = ""
+description = ""
+content_array = [  ]
+msg_array = [  ]
+tape_color = Color( 0, 0, 0, 1 )

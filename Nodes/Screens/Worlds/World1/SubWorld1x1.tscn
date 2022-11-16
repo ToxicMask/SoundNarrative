@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Render/Render.003.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Render/_RenderDropzone/Render.003.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
+
 
 [node name="SubWorld1x1" instance=ExtResource( 1 )]
 
