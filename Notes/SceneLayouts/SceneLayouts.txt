@@ -14,14 +14,9 @@ Descrição basica para montar os layouts
 		- Introdução para a mecanica de Tocar fitas
 		- Sinal da fita zero libera proxima cena
 
-	@ Cena0x3: Escrivaninha com Luminaria iluminando Chave do Carro
-		- SETA UI: Intrução para clicar na Fita
-
-	@ Cena0x4: Escrivaninha com Luminaria iluminando Chave do Carro e Livro
+	@ Cena0x3: Escrivaninha com Luminaria iluminando Chave do Carro e Livro
 		- Highlight da chave do carro.
-
-	@ Cena0x5: Close no Livro "112357" - Dark Void
-		- SETA UI: Go back
+		- UI Text no Livro "112357 - O Segredo de Tudo" 
 
 
 # Cena 1: Secretaria Interior - Inteior / Exterior - Noite
