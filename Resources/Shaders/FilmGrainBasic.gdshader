@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform bool active = true;
-uniform float amount = 0.3;
+uniform float amount : hint_range(0.001, 0.1) = 0.1;
 
 // Return 0 to 1
 float rand(vec2 co){
@@ -25,7 +25,6 @@ void fragment() {
 		vec2 offsetUV = vec2( 0, - fract(TIME * rng) ) ;
 		
 		finalPixel = screenPixel + (rng *  amount);
-	
 	}
 	else {
 		finalPixel = screenPixel;
