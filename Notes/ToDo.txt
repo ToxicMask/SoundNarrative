@@ -1,6 +1,5 @@
 
 Exploração de Cena
-	- Preencher descrição de Cenas e Subcenas por Layout
 	- Fazer layouts de cada cena
 
 Efeitos Visuais
@@ -51,6 +50,9 @@ Design Notes
 Exploração de Cena
 	- Fazer Sistema de navegação de cenario
 	- Fazer Objetos clicaveis para navegação
+
+Exploração de Cena
+	- Preencher descrição de Cenas e Subcenas por Layout
 
 Efeitos Visuais
 	- Shaders de Tranisição de Cena
