@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameObjects/DigitalLock.gd" type="Script" id=1]
+
+[node name="D_Lock" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 124.0
+margin_top = 222.0
+margin_right = 416.0
+margin_bottom = 414.0
+rect_min_size = Vector2( 292, 192 )
+
+[node name="CentralButtons" type="GridContainer" parent="HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 200.0
+custom_constants/vseparation = 4
+custom_constants/hseparation = 4
+columns = 3
+
+[node name="DigitalButton1" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "1"
+
+[node name="DigitalButton2" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "2"
+
+[node name="DigitalButton3" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "3"
+
+[node name="DigitalButton4" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+text = "4"
+
+[node name="DigitalButton5" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+text = "5"
+
+[node name="DigitalButton6" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+text = "6"
+
+[node name="DigitalButton7" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+text = "7"
+
+[node name="DigitalButton8" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+text = "8"
+
+[node name="DigitalButton9" type="Button" parent="HBoxContainer/CentralButtons"]
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+text = "9"
+
+[node name="LateralButtons" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 204.0
+margin_right = 268.0
+margin_bottom = 200.0
+
+[node name="DigitalButton0" type="Button" parent="HBoxContainer/LateralButtons"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "0"
+
+[node name="DigitalButtonC" type="Button" parent="HBoxContainer/LateralButtons"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 0, 48 )
+text = "C"
+
+[node name="DigitalButtonEnter" type="Button" parent="HBoxContainer/LateralButtons"]
+margin_top = 120.0
+margin_right = 64.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 80 )
+text = "E"
+
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton1" to="." method="_add_password_digit" binds= [ "1" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton2" to="." method="_add_password_digit" binds= [ "2" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton3" to="." method="_add_password_digit" binds= [ "3" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton4" to="." method="_add_password_digit" binds= [ "4" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton5" to="." method="_add_password_digit" binds= [ "5" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton6" to="." method="_add_password_digit" binds= [ "6" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton7" to="." method="_add_password_digit" binds= [ "7" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton8" to="." method="_add_password_digit" binds= [ "8" ]]
+[connection signal="button_up" from="HBoxContainer/CentralButtons/DigitalButton9" to="." method="_add_password_digit" binds= [ "9" ]]
+[connection signal="button_up" from="HBoxContainer/LateralButtons/DigitalButton0" to="." method="_add_password_digit" binds= [ "0" ]]
+[connection signal="button_up" from="HBoxContainer/LateralButtons/DigitalButtonC" to="." method="_clear_password"]
+[connection signal="button_up" from="HBoxContainer/LateralButtons/DigitalButtonEnter" to="." method="_enter_password"]
