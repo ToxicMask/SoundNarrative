@@ -7,7 +7,8 @@ Abstract Clickable Object
 
 class_name ClickableObject
 
-signal mouse_click (_event)
+signal mouse_click ()
+signal mouse_click_event (event)
 
 
 var mouse_hover   := false
@@ -32,7 +33,8 @@ func _process_input(_viewport, event, _shape):
 		if event.is_pressed(): 
 			if not mouse_pressed:
 				mouse_pressed = true
-				emit_signal("mouse_click", event)
+				emit_signal("mouse_click")
+				emit_signal("mouse_click_event", event)
 		elif !event.is_pressed() and mouse_pressed: # Released
 			mouse_pressed = false
 	pass
