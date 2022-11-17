@@ -47,7 +47,8 @@ func _quit_app():
 
 
 """
-Add Direct Children
+Manage Direct Children
+// "Global Game Data"
 """
 
 func _add_tape_recorder_hud():
@@ -66,6 +67,18 @@ func _add_keep_data():
 	add_child(new_instance)
 	pass
 
+func _clear_game_data():
+	var delete_array = ["KeepDataManager", "TapeRecorder"]
+	for d in delete_array:
+		_remove_main_child(d)
+	pass
+
+func _remove_main_child(name : String):
+	var node = self.get_node_or_null(name)
+	if node != null:
+		self.remove_child(node)
+		node.queue_free()
+	pass
 
 """
 Scene Managment
