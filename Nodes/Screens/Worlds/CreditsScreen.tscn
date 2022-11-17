@@ -30,16 +30,18 @@ margin_right = 1024.0
 margin_bottom = 560.0
 
 [node name="CreditsText" type="Label" parent="CreditsLayer/FullRect/FullRectMargin/Center"]
-margin_left = 273.0
-margin_top = 210.0
-margin_right = 751.0
-margin_bottom = 310.0
+margin_left = 305.0
+margin_top = 202.0
+margin_right = 718.0
+margin_bottom = 318.0
 rect_min_size = Vector2( 300, 100 )
 text = "CRÉDITOS
 
-Tomás Xavier Carciofi  - GAME DESIGN / / ROTEIRO DESENVOLVIMENTO
+Tomás Xavier Carciofi 
+GAME DESIGN /  ROTEIRO /  DESENVOLVIMENTO / SONOPLASTIA
 
-Pedro Prada Carciofi - Atuação de Voz"
+Pedro Prada Carciofi 
+ATUAÇÂO DE VOZ"
 align = 1
 valign = 1
 uppercase = true
