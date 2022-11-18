@@ -3,6 +3,7 @@ Exploração de Cena
 	- Fazer layouts de cada cena
 
 Efeitos Visuais
+	-Shader de Objeto - Borda Corrompida
 	- Shader de Sumir - Anomalia
 	- Shader de Destruir - Anomalia
 	

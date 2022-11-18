@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assets/Images/Render/_RenderDropzone/Render.000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Assets/Images/WHITE_128x128.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Shaders/AnomalyV0.gdshader" type="Shader" id=11]
 [ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/icon128.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=14]
+[ext_resource path="res://Resources/Gradients/AnomV2Gradient.tres" type="Gradient" id=15]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
@@ -93,6 +96,17 @@ shader_param/maskGradient = SubResource( 23 )
 shader_param/noiseTexture = SubResource( 21 )
 shader_param/tintGradient = ExtResource( 12 )
 
+[sub_resource type="GradientTexture" id=27]
+gradient = ExtResource( 15 )
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = ExtResource( 14 )
+shader_param/textureFactor = 0.5
+shader_param/outlineFactor = 0.5
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/mask_thickness = 4.636
+shader_param/colorGradient = SubResource( 27 )
+
 [node name="TEST_SCENE_SHADER" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
@@ -139,14 +153,19 @@ texture = SubResource( 16 )
 centered = false
 
 [node name="Shade6" type="Sprite" parent="."]
+visible = false
 material = SubResource( 19 )
 position = Vector2( 260, 327 )
 rotation = 1.57079
 scale = Vector2( 0.551139, 0.54067 )
 texture = ExtResource( 10 )
 
+[node name="Shade7" type="Sprite" parent="."]
+material = SubResource( 25 )
+position = Vector2( 394, 324 )
+texture = ExtResource( 13 )
+
 [node name="ScreenOverlayLayer" type="CanvasLayer" parent="."]
-visible = false
 follow_viewport_enable = true
 
 [node name="FilmGrainOverlay" parent="ScreenOverlayLayer" instance=ExtResource( 8 )]
