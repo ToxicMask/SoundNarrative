@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/Images/Render/_RenderDropzone/Render.000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://Resources/Shaders/TextureNoiseTransition.gdshader" type="Shader" id=6]
 [ext_resource path="res://Resources/Shaders/TextureSlideTransition.gdshader" type="Shader" id=7]
 [ext_resource path="res://Nodes/Objects/GameObjects/VisualEffects/FilmGrainOverlay.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Images/Textures/Anomaly0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/Textures/Anomaly1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Images/WHITE_128x128.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Shaders/AnomalyV0.gdshader" type="Shader" id=11]
+[ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=12]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
@@ -70,81 +72,6 @@ width = 1024
 shader = ExtResource( 6 )
 shader_param/interFactor = 0.0
 
-[sub_resource type="Shader" id=18]
-code = "shader_type canvas_item;
-
-uniform sampler2D anomalyMask;
-uniform sampler2D maskGradient;
-uniform sampler2D noiseTexture;
-
-
-uniform float radiansPerSecond = 0.05;
-const float PI = 3.14159;
-
-
-uniform float waveFactor: hint_range(0.0, 1.0) = 0.0;
-uniform float waveOpacity : hint_range(0.0, 1.0) = 0.0;
-
-uniform vec4 tintColor : hint_color = vec4(1);
-
-uniform float rgbOffset : hint_range(0.0, 0.05) = 0;
-uniform bool rgbTimeOffset = true;
-
-
-
-vec2 rotateUV(vec2 uv, vec2 pivot, float rotation) {
-    float cosa = cos(rotation);
-    float sina = sin(rotation);
-    uv -= pivot;
-    return vec2(
-        cosa * uv.x - sina * uv.y,
-        cosa * uv.y + sina * uv.x 
-    ) + pivot;
-}
-
-void fragment(){
-	
-	// Distortion Mask
-	vec2 rotatedUV = rotateUV(UV, vec2(0.5), (radiansPerSecond * PI) * TIME );
-	vec4 anomalyPixel = texture(anomalyMask, rotatedUV);
-	vec2 gradientUV = vec2(anomalyPixel.r, 0);
-	vec4 maskPixel = texture(maskGradient, gradientUV);
-	
-	// Screen Pixel
-	vec4 screenPixel = texture(SCREEN_TEXTURE, SCREEN_UV);
-	
-	// RGB ABERATION
-	vec4 rPixel = vec4(1);
-	vec4 gPixel = vec4(1);
-	vec4 bPixel = vec4(1);
-	if (rgbTimeOffset){
-		float timeFactor = max(abs(cos(TIME)), .2) ;
-		rPixel = texture(SCREEN_TEXTURE, SCREEN_UV+ vec2(-rgbOffset * timeFactor , 0));
-		gPixel = texture(SCREEN_TEXTURE, SCREEN_UV);
-		bPixel = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(+rgbOffset * timeFactor, 0));
-	}else{
-		rPixel = texture(SCREEN_TEXTURE, SCREEN_UV+ vec2(-rgbOffset, 0));
-		gPixel = texture(SCREEN_TEXTURE, SCREEN_UV);
-		bPixel = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(+rgbOffset, 0));
-	}
-	vec4 rgbPixel = vec4(rPixel.r, gPixel.g, bPixel.b, 1.0);
-	
-	
-	// Wave Distortion
-	float noiseFactor = 2.0*(texture(noiseTexture, vec2(UV.x, TIME) ).r) - 1.0;
-	vec2 waveOffset = vec2(SCREEN_PIXEL_SIZE.x, 0) * (120.0 * noiseFactor) ;
-	vec4 wavePixel = texture(SCREEN_TEXTURE, SCREEN_UV +  waveOffset * waveFactor );
-	
-	
-	
-	// Final Mix
-	vec4 finalMix = screenPixel;
-	finalMix = mix(finalMix, wavePixel, waveOpacity);
-	finalMix = mix( finalMix, (rgbPixel) * tintColor, 1.0-maskPixel.r);
-	
-	COLOR = finalMix;
-}"
-
 [sub_resource type="Gradient" id=22]
 interpolation_mode = 2
 
@@ -157,16 +84,14 @@ gradient = SubResource( 22 )
 noise = SubResource( 20 )
 
 [sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 18 )
-shader_param/radiansPerSecond = 0.0
-shader_param/waveFactor = 0.372
-shader_param/waveOpacity = 1.0
-shader_param/tintColor = Color( 1, 1, 1, 1 )
-shader_param/rgbOffset = 0.006
-shader_param/rgbTimeOffset = false
+shader = ExtResource( 11 )
+shader_param/radiansPerSecond = -0.9
+shader_param/waveFactor = 0.09
+shader_param/tintBright = 4.687
 shader_param/anomalyMask = ExtResource( 9 )
 shader_param/maskGradient = SubResource( 23 )
 shader_param/noiseTexture = SubResource( 21 )
+shader_param/tintGradient = ExtResource( 12 )
 
 [node name="TEST_SCENE_SHADER" type="Node2D"]
 __meta__ = {
@@ -215,9 +140,9 @@ centered = false
 
 [node name="Shade6" type="Sprite" parent="."]
 material = SubResource( 19 )
-position = Vector2( 777, 48 )
+position = Vector2( 260, 327 )
 rotation = 1.57079
-scale = Vector2( 0.845513, 1.92445 )
+scale = Vector2( 0.551139, 0.54067 )
 texture = ExtResource( 10 )
 
 [node name="ScreenOverlayLayer" type="CanvasLayer" parent="."]

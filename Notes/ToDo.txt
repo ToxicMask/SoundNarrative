@@ -3,7 +3,6 @@ Exploração de Cena
 	- Fazer layouts de cada cena
 
 Efeitos Visuais
-	- Shaders de Anomalia
 	- Shader de Sumir - Anomalia
 	- Shader de Destruir - Anomalia
 	
@@ -56,6 +55,7 @@ Exploração de Cena
 
 Efeitos Visuais
 	- Shaders de Tranisição de Cena
+	- Shaders de Anomalia
 
 
 ######### CANCELLED #######
