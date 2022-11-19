@@ -14,7 +14,6 @@
 [ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/icon128.png" type="Texture" id=13]
 [ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=14]
-[ext_resource path="res://Resources/Gradients/AnomV2Gradient.tres" type="Gradient" id=15]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
@@ -96,16 +95,24 @@ shader_param/maskGradient = SubResource( 23 )
 shader_param/noiseTexture = SubResource( 21 )
 shader_param/tintGradient = ExtResource( 12 )
 
-[sub_resource type="GradientTexture" id=27]
-gradient = ExtResource( 15 )
+[sub_resource type="OpenSimplexNoise" id=26]
+period = 20.8
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=27]
+seamless = true
+noise = SubResource( 26 )
 
 [sub_resource type="ShaderMaterial" id=25]
 shader = ExtResource( 14 )
-shader_param/textureFactor = 0.5
-shader_param/outlineFactor = 0.5
-shader_param/line_color = Color( 1, 1, 1, 1 )
-shader_param/mask_thickness = 4.636
-shader_param/colorGradient = SubResource( 27 )
+shader_param/gradientOffset = 0.0
+shader_param/waveSpeed = 1.509
+shader_param/waveFactor = 0.0
+shader_param/line_color = Color( 1, 0, 0, 1 )
+shader_param/mask_thickness = 1.0
+shader_param/colorGradient = ExtResource( 12 )
+shader_param/noiseTexture = SubResource( 27 )
 
 [node name="TEST_SCENE_SHADER" type="Node2D"]
 __meta__ = {
@@ -153,7 +160,6 @@ texture = SubResource( 16 )
 centered = false
 
 [node name="Shade6" type="Sprite" parent="."]
-visible = false
 material = SubResource( 19 )
 position = Vector2( 260, 327 )
 rotation = 1.57079
@@ -162,10 +168,14 @@ texture = ExtResource( 10 )
 
 [node name="Shade7" type="Sprite" parent="."]
 material = SubResource( 25 )
-position = Vector2( 394, 324 )
+position = Vector2( 377.5, 309 )
+scale = Vector2( 0.742188, 0.765625 )
 texture = ExtResource( 13 )
 
 [node name="ScreenOverlayLayer" type="CanvasLayer" parent="."]
 follow_viewport_enable = true
 
 [node name="FilmGrainOverlay" parent="ScreenOverlayLayer" instance=ExtResource( 8 )]
+__meta__ = {
+"_edit_lock_": true
+}
