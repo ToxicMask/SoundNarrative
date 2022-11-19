@@ -39,42 +39,6 @@ shader = ExtResource( 4 )
 shader_param/distortionScale = 0.03
 shader_param/distortionTexture = SubResource( 6 )
 
-[sub_resource type="OpenSimplexNoise" id=11]
-seed = -1
-period = 0.1
-persistence = 0.0
-lacunarity = 0.1
-
-[sub_resource type="NoiseTexture" id=12]
-width = 32
-height = 32
-seamless = true
-noise = SubResource( 11 )
-
-[sub_resource type="ShaderMaterial" id=10]
-shader = ExtResource( 3 )
-shader_param/staticOffset = 0.0
-shader_param/grayscaleFactor = true
-shader_param/noiseFactor = 0.3
-shader_param/noiseBright = 0.0
-shader_param/tint = Color( 1, 1, 1, 1 )
-shader_param/noiseTexture = SubResource( 12 )
-
-[sub_resource type="ShaderMaterial" id=17]
-shader = ExtResource( 7 )
-shader_param/interFactor = 0.0
-
-[sub_resource type="Gradient" id=15]
-interpolation_mode = 1
-
-[sub_resource type="GradientTexture" id=16]
-gradient = SubResource( 15 )
-width = 1024
-
-[sub_resource type="ShaderMaterial" id=14]
-shader = ExtResource( 6 )
-shader_param/interFactor = 0.0
-
 [sub_resource type="Gradient" id=22]
 interpolation_mode = 2
 
@@ -117,6 +81,27 @@ shader_param/mask_thickness = 1.0
 shader_param/colorGradient = ExtResource( 12 )
 shader_param/noiseTexture = SubResource( 27 )
 
+[sub_resource type="OpenSimplexNoise" id=11]
+seed = -1
+period = 0.1
+persistence = 0.0
+lacunarity = 0.1
+
+[sub_resource type="NoiseTexture" id=12]
+width = 32
+height = 32
+seamless = true
+noise = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 3 )
+shader_param/staticOffset = 0.0
+shader_param/grayscaleFactor = true
+shader_param/noiseFactor = 0.3
+shader_param/noiseBright = 0.0
+shader_param/tint = Color( 1, 1, 1, 1 )
+shader_param/noiseTexture = SubResource( 12 )
+
 [sub_resource type="Gradient" id=31]
 offsets = PoolRealArray( 0, 0.214815, 0.903704, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.875, 1, 0, 1, 0.847577, 1, 0.0943396, 1, 0.858824, 1, 0.0470588, 0 )
@@ -140,6 +125,21 @@ shader_param/disappearFactor = 0.0
 shader_param/noiseTexture = SubResource( 30 )
 shader_param/gradientTexture = SubResource( 32 )
 
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 7 )
+shader_param/interFactor = 0.0
+
+[sub_resource type="Gradient" id=15]
+interpolation_mode = 1
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 15 )
+width = 1024
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = ExtResource( 6 )
+shader_param/interFactor = 0.0
+
 [node name="TEST_SCENE_SHADER" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
@@ -152,64 +152,70 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shade1" type="Sprite" parent="."]
+[node name="ScreenEffects" type="Node2D" parent="."]
 visible = false
+
+[node name="RGBSliders" type="Sprite" parent="ScreenEffects"]
 material = SubResource( 2 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="Shade2" type="Sprite" parent="."]
-visible = false
+[node name="GlassScreenDistortion" type="Sprite" parent="ScreenEffects"]
 modulate = Color( 0.490196, 0.901961, 0.901961, 1 )
 material = SubResource( 4 )
-position = Vector2( 576, 191 )
+position = Vector2( 382, 227 )
 texture = ExtResource( 2 )
 
-[node name="Shade3" type="Sprite" parent="."]
+[node name="Anomalities" type="Node2D" parent="."]
 visible = false
-material = SubResource( 10 )
-texture = ExtResource( 1 )
-centered = false
 
-[node name="Shade4" type="Sprite" parent="."]
-visible = false
-material = SubResource( 17 )
-scale = Vector2( 1, 600 )
-texture = SubResource( 16 )
-centered = false
-
-[node name="Shade5" type="Sprite" parent="."]
-visible = false
-material = SubResource( 14 )
-scale = Vector2( 1, 600 )
-texture = SubResource( 16 )
-centered = false
-
-[node name="Shade6" type="Sprite" parent="."]
-visible = false
+[node name="SmallAnomality" type="Sprite" parent="Anomalities"]
 material = SubResource( 19 )
 position = Vector2( 378, 303 )
 rotation = 1.57079
 scale = Vector2( 0.551139, 0.54067 )
 texture = ExtResource( 10 )
 
-[node name="Shade7" type="Sprite" parent="."]
-visible = false
+[node name="CorruptObject" type="Sprite" parent="Anomalities"]
 material = SubResource( 25 )
 position = Vector2( 377.5, 309 )
 scale = Vector2( 0.742188, 0.765625 )
 texture = ExtResource( 13 )
 
-[node name="Shade8" type="Sprite" parent="."]
+[node name="ObjectTextureEffects" type="Node2D" parent="."]
+
+[node name="TelevisionTextureShader" type="Sprite" parent="ObjectTextureEffects"]
+visible = false
+material = SubResource( 10 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Shade8" type="Sprite" parent="ObjectTextureEffects"]
 material = SubResource( 29 )
 position = Vector2( 742, 250 )
 scale = Vector2( 0.742188, 0.765625 )
 texture = ExtResource( 13 )
 
 [node name="ScreenOverlayLayer" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enable = true
 
 [node name="FilmGrainOverlay" parent="ScreenOverlayLayer" instance=ExtResource( 8 )]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Transitions" type="Control" parent="ScreenOverlayLayer"]
+
+[node name="DiagonalTransition" type="Sprite" parent="ScreenOverlayLayer/Transitions"]
+material = SubResource( 17 )
+scale = Vector2( 1, 600 )
+texture = SubResource( 16 )
+centered = false
+
+[node name="NoiseTransition" type="Sprite" parent="ScreenOverlayLayer/Transitions"]
+visible = false
+material = SubResource( 14 )
+scale = Vector2( 1, 600 )
+texture = SubResource( 16 )
+centered = false
