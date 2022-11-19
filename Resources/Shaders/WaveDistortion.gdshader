@@ -4,14 +4,17 @@ shader_type canvas_item;
 uniform sampler2D noiseTexture;
 
 // Wave
+uniform float waveSpeed = 1.0;
+uniform float waveScale = 1.0;
+uniform float waveStrength = 120.0;
 uniform float waveFactor: hint_range(0.0, 1.0) = 0.0;
 
 
 void fragment(){
 	
 	// Wave Distortion
-	float noiseFactor = 2.0*(texture(noiseTexture, vec2(UV.x, TIME) ).r) - 1.0;
-	vec2 waveOffset = vec2(SCREEN_PIXEL_SIZE.x, 0) * (120.0 * noiseFactor) ;
+	float noiseFactor = 2.0*(texture(noiseTexture, vec2(UV.x*waveScale, TIME * waveSpeed) ).r) - 1.0;
+	vec2 waveOffset = vec2(SCREEN_PIXEL_SIZE.x, 0) * (waveStrength * noiseFactor) ;
 	vec4 wavePixel = texture(SCREEN_TEXTURE, SCREEN_UV +  waveOffset * waveFactor );
 
 	COLOR = wavePixel;

@@ -8,7 +8,9 @@ uniform sampler2D noiseTexture;
 
 // Wave
 uniform float waveSpeed = 1.0;
-uniform float waveFactor: hint_range(0.0, 1.0) = 0.0;
+uniform float waveScale = 1.0;
+uniform float waveStrength = 50.0;
+uniform float waveFactor: hint_range(0.0, 1.0) = 0.1;
 
 // OUTLINE FACTORS
 uniform vec4 line_color : hint_color = vec4(1,0.0,0.0,1.0);
@@ -48,8 +50,8 @@ void fragment() {
 	
 	
 	// Wave Distortion
-	float noiseFactor = 2.0*(texture(noiseTexture, vec2(UV.y, TIME * waveSpeed) ).r) - 1.0;
-	vec2 waveOffset = vec2(TEXTURE_PIXEL_SIZE.x, 0) * (50.0 * noiseFactor) ;
+	float noiseFactor = 2.0*(texture(noiseTexture, vec2(UV.y* waveScale, TIME * waveSpeed) ).r) - 1.0;
+	vec2 waveOffset = vec2(TEXTURE_PIXEL_SIZE.x, 0) * (waveStrength * noiseFactor) ;
 	vec4 wavePixel = texture(TEXTURE, UV +  waveOffset * waveFactor);
 	
 	float outline_mask = outline_mask(TEXTURE, UV +  waveOffset * waveFactor, size);
