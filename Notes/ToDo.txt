@@ -4,7 +4,6 @@ Exploração de Cena
 		Faltantes: Cenas 2, 3, 4, 5, 6
 
 Efeitos Visuais
-	- Shader de Sumir - Anomalia
 	- Shader de Destruir - Anomalia
 	
 
@@ -58,6 +57,7 @@ Efeitos Visuais
 	- Shaders de Tranisição de Cena
 	- Shaders de Anomalia
 	- Shader de Objeto - Borda Corrompida
+	- Shader de Sumir - Anomalia
 
 
 ######### CANCELLED #######
