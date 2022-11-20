@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Assets/Images/Render/_RenderDropzone/Render.000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
@@ -17,11 +17,13 @@
 [ext_resource path="res://Resources/Shaders/NoiseDissolve.gdshader" type="Shader" id=15]
 [ext_resource path="res://Assets/Images/iconGrad128.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Shaders/BrightnessGradient.gdshader" type="Shader" id=17]
+[ext_resource path="res://Nodes/_Debug/_DebugSchockScreen.gd" type="Script" id=18]
+[ext_resource path="res://Resources/Shaders/ScreenPulse.gdshader" type="Shader" id=19]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
 shader_param/timeScale = 0.0
-shader_param/scaleA = 0.512
+shader_param/scaleA = 0.29
 shader_param/scaleB = 0.318
 shader_param/modulateA = Color( 0.34902, 0.933333, 0.372549, 1 )
 shader_param/modulateB = Color( 0.164706, 0.717647, 0.843137, 1 )
@@ -40,6 +42,23 @@ noise = SubResource( 5 )
 shader = ExtResource( 4 )
 shader_param/distortionScale = 0.03
 shader_param/distortionTexture = SubResource( 6 )
+
+[sub_resource type="Shader" id=42]
+code = "shader_type canvas_item;
+
+uniform vec2 shockCenter = vec2(0.5);
+uniform float force = 0.0;
+
+void fragment(){
+	vec2 disp = normalize(UV - shockCenter) *  force;
+	COLOR = vec4( UV -disp, 0.0, 1.0 );
+	COLOR = texture(TEXTURE, UV- disp);
+}"
+
+[sub_resource type="ShaderMaterial" id=41]
+shader = SubResource( 42 )
+shader_param/shockCenter = Vector2( 0.5, 0.5 )
+shader_param/force = -0.734
 
 [sub_resource type="Gradient" id=22]
 interpolation_mode = 2
@@ -162,6 +181,48 @@ shader = SubResource( 36 )
 shader_param/rotationPower = 32.0
 shader_param/rotationSpeed = -1.0
 
+[sub_resource type="ShaderMaterial" id=44]
+resource_name = "Screen Pulse"
+shader = ExtResource( 19 )
+shader_param/colorModulate = Color( 0.5, 0.5, 0.5, 0.552941 )
+shader_param/pulseCenter = Vector2( 0.5, 0.5 )
+shader_param/force = 0.03
+shader_param/radius = 0.0
+shader_param/thick = 0.001
+shader_param/innerBlur = 0.15
+shader_param/blur = 0.05
+
+[sub_resource type="Animation" id=45]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "_DebugPulse"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.67, 1.98 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0, 2.0 ]
+}
+
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 7 )
 shader_param/interFactor = 0.0
@@ -190,32 +251,38 @@ __meta__ = {
 }
 
 [node name="ScreenEffects" type="Node2D" parent="."]
-visible = false
 
 [node name="RGBSliders" type="Sprite" parent="ScreenEffects"]
+visible = false
 material = SubResource( 2 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="GlassScreenDistortion" type="Sprite" parent="ScreenEffects"]
+visible = false
 modulate = Color( 0.490196, 0.901961, 0.901961, 1 )
 material = SubResource( 4 )
-position = Vector2( 382, 227 )
+position = Vector2( 138, 345 )
 texture = ExtResource( 2 )
 
-[node name="Anomalities" type="Node2D" parent="."]
+[node name="SuctionTexture" type="Sprite" parent="ScreenEffects"]
 visible = false
+material = SubResource( 41 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Anomalities" type="Node2D" parent="."]
 
 [node name="SmallAnomality" type="Sprite" parent="Anomalities"]
 material = SubResource( 19 )
-position = Vector2( 378, 303 )
+position = Vector2( 154, 332 )
 rotation = 1.57079
 scale = Vector2( 0.551139, 0.54067 )
 texture = ExtResource( 10 )
 
 [node name="CorruptObject" type="Sprite" parent="Anomalities"]
 material = SubResource( 25 )
-position = Vector2( 377.5, 309 )
+position = Vector2( 228, 354 )
 scale = Vector2( 0.742188, 0.765625 )
 texture = ExtResource( 13 )
 
@@ -246,24 +313,37 @@ scale = Vector2( 0.742188, 0.765625 )
 texture = ExtResource( 13 )
 
 [node name="ScreenOverlayLayer" type="CanvasLayer" parent="."]
-visible = false
 follow_viewport_enable = true
 
+[node name="SchockScreen" type="ColorRect" parent="ScreenOverlayLayer"]
+material = SubResource( 44 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
+script = ExtResource( 18 )
+
+[node name="Anim" type="AnimationPlayer" parent="ScreenOverlayLayer/SchockScreen"]
+anims/RESET = SubResource( 45 )
+anims/_DebugPulse = SubResource( 46 )
+
 [node name="FilmGrainOverlay" parent="ScreenOverlayLayer" instance=ExtResource( 8 )]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Transitions" type="Control" parent="ScreenOverlayLayer"]
+visible = false
 
 [node name="DiagonalTransition" type="Sprite" parent="ScreenOverlayLayer/Transitions"]
+visible = false
 material = SubResource( 17 )
 scale = Vector2( 1, 600 )
 texture = SubResource( 16 )
 centered = false
 
 [node name="NoiseTransition" type="Sprite" parent="ScreenOverlayLayer/Transitions"]
-visible = false
 material = SubResource( 14 )
 scale = Vector2( 1, 600 )
 texture = SubResource( 16 )
