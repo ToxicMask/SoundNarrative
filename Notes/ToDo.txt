@@ -3,7 +3,23 @@ Exploração de Cena
 	- Fazer layouts de cada cena
 		Faltantes: Cenas 2, 3, 4, 5, 6
 
+Montagem de Cenario Interativo
+	- Usar Roteiros e Layouts para montar Mundos e Submundos
+	- Montar Elementos Interativos
+	- Desenhar Sistemas sonoros
 
+Montagem de Cenario 3D
+	- Blocagem de Cenarios e Props
+	- Posicionamento das cameras de acordo com Layouts
+	- Modelagem de Objetos
+	- Textura de Objetos
+	- Renederização de Cenarios de Mundo
+	- Renderização de Objetos
+	
+
+Sonoplastia
+	- Encher o saco do Pedro
+	
 
 ####### Completed #############
 
