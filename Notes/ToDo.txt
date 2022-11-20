@@ -3,9 +3,7 @@ Exploração de Cena
 	- Fazer layouts de cada cena
 		Faltantes: Cenas 2, 3, 4, 5, 6
 
-Efeitos Visuais
-	- Shader de Destruir - Anomalia
-	
+
 
 ####### Completed #############
 
@@ -58,6 +56,7 @@ Efeitos Visuais
 	- Shaders de Anomalia
 	- Shader de Objeto - Borda Corrompida
 	- Shader de Sumir - Anomalia
+	- Shader de Destruir - Anomalia
 
 
 ######### CANCELLED #######
