@@ -17,3 +17,49 @@ margin_bottom = 561.0
 text = "Go Next"
 subworld_path = NodePath("..")
 next_subworld_index = 2
+
+[node name="DarkVoidHUD" type="CanvasLayer" parent="." index="2"]
+layer = 5
+visible = false
+follow_viewport_enable = true
+
+[node name="DarkVoidElements" type="Control" parent="DarkVoidHUD" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="DarkVoidHUD/DarkVoidElements" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LetterLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer" index="0"]
+visible = false
+margin_left = -81.0
+margin_top = 165.0
+margin_right = 1105.0
+margin_bottom = 434.0
+text = "Caro Senhor Miller
+
+Representando a Laboratórios Otto, nós o convidamos para conhecer nossas novas instalações.
+
+Ficamos impressionados por suas divulgações aldaciosas no meio jornalistico. Não é todo dia que um reporter com sua deficiencia vocal adguirtanto prestigio.
+
+Nos ultimos meses, nossa equipe tem pesquisado intensamente sobre estranhos fenomenos sonoros que ocorrem na \"Colina dos Sussuros\", utilizando equipamento ultra tecnologicos.
+
+Temos certeza que sua experiencia pessoal podera oferecer uma nova perspectiva para nossas pesquinas e para seus leitores.
+
+Obrigado pela atenção,
+Peter Rocha
+Laboratórios Otto.
+
+PS. O Dr. OTTO não permitiu dar mais detalhes por questão de segurança, mas aqui está uma gravação minha de um desses fenomenos.
+PSS. Sei que a reputação do Dr. Otto, pode não ser das melhores no meio cientifico. Porém, eu REALMENTE acredito que ele fez uma grande descoberta."
+align = 3
+
+[node name="TutorialElements" type="Control" parent="DarkVoidHUD" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Step1" type="Control" parent="DarkVoidHUD/TutorialElements" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
