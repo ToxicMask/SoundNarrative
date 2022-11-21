@@ -30,6 +30,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 2
 
 [node name="SelectableTape0" parent="." groups=["SelectionTape"] instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 128, 64 )
 tape_info = ExtResource( 3 )
 

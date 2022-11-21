@@ -1,8 +1,8 @@
 extends WorldScreen
 class_name StarGameScreen
 
-func _next_scene():
+func _go_to_next_scene(scene_id):
 	$NewGameManager._set_new_game_data()
 	get_tree().call_group("Main", "_add_tape_recorder_hud")
-	get_tree().call_group("Main", "_change_world_scene", "Scene0")
+	._go_to_next_scene(scene_id) # Do the scene Transition
 	pass

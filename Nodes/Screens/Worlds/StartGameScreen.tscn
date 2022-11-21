@@ -70,4 +70,4 @@ script = ExtResource( 3 )
 script = ExtResource( 4 )
 receiver_id = "NewGameManager"
 
-[connection signal="pressed" from="IntroScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="." method="_next_scene"]
+[connection signal="pressed" from="IntroScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="." method="_go_to_next_scene" binds= [ "World0" ]]

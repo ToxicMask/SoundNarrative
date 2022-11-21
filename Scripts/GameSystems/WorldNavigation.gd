@@ -1,6 +1,8 @@
 extends Node2D
 class_name WorldNavigation
 
+export (NodePath) var world_path : String
+
 export (Array, PackedScene) var subworld_packs : Array
 var subworld_instances = []
 var current_subworld : int = 0
@@ -13,8 +15,10 @@ func _ready():
 
 
 func _create_subworld_instances(array_packs : Array):
+	var world_node = get_node_or_null(world_path)
 	for i in range(array_packs.size()):
-		var instance = (subworld_packs[i]as PackedScene).instance()
+		var instance = (subworld_packs[i]as PackedScene).instance() as SubWorld
+		instance.world_node = world_node
 		subworld_instances.append(instance)
 	pass
 
@@ -28,7 +32,7 @@ func _set_subworld( index : int):
 	
 	# Is in index range
 	if index < subworld_instances.size():
-		var instance = subworld_instances[index] as Node2D
+		var instance = subworld_instances[index] as SubWorld
 		instance.connect("sub_world_changed", self, "_set_subworld", [], CONNECT_ONESHOT)
 		add_child(instance)
 		# Update counter

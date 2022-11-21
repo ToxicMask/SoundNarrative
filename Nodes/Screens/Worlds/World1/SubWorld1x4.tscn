@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x4PH.png" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/D_LockInteractable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/GameSystems/Subworld/SubWorld1x4.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x4aPH.png" type="Texture" id=6]
+[ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72.5, 300 )
 
 [node name="SubWorld1x4" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
@@ -26,12 +30,15 @@ next_subworld_index = 1
 [node name="D_Lock" parent="." index="2" instance=ExtResource( 4 )]
 key_password = "9876"
 
-[node name="GoNextSceneInteractable" type="Button" parent="." index="3"]
+[node name="GoNextSceneInteractable" parent="." index="3" instance=ExtResource( 7 )]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 462.0
-margin_right = 563.0
-margin_bottom = 605.0
+position = Vector2( 463, 2 )
+
+[node name="ClickArea" parent="GoNextSceneInteractable" index="1"]
+position = Vector2( 72.5, 300 )
+shape = SubResource( 1 )
 
 [connection signal="unlocked" from="D_Lock" to="." method="_open_door"]
-[connection signal="pressed" from="GoNextSceneInteractable" to="." method="_go_to_next_scene"]
+[connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "MainMenu" ]]
+
+[editable path="GoNextSceneInteractable"]

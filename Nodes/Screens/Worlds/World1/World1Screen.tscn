@@ -12,4 +12,5 @@ script = ExtResource( 1 )
 
 [node name="WorldNavigation" type="Node2D" parent="."]
 script = ExtResource( 3 )
+world_path = NodePath("..")
 subworld_packs = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]

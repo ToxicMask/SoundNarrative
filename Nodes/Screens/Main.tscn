@@ -23,12 +23,12 @@ world_scene_dict = {
 "Credits": ExtResource( 11 ),
 "Dummy": ExtResource( 1 ),
 "MainMenu": ExtResource( 3 ),
-"Scene0": ExtResource( 12 ),
-"Scene1": ExtResource( 10 ),
 "StartGame": ExtResource( 9 ),
 "TEST0": ExtResource( 5 ),
 "TEST1": ExtResource( 8 ),
-"TEST2": ExtResource( 7 )
+"TEST2": ExtResource( 7 ),
+"World0": ExtResource( 12 ),
+"World1": ExtResource( 10 )
 }
 
 [node name="_MainDebug" parent="." instance=ExtResource( 2 )]

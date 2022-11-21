@@ -6,5 +6,6 @@ func _enter_tree():
 	self.add_to_group("DeleteOnChangeScene")
 	pass
 
-func _next_scene():
+func _go_to_next_scene(scene_id : String):
+	get_tree().call_group("Main", "_change_world_scene", scene_id)
 	pass
