@@ -1,0 +1,14 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/GameSystems/WorldScreen.gd" type="Script" id=1]
+[ext_resource path="res://Nodes/Screens/Worlds/World0/SubWorld0x1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/GameSystems/WorldNavigation.gd" type="Script" id=3]
+[ext_resource path="res://Nodes/Screens/Worlds/World0/SubWorld0x0.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Nodes/Screens/Worlds/World0/SubWorld0x2.tscn" type="PackedScene" id=5]
+
+[node name="World0Screen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="WorldNavigation" type="Node2D" parent="."]
+script = ExtResource( 3 )
+subworld_packs = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
