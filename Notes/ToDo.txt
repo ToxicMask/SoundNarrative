@@ -3,10 +3,13 @@ Exploração de Cena
 	- Fazer layouts de cada cena
 		Faltantes: Cenas 2, 3, 4, 5, 6
 
+
 Montagem de Cenario Interativo
 	- Usar Roteiros e Layouts para montar Mundos e Submundos
+		Faltantes: 0, 2, 3, 4, 5, 6
 	- Montar Elementos Interativos
-	- Desenhar Sistemas sonoros
+	
+
 
 Montagem de Cenario 3D
 	- Blocagem de Cenarios e Props
@@ -18,7 +21,14 @@ Montagem de Cenario 3D
 	
 
 Sonoplastia
-	- Encher o saco do Pedro
+
+	- Desenhar Sistemas Sonoros Globais - Efeitos Sonoros / OST / Ambiencia
+
+	- Editar audio das fitas
+		Faltantes: 1, 2, 3, 4, 5, 6
+
+	- Esperar arquivos de audio:
+		Faltantes: 5, 6
 	
 
 ####### Completed #############
@@ -73,6 +83,9 @@ Efeitos Visuais
 	- Shader de Objeto - Borda Corrompida
 	- Shader de Sumir - Anomalia
 	- Shader de Destruir - Anomalia
+
+Sonoplastia
+	- Encher o saco do Pedro
 
 
 ######### CANCELLED #######

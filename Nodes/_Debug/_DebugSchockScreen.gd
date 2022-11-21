@@ -7,12 +7,9 @@ func _normalize_screen_position(_vec :Vector2) -> Vector2:
 
 
 func _input(event):
-
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and (event.pressed and not event.is_echo() ):
-			print("PRINT")
 			var pos =  _normalize_screen_position( get_global_mouse_position() )
-			#print(pos)
 			material.set_shader_param( "pulseCenter" , pos)
 			$Anim.stop()
 			$Anim.play("_DebugPulse")
