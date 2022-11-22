@@ -24,8 +24,8 @@ var current_world_scene_key := ""
 Callbacks
 """
 func _ready():
-	_add_keep_data()
 	_change_world_scene("MainMenu")
+	_add_keep_data()
 	pass
 
 
@@ -48,7 +48,7 @@ func _quit_app():
 
 """
 Manage Direct Children
-// "Global Game Data"
+// Global Game Data
 """
 
 func _add_tape_recorder_hud():
@@ -68,9 +68,13 @@ func _add_keep_data():
 	pass
 
 func _clear_game_data():
-	var delete_array = ["KeepDataManager", "TapeRecorder"]
+	var delete_array = ["TapeRecorder"]
 	for d in delete_array:
 		_remove_main_child(d)
+	var keep_data = get_node_or_null("KeepDataManager") as KeepDataManager
+	if keep_data:
+		keep_data._clear_data()
+		
 	pass
 
 func _remove_main_child(name : String):

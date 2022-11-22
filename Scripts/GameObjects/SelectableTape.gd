@@ -14,7 +14,7 @@ func _ready():
 	var _err = self.connect("mouse_click", self, "_emit_tape_selection")
 	pass
 
-func _emit_tape_selection(_event):
+func _emit_tape_selection():
 	emit_signal("insert_tape_selection", tape_info)
 	pass
 
