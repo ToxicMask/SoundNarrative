@@ -4,7 +4,8 @@ class_name Main
 
 #Execute Function of Game Manager
 #	Uses to Start and End The Game
-#	Set Play Variablens ()
+#	Set Play Variables ()
+# Add and Remove Tape Recorder From Scene
 #	Change WorldScreens & Menus
 
 

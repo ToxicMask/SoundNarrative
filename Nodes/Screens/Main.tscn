@@ -16,7 +16,7 @@
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource( 6 )
 __meta__ = {
-"_editor_description_": ""
+"_editor_description_": "Main Node for Running the Game"
 }
 tape_recorder_packed = ExtResource( 4 )
 world_scene_dict = {

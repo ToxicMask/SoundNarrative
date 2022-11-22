@@ -8,9 +8,9 @@
 [ext_resource path="res://Assets/Images/placeholder_playbuttons_32.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=11]
 
-[node name="TapeRecorder" type="Node2D" groups=["MessageEmitter"]]
+[node name="TapeRecorder" type="Node2D" groups=["MessageEmitter", "TapeRecorder"]]
 position = Vector2( 1024, 600 )
-z_index = 10
+z_index = 8
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true

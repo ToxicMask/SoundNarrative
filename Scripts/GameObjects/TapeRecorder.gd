@@ -1,7 +1,23 @@
 extends Node2D
-
 class_name TapeRecorder
 
+
+# Display Signals
+signal hud_hid
+signal hud_showed
+
+# Action Button Signals
+signal play_pressed
+signal pause_pressed
+signal stop_pressed
+signal goback_pressed
+signal gofoward_pressed
+signal eject_pressed
+
+# Tape Signals
+signal tape_inserted
+
+# Buttons Variables
 onready var play_button := $PlayButton
 onready var pause_button := $PauseButton
 onready var stop_button := $StopButton
@@ -87,11 +103,14 @@ Button Functions
 """
 
 func _play_tape():
+	
+	# Emit Signal
+	emit_signal("play_pressed")
+	
 	# Control Condition
 	if current_tape_state == PLAYING:
 		return
 	current_tape_state =  PLAYING
-
 	# Reset Tape 
 	var tape_length : float = tape_node._get_selected_tape_length()
 	if current_tapetime >= tape_length:
@@ -106,9 +125,15 @@ func _play_tape():
 	
 	# Play Audio in time
 	tape_node._play_audio(current_tapetime)
+	
+
 	pass
 
 func _pause_tape():
+
+	# Emit Signal
+	emit_signal("pause_pressed")
+	
 	# Clear Buttons
 	play_button._realese_button()
 	goback_button._realese_button()
@@ -122,6 +147,10 @@ func _pause_tape():
 	pass
 
 func _stop_tape():
+	
+	# Emit Signal
+	emit_signal("stop_pressed")
+	
 	#Control State
 	current_tape_state = OFF
 	current_tapetime  = 0.0
@@ -134,6 +163,10 @@ func _stop_tape():
 	pass
 
 func _goback_tape():
+	
+	# Emit Signal
+	emit_signal("goback_pressed")
+	
 	#Clear Buttons
 	play_button._realese_button()
 	pause_button._realese_button()
@@ -147,6 +180,10 @@ func _goback_tape():
 	pass
 
 func _gofoward_tape():
+	
+	# Emit Signal
+	emit_signal("gofoward_pressed")
+	
 	#Clear Buttons
 	play_button._realese_button()
 	pause_button._realese_button()
@@ -164,6 +201,10 @@ func _gofoward_tape():
 State Control Functions
 """
 func _insert_new_tape(new_tape_info):
+	
+	# Emit Signal
+	emit_signal("tape_inserted")
+	
 	tape_node._set_selected_tape(new_tape_info)
 	_hide_selection()
 	$TapeSprite.modulate = new_tape_info.tape_color
@@ -191,12 +232,14 @@ func _toggle_hud():
 	pass
 
 func _show_hud():
+	emit_signal("hud_showed")
 	current_hud_state = SHOW
 	self.position = show_position
 	$RevealButton/RevelSprite.flip_v = true
 	pass
 
 func _hide_hud():
+	emit_signal("hud_hid")
 	current_hud_state = HIDE
 	self.position = hide_position
 	$RevealButton/RevelSprite.flip_v = false
@@ -205,6 +248,7 @@ func _hide_hud():
 	pass
 
 func _show_selection():
+	emit_signal("eject_pressed")
 	current_tape_state = EJECTED
 	if not selection_hud.visible:
 		selection_hud.show()
@@ -256,4 +300,3 @@ func _release_all_buttons():
 	goback_button._realese_button()
 	gofoward_button._realese_button()
 	pass
-
