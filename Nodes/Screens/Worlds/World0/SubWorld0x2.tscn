@@ -12,4 +12,87 @@ texture = ExtResource( 2 )
 [node name="KeyChangeScene" parent="." index="1" instance=ExtResource( 3 )]
 position = Vector2( 544, 323 )
 
+[node name="OpenBook" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 438, 87 )
+scale = Vector2( 1.708, 1.498 )
+
+[node name="DarkVoidHUD" type="CanvasLayer" parent="." index="3"]
+layer = 5
+follow_viewport_enable = true
+
+[node name="DarkVoidElements" type="Control" parent="DarkVoidHUD" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="DarkVoidHUD/DarkVoidElements" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DarkVoidHUD/DarkVoidElements/CenterContainer" index="0"]
+margin_left = 56.0
+margin_top = 139.0
+margin_right = 967.0
+margin_bottom = 461.0
+custom_constants/margin_bottom = 80
+
+[node name="Letter Labels" type="VBoxContainer" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer" index="0"]
+margin_right = 911.0
+margin_bottom = 242.0
+
+[node name="partALabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="0"]
+margin_right = 911.0
+margin_bottom = 31.0
+text = "\"0112357\" - A sequencia fundamental
+por Arthur das Dores"
+align = 1
+
+[node name="InvisibleSeparator" type="HSeparator" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="1"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 35.0
+margin_right = 911.0
+margin_bottom = 71.0
+custom_constants/separation = 36
+
+[node name="partBLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="2"]
+margin_top = 75.0
+margin_right = 911.0
+margin_bottom = 242.0
+text = "Um livro de filosofia e matematica encontrado em um sebo qualquer. 
+Na contra capa, segue escrito:
+
+\"Cunhada por Leonardo Fibonacci, essa sequencia de numeros se baseia na sequinte formula: 
+Começando pelo numero 0, sequido por 1, o proximo numero na sequencia sempre será a soma dos dois numeros anteriores na sequencia.
+
+A formula Febonacci, também conhecidada como a \"formula da vida\", é um padrão que aparece em diversos aspectos da natureza e nas artes.
+
+Tanto na formação de folhas, até na proporções de um corpo  ideal, os humanos parecem ser atraidos por esse padrão.
+Quem sabe que segredos essa sequencia pode revelar? \""
+
+[node name="ColorBackground" type="ColorRect" parent="DarkVoidHUD/DarkVoidElements" index="1"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.705882 )
+
+[node name="NavButton" type="Button" parent="DarkVoidHUD/DarkVoidElements" index="2"]
+anchor_left = 0.0556641
+anchor_top = 0.943333
+anchor_right = 0.0556641
+anchor_bottom = 0.943333
+margin_top = -49.0
+margin_right = 102.0
+focus_mode = 0
+shortcut_in_tooltip = false
+action_mode = 0
+button_mask = 3
+enabled_focus_mode = 0
+text = "Voltar"
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [connection signal="mouse_click" from="KeyChangeScene" to="." method="_go_to_next_scene" binds= [ "World1" ]]
+[connection signal="mouse_click" from="OpenBook" to="DarkVoidHUD/DarkVoidElements" method="show"]
+[connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/DarkVoidElements" method="hide"]
+[connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/DarkVoidElements" method="hide"]

@@ -15,14 +15,14 @@ func _ready():
 	pass
 
 
-func _check_tutorial_progress(expected_step):
+func _check_tutorial_progress(expected_step : int):
 	if current_step == expected_step:
 		_show_step(current_step+1)
 	pass
 
 
 func _show_step(new_step : int):
-	print("Step" + str(new_step) )
+	#print("Step" + str(new_step) )
 	_hide_all_steps()
 	var control_node : Control = get_node_or_null("Step" + str(new_step) )
 	if control_node:
