@@ -22,17 +22,7 @@ tape_id = "Woldemort"
 normal_color = Color( 0.584314, 0.584314, 0.584314, 1 )
 hover_color = Color( 0.819608, 0.819608, 0.819608, 1 )
 
-[node name="NavButton" parent="." index="2" instance=ExtResource( 3 )]
-visible = false
-margin_left = 58.0
-margin_top = 519.0
-margin_right = 160.0
-margin_bottom = 568.0
-text = "Go Next"
-subworld_path = NodePath("..")
-next_subworld_index = 2
-
-[node name="MessageListener" type="Node" parent="NavButton" index="0"]
+[node name="MessageListener" type="Node" parent="." index="2"]
 script = ExtResource( 5 )
 std_message = "WOLDEMORT!"
 
@@ -41,6 +31,7 @@ layer = 5
 follow_viewport_enable = true
 
 [node name="DarkVoidElements" type="Control" parent="DarkVoidHUD" index="0"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -129,7 +120,7 @@ shortcut_in_tooltip = false
 action_mode = 0
 button_mask = 3
 enabled_focus_mode = 0
-text = "Go Next"
+text = "Fechar"
 icon_align = 1
 __meta__ = {
 "_edit_use_anchors_": true
@@ -153,7 +144,7 @@ margin_left = 775.0
 margin_top = 260.0
 margin_right = 977.0
 margin_bottom = 291.0
-text = "Colete fitas 
+text = "Colete FITAS
 <--"
 
 [node name="Step2" type="Control" parent="DarkVoidHUD/TutorialStep" index="1"]
@@ -192,37 +183,35 @@ V
 align = 2
 
 [node name="Step4" type="Control" parent="DarkVoidHUD/TutorialStep" index="3"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step4" index="0"]
-margin_left = 395.0
-margin_top = 164.0
-margin_right = 613.0
-margin_bottom = 246.0
+margin_left = 381.0
+margin_top = 142.0
+margin_right = 599.0
+margin_bottom = 224.0
 rect_pivot_offset = Vector2( 119, 23 )
 text = "/\\                   
 |                   
 |                   
-Escolha uma fita               
+Escolha uma FITA               
 "
 align = 2
 
 [node name="Step5" type="Control" parent="DarkVoidHUD/TutorialStep" index="4"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step5" index="0"]
-margin_left = 450.0
-margin_top = 294.0
-margin_right = 668.0
-margin_bottom = 376.0
+margin_left = 467.0
+margin_top = 321.0
+margin_right = 685.0
+margin_bottom = 403.0
 rect_pivot_offset = Vector2( 119, 23 )
-text = "Use Play para TOCAR a fita. 
+text = "Use PLAY  para tocar a fita. 
 |                   
 |                   
 V                   "
@@ -244,9 +233,17 @@ Alguém ou algo pode estar ouvindo.
 "
 align = 1
 
+[node name="NavButton" parent="DarkVoidHUD/TutorialStep/Step6" index="1" instance=ExtResource( 3 )]
+margin_left = 58.0
+margin_top = 519.0
+margin_right = 160.0
+margin_bottom = 568.0
+text = "Go Next"
+subworld_path = NodePath("../../../..")
+next_subworld_index = 2
+
 [connection signal="mouse_click" from="PickUpTape" to="DarkVoidHUD/TutorialStep" method="_show_step" binds= [ 2 ]]
-[connection signal="message_received" from="NavButton/MessageListener" to="NavButton" method="show" flags=6]
-[connection signal="message_received" from="NavButton/MessageListener" to="DarkVoidHUD/TutorialStep" method="_show_step" flags=7 binds= [ 6 ]]
+[connection signal="message_received" from="MessageListener" to="DarkVoidHUD/TutorialStep" method="_show_step" flags=7 binds= [ 6 ]]
 [connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/DarkVoidElements" method="show"]
 [connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/TutorialStep" method="show"]
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="PickUpTape" method="show" flags=6]
