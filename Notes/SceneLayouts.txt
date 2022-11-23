@@ -1,0 +1,115 @@
+### SCENE LAYOUTS ###
+Descrição basica para montar os layouts
+
+
+
+# Cena 0: Escritório de MILLER - Inteior - Noite - Chovendo
+
+	@ Cena0x1: Escrivaninha com Luminaria iluminando Carta
+		- SETA UI: Intrução para clicar na Carta
+
+	@ Cena0x2: Close na Carta - Dark Void
+		- Texto UI: Carta de Peter convidando Miller
+		- Contem Fita 0
+		- Introdução para a mecanica de Tocar fitas
+		- Sinal da fita zero libera proxima cena
+
+	@ Cena0x3: Escrivaninha com Luminaria iluminando Chave do Carro e Livro
+		- Highlight da chave do carro.
+		- UI Text no Livro "112357 - O Segredo de Tudo" 
+
+
+# Cena 1: Secretaria Interior - Inteior / Exterior - Noite
+
+	@ Cena1x1 - Lado de fora do laboratório
+		- Highlight na porta do laboratório
+
+	@ Cena1x2 - Secretaria do Laboratório Com Porta Trancada
+		- Highlight na escrivaninha e Tranca da porta
+
+	@ Cena1x3 - Escrivaninha - Secretaria
+		- Highlight na gaveta com a Fita 1
+		- Mapa do Primeiro Andar, mapa do segunda andar borrado
+
+	@ Cena1x4 - Porta Trancada + Painel de senha
+		- Foco principal na tranca, com foco secundario na porta trancada
+
+
+
+# Cena 2: Camada Exterior do laboratório - Interior
+
+	@ Cena2x1 -  Camada Exteior
+		- Porta com Trava Sonora na direita, foco principal. cabos indo da porta até o canto direito, foco secundario.
+		- Espaço negativo para o corredor da esquerda.
+
+	@ Cena2x2 - Porta de segurança da Camada Exteior
+		- Sistema de identificador de Voz
+
+	@ Cena2x3 - Canto com area de trabalho sonora, foco na escrivaninha.
+		- Detalhe secundario Cabos espalahos pelas paredes.
+
+	@ Cena2x4 - Escrivaniha de trabalho sonoro
+		- cabos de sons, gravadores, equipamentos de sons espalhados na mesa.
+		- Identificador de voz ativo, mas decoplado da parede.
+		- Equipamentos sonoros escondem a fita 2.
+	
+
+
+# Cena 3: Camada Interior do Laboratório
+
+	@ Cena3x1 - Foco na proxima sala
+	-Sala cheia de microfones e cabos pela parede.
+
+	@ Cena3x2 - Foco na Porta de reconhecimento
+		- Etiquetas dizendo a senha e lembrete para se vibrar das senhas.
+
+	@ Cena3x3 - Bancada com uma janela fosca
+		- Bancada com varios equipamentos de som ativos
+		- Anomalias do outro lado de um vidro fosco
+		- Highlight na bancada: Fita 3
+
+
+
+# Cena 4: Porão do Laboratório
+
+@ Cena4x1 - Sala de anomalias, com um corredor.
+	@Cena4x1a - Maquina dos numeros
+	@Cena4x1b - Maquina do suma
+	@Cena4x1c - Maquina do Abrir
+	@Cena4x1d - Maquina do Destruir
+	@Cena4x1e - Maquina do Luzes
+		- Na frente da maquina de luzes ele vai encontrar a fita 4
+
+@ Cena4x2 - Porta trancada com anomalia, espaço negativo para ter bancada.
+	- Animação da porta desaparecendo
+
+@ Cena4x3 - Bancada
+	- Montagem do Interpretador Universal
+
+
+
+# Cena 5: Área Instavel do Laboratório
+
+@ Cena5x1: Sala cheia de anomalias e efeitos visuais
+	- Porta trancada, com anomalia de destruir
+	- Animação da destruição da porta.
+	- Tem uma estante com uma caixa
+
+@ Cena5x2: Foco na Caixa - Dark Void
+	- Dentro da caixa tem um papel escrito com as palavras: DESTRUIR e SUMA
+	- A fita 5 esta dentro da caixa.
+
+
+
+# Cena 6: Sala da Origem
+
+	@ Cena6x1 - Sala de contenção da Anomalia de Origem
+		- Foco principal: Maquina de contenção da Anomalia, Foco Secundario, botão de destruição.
+		- Highlight na Maleta
+
+	@ Cena6x2 - Maleta com Fita 6
+
+	@ Cena6x3 - Foco na Maquina de Contenção, pode abrir para falar os comandos.
+
+	@ Cena6x4 - Botão de destruição, pode abrir tampa do botão.
+
