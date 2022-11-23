@@ -236,6 +236,7 @@ func _show_hud():
 	current_hud_state = SHOW
 	self.position = show_position
 	$RevealButton/RevelSprite.flip_v = true
+	$BackgroundModulate.show()
 	pass
 
 func _hide_hud():
@@ -243,6 +244,7 @@ func _hide_hud():
 	current_hud_state = HIDE
 	self.position = hide_position
 	$RevealButton/RevelSprite.flip_v = false
+	$BackgroundModulate.hide()
 	self._hide_selection()
 	self._stop_tape()
 	pass

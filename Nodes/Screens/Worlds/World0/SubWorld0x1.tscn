@@ -39,7 +39,6 @@ std_message = "WOLDEMORT!"
 
 [node name="_DebugMessageListener" type="Node" parent="NavButton" index="1"]
 script = ExtResource( 6 )
-std_message = "WOLDEMORT"
 
 [node name="DarkVoidHUD" type="CanvasLayer" parent="." index="3"]
 layer = 5
@@ -166,6 +165,7 @@ V
 align = 2
 
 [node name="Step3" type="Control" parent="DarkVoidHUD/TutorialStep" index="2"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -183,19 +183,21 @@ V
 align = 2
 
 [node name="Step4" type="Control" parent="DarkVoidHUD/TutorialStep" index="3"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step4" index="0"]
-margin_left = 537.0
-margin_top = 314.0
-margin_right = 755.0
-margin_bottom = 396.0
-text = "Use PLAY para Tocar a Fita
+margin_left = 395.0
+margin_top = 164.0
+margin_right = 613.0
+margin_bottom = 246.0
+rect_pivot_offset = Vector2( 119, 23 )
+text = "/\\                   
 |                   
 |                   
-V                   
+Escolha uma fita               
 "
 align = 2
 
@@ -206,6 +208,24 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step5" index="0"]
+margin_left = 450.0
+margin_top = 294.0
+margin_right = 668.0
+margin_bottom = 376.0
+rect_pivot_offset = Vector2( 119, 23 )
+text = "Use Play para TOCAR a fita. 
+|                   
+|                   
+V                   "
+align = 2
+
+[node name="Step6" type="Control" parent="DarkVoidHUD/TutorialStep" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step6" index="0"]
 margin_left = 27.0
 margin_top = 266.0
 margin_right = 347.0
@@ -216,8 +236,8 @@ Alguém ou algo pode estar ouvindo.
 align = 1
 
 [connection signal="mouse_click" from="PickUpTape" to="DarkVoidHUD/TutorialStep" method="_show_step" binds= [ 2 ]]
-[connection signal="message_received" from="NavButton/MessageListener" to="NavButton" method="show"]
-[connection signal="message_received" from="NavButton/MessageListener" to="DarkVoidHUD/TutorialStep" method="_hide_all_steps" flags=6]
+[connection signal="message_received" from="NavButton/MessageListener" to="NavButton" method="show" flags=6]
+[connection signal="message_received" from="NavButton/MessageListener" to="DarkVoidHUD/TutorialStep" method="_show_step" flags=7 binds= [ 6 ]]
 [connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/DarkVoidElements" method="show"]
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="PickUpTape" method="show" flags=6]
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/DarkVoidElements" method="hide" flags=6]

@@ -18,36 +18,42 @@ __meta__ = {
 
 [node name="PlayButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( -408, -168 )
+z_index = 1
 
 [node name="Sprite" parent="PlayButton" index="0"]
 frame = 1
 
 [node name="PauseButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( -344, -168 )
+z_index = 1
 
 [node name="Sprite" parent="PauseButton" index="0"]
 frame = 2
 
 [node name="StopButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( -280, -168 )
+z_index = 1
 
 [node name="Sprite" parent="StopButton" index="0"]
 frame = 3
 
 [node name="GoBackButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( -216, -168 )
+z_index = 1
 
 [node name="Sprite" parent="GoBackButton" index="0"]
 frame = 4
 
 [node name="GoFowardButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( -152, -168 )
+z_index = 1
 
 [node name="Sprite" parent="GoFowardButton" index="0"]
 frame = 5
 
 [node name="EjectButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( -88, -168 )
+z_index = 1
 
 [node name="Sprite" parent="EjectButton" index="0"]
 frame = 6
@@ -56,15 +62,28 @@ frame = 6
 self_modulate = Color( 1, 1, 1, 0.843137 )
 position = Vector2( -296, -80 )
 scale = Vector2( 2, 0.375 )
+z_index = 2
 texture = ExtResource( 11 )
 
 [node name="Backdrop" type="Sprite" parent="."]
 show_behind_parent = true
 position = Vector2( 16, 16 )
 scale = Vector2( 1.52, 0.746667 )
+z_index = 1
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -400, -300 )
+
+[node name="BackgroundModulate" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1088.0
+margin_top = -664.0
+margin_right = 136.0
+margin_bottom = 104.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.392157 )
 
 [node name="TimeStamp_Label" type="Label" parent="."]
 margin_left = -496.0
