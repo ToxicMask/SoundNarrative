@@ -1,19 +1,72 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x4PH.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/D_LockInteractable.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/GameSystems/Subworld/SubWorld1x4.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x4aPH.png" type="Texture" id=6]
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.5, 300 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "OpenDoor"
+length = 0.02
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("WorldRender:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GoNextSceneInteractable:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.01 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("WorldRender:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GoNextSceneInteractable:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
 [node name="SubWorld1x4" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
-open_texture = ExtResource( 6 )
 
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 2 )
@@ -38,7 +91,11 @@ position = Vector2( 463, 2 )
 position = Vector2( 72.5, 300 )
 shape = SubResource( 1 )
 
-[connection signal="unlocked" from="D_Lock" to="." method="_open_door"]
-[connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "MainMenu" ]]
+[node name="ScreenActions" type="AnimationPlayer" parent="." index="4"]
+anims/OpenDoor = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="unlocked" from="D_Lock" to="ScreenActions" method="play" binds= [ "OpenDoor" ]]
+[connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "World2" ]]
 
 [editable path="GoNextSceneInteractable"]

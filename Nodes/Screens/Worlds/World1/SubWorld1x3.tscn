@@ -1,24 +1,126 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x3bPH.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/PickUpTape.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/GameSystems/Subworld/SubWorld1x3.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x3aPH.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 57.0761, 71.6036 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "OpenDrawer"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("DrawerContent/PickUpTape:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.03 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WorldRender:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.03 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DrawerContent:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.03 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DrawerContent/PickUpTape:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WorldRender:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DrawerOpenInteractable:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DrawerContent:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
 [node name="SubWorld1x3" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
-revealed_texture = ExtResource( 2 )
 
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 7 )
 
-[node name="GoBackNavButton" parent="." index="1" instance=ExtResource( 3 )]
+[node name="DrawerContent" type="Node2D" parent="." index="1"]
+visible = false
+position = Vector2( 30, 492 )
+
+[node name="PickUpTape" parent="DrawerContent" index="0" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 222, -297 )
+rotation = -0.453189
+scale = Vector2( 1.28, 0.759999 )
+tape_id = "Evil Laugh"
+normal_color = Color( 0.639216, 0.156863, 0.156863, 1 )
+hover_color = Color( 0.941176, 0.0823529, 0.0823529, 1 )
+
+[node name="GoBackNavButton" parent="." index="2" instance=ExtResource( 3 )]
 margin_left = 30.0
 margin_top = 492.0
 margin_right = 139.0
@@ -27,14 +129,6 @@ text = "Voltar"
 subworld_path = NodePath("..")
 next_subworld_index = 1
 
-[node name="PickUpTape" parent="." index="2" instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 298, 236 )
-scale = Vector2( 1.28, 0.759999 )
-tape_id = "Evil Laugh"
-normal_color = Color( 0.639216, 0.156863, 0.156863, 1 )
-hover_color = Color( 0.941176, 0.0823529, 0.0823529, 1 )
-
 [node name="DrawerOpenInteractable" parent="." index="3" instance=ExtResource( 5 )]
 position = Vector2( 397, 253 )
 rotation = 0.448413
@@ -42,9 +136,13 @@ scale = Vector2( 3.04346, 1 )
 
 [node name="ClickArea" parent="DrawerOpenInteractable" index="1"]
 position = Vector2( 4.30295, 5.39639 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[connection signal="mouse_click" from="DrawerOpenInteractable" to="." method="_reveal_table_content" flags=6]
+[node name="ScreenActions" type="AnimationPlayer" parent="." index="4"]
+anims/OpenDrawer = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="mouse_click" from="DrawerOpenInteractable" to="DrawerOpenInteractable" method="queue_free"]
+[connection signal="mouse_click" from="DrawerOpenInteractable" to="ScreenActions" method="play" flags=6 binds= [ "OpenDrawer" ]]
 
 [editable path="DrawerOpenInteractable"]
