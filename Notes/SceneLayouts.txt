@@ -45,8 +45,9 @@ Descrição basica para montar os layouts
 	@ Cena2x2 - Porta de segurança da Camada Exteior
 		- Sistema de identificador de Voz
 
-	@ Cena2x3 - Canto com area de trabalho sonora, foco na escrivaninha.
-		- Detalhe secundario Cabos espalahos pelas paredes.
+	@ Cena2x3 - Porta de ventilação com anomalia por trás
+		- Apenas luzes oscilantes que passam pelas frestas
+
 
 	@ Cena2x4 - Escrivaniha de trabalho sonoro
 		- cabos de sons, gravadores, equipamentos de sons espalhados na mesa.
