@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/DummyScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Objects/_Debug/_MainDebug.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Nodes/Screens/Worlds/World1/World1Screen.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Nodes/Screens/Worlds/CreditsScreen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Nodes/Screens/Worlds/World0/World0Screen.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Nodes/Screens/Worlds/World2/World2.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource( 6 )
@@ -28,7 +29,8 @@ world_scene_dict = {
 "TEST1": ExtResource( 8 ),
 "TEST2": ExtResource( 7 ),
 "World0": ExtResource( 12 ),
-"World1": ExtResource( 10 )
+"World1": ExtResource( 10 ),
+"World2": ExtResource( 13 )
 }
 
 [node name="_MainDebug" parent="." instance=ExtResource( 2 )]

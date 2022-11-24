@@ -2,6 +2,9 @@ extends Node2D
 class_name TapeRecorder
 
 
+#Playing Signals
+signal tape_state_changed(new_state)
+
 # Display Signals
 signal hud_hid
 signal hud_showed
@@ -126,7 +129,8 @@ func _play_tape():
 	# Play Audio in time
 	tape_node._play_audio(current_tapetime)
 	
-
+	# Emit Signals
+	emit_signal("tape_state_changed", current_tape_state)
 	pass
 
 func _pause_tape():
@@ -217,6 +221,9 @@ func _end_tape():
 		current_tapetime  = 0.0
 		_release_all_buttons()
 		_update_timestamp_display()
+	
+	# Emit Signals
+	emit_signal("tape_state_changed", current_tape_state)
 	pass
 
 

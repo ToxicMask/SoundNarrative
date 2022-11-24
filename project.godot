@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameObjects/SelectableTape.gd"
 }, {
+"base": "AbstractLock",
+"class": "SimpleVoiceLock",
+"language": "GDScript",
+"path": "res://Scripts/GameObjects/SimpleVoiceLock.gd"
+}, {
 "base": "WorldScreen",
 "class": "StarGameScreen",
 "language": "GDScript",
@@ -148,6 +153,7 @@ _global_script_class_icons={
 "MessageListener": "",
 "NewGameManager": "",
 "SelectionTape": "",
+"SimpleVoiceLock": "",
 "StarGameScreen": "",
 "SubWorld": "",
 "TapeInfo": "",

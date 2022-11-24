@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Images/Textures/Anomaly1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Render/Scene2/Render2x1PH.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=3]
+[ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Shaders/AnomalyV0.gdshader" type="Shader" id=6]
+
+[sub_resource type="Gradient" id=22]
+interpolation_mode = 2
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+
+[sub_resource type="OpenSimplexNoise" id=20]
+
+[sub_resource type="NoiseTexture" id=21]
+noise = SubResource( 20 )
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 6 )
+shader_param/radiansPerSecond = -0.9
+shader_param/waveFactor = 0.09
+shader_param/tintBright = 4.687
+shader_param/anomalyMask = ExtResource( 1 )
+shader_param/maskGradient = SubResource( 23 )
+shader_param/noiseTexture = SubResource( 21 )
+shader_param/tintGradient = ExtResource( 3 )
+
+[node name="SubWorld2x1" instance=ExtResource( 4 )]
+
+[node name="WorldRender" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="Anomaly" type="ColorRect" parent="." index="1"]
+material = SubResource( 19 )
+margin_left = 603.0
+margin_top = 96.0
+margin_right = 652.0
+margin_bottom = 145.0
+
+[node name="NavButtons" type="Control" parent="." index="2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="NavButton1" parent="NavButtons" index="0" instance=ExtResource( 5 )]
+margin_left = 217.0
+margin_top = 342.0
+margin_right = 312.0
+margin_bottom = 391.0
+text = "Inspect Door"
+subworld_path = NodePath("../..")
+next_subworld_index = 1
+
+[node name="NavButton2" parent="NavButtons" index="1" instance=ExtResource( 5 )]
+margin_left = 609.0
+margin_top = 142.0
+margin_right = 649.0
+margin_bottom = 172.0
+text = "?"
+subworld_path = NodePath("../..")
+next_subworld_index = 2
+
+[node name="NavButton3" parent="NavButtons" index="2" instance=ExtResource( 5 )]
+margin_left = 815.0
+margin_top = 332.0
+margin_right = 910.0
+margin_bottom = 381.0
+text = "Inspect Table"
+subworld_path = NodePath("../..")
+next_subworld_index = 3

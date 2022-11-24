@@ -30,13 +30,19 @@ func _input(event):
 		if active:
 			match(event.scancode):
 				KEY_1:
-					print("CHANGE SCENE: TEST0")
-					main_parent._change_world_scene("TEST0")
+					print("CHANGE SCENE: World0")
+					main_parent._change_world_scene("World0")
 				KEY_2:
-					print("CHANGE SCENE: TEST1")
-					main_parent._change_world_scene("TEST1")
+					print("CHANGE SCENE: World1")
+					main_parent._change_world_scene("World1")
 				KEY_3:
-					print("CHANGE SCENE: TEST2")
-					main_parent._change_world_scene("TEST2")
-		pass
+					print("CHANGE SCENE: World2")
+					main_parent._change_world_scene("World2")
+				
+				KEY_0:
+					print("CHANGE SCENE: Test0")
+					main_parent._change_world_scene("TEST0")
+				KEY_9:
+					print("CHANGE SCENE: Test1")
+					main_parent._change_world_scene("TEST1")
 	pass
