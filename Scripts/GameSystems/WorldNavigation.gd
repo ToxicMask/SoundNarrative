@@ -1,6 +1,8 @@
 extends Node2D
 class_name WorldNavigation
 
+signal subworld_changed
+
 export (NodePath) var world_path : String
 
 export (Array, PackedScene) var subworld_packs : Array
@@ -30,13 +32,17 @@ func _set_subworld( index : int):
 		if old_subworld != null:
 			remove_child(old_subworld)
 	
-	# Is in index range
+	# Set Subworld in Tree
+	# Is it is in index range
 	if index < subworld_instances.size():
 		var instance = subworld_instances[index] as SubWorld
 		instance.connect("sub_world_changed", self, "_set_subworld", [], CONNECT_ONESHOT)
 		add_child(instance)
 		# Update counter
 		current_subworld = index
+	
+	# Emit Signal
+	emit_signal("subworld_changed")
 	pass
 
 

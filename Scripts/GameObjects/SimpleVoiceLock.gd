@@ -18,9 +18,7 @@ func _ready():
 
 func _connect_tape_recorder():
 	var recorder_group = get_tree().get_nodes_in_group("TapeRecorder")
-
 	if not recorder_group.empty():
-		print("Found it")
 		var tape_recorder : TapeRecorder = recorder_group[0]
 		if tape_recorder:
 			if not tape_recorder.is_connected("tape_state_changed", self, "_check_tape_state"):
@@ -29,13 +27,21 @@ func _connect_tape_recorder():
 			_check_tape_state(tape_recorder.current_tape_state)
 	pass
 
-func _check_tape_state(current_state: int):
 
+
+func _check_tape_state(current_state: int):
 	if not self.locked:
 		return
 
 	if current_state == TapeRecorder.PLAYING:
+		$DeviceAnim.play("DeviceHearing")
 		emit_signal("started_hearing")
 	else:
+		$DeviceAnim.play("DeviceNotHearing")
 		emit_signal("stopped_hearing")
+	pass
+
+func _unlock():
+	._unlock()
+	$DeviceAnim.play("DeviceUnlocked")
 	pass
