@@ -59,9 +59,12 @@ Descrição basica para montar os layouts
 # Cena 3: Camada Interior do Laboratório
 
 	@ Cena3x1 - Foco na proxima sala
-	-Sala cheia de microfones e cabos pela parede.
+		- Tem Porta trancada e uma bancada de controle
+		- Sala cheia de microfones e cabos pela parede.
 
 	@ Cena3x2 - Foco na Porta de reconhecimento
+
+	@ Cena3x3 - Etiquetas espalhas pelas paredes
 		- Etiquetas dizendo a senha e lembrete para se vibrar das senhas.
 
 	@ Cena3x3 - Bancada com uma janela fosca
