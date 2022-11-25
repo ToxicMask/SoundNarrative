@@ -24,9 +24,6 @@ Montagem de Cenario Interativo
 	- Montar Elementos Interativos
 	
 
-
-	
-
 Sonoplastia
 	- Desenhar Sistemas Sonoros Globais - Efeitos Sonoros / OST / Ambiencia
 	- Editar audio das fitas

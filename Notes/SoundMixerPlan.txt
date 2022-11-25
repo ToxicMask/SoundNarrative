@@ -1,0 +1,21 @@
+
+----- Sound Stream Design System -----
+
+Efeitos Sonoros:
+	- Cada Objeto Responsavel toca o audio de um Objeto Stream Player
+		-> Sons não-diegeticos
+		-> Sons Ambientes
+	
+
+Musica & Ambiencia:
+	- Mandar Pro objeto SoundMixer
+		- Responsavel por tocar o som ambiente e a Musica nos volumes apropriados
+
+Canais:
+	- Plain SFX: Sons não Diegeticos ou sons proximos do Player
+	- Surround SFX: Sons do ambiente (Mundo / SubMundo) com Sound Scape
+	- Musica
+	- Ambiencia
+
+
+
