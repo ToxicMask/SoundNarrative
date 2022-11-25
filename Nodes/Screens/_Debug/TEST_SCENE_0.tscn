@@ -4,7 +4,7 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/DragableObject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/GameSystems/WorldScreen.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/_Debug/_DegubDragableObject.gd" type="Script" id=4]
-[ext_resource path="res://Nodes/Objects/_Debug/_DebugClickableObject.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/_Debug/_DebugClickableObject.gd" type="Script" id=5]
 
 [node name="TEST_SCENE_0" type="Node2D" groups=["DeleteOnChangeScene"]]
 script = ExtResource( 3 )

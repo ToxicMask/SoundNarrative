@@ -17,8 +17,9 @@
 [ext_resource path="res://Resources/Shaders/NoiseDissolve.gdshader" type="Shader" id=15]
 [ext_resource path="res://Assets/Images/iconGrad128.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Shaders/BrightnessGradient.gdshader" type="Shader" id=17]
-[ext_resource path="res://Nodes/_Debug/_DebugSchockScreen.gd" type="Script" id=18]
+[ext_resource path="res://Scripts/_Debug/_DebugSchockScreen.gd" type="Script" id=18]
 [ext_resource path="res://Resources/Shaders/ScreenPulse.gdshader" type="Shader" id=19]
+
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )

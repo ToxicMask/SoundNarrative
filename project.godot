@@ -138,6 +138,11 @@ _global_script_classes=[ {
 "class": "_DebugMessageListener",
 "language": "GDScript",
 "path": "res://Scripts/_Debug/_DebugMessageListener.gd"
+}, {
+"base": "Node2D",
+"class": "_MainDebug",
+"language": "GDScript",
+"path": "res://Scripts/_Debug/_MainDebug.gd"
 } ]
 _global_script_class_icons={
 "AbstractLock": "",
@@ -165,7 +170,8 @@ _global_script_class_icons={
 "TutorialStep": "",
 "WorldNavigation": "",
 "WorldScreen": "",
-"_DebugMessageListener": ""
+"_DebugMessageListener": "",
+"_MainDebug": ""
 }
 
 [application]

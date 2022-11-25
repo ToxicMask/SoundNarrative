@@ -1,4 +1,5 @@
 extends Node2D
+class_name _MainDebug
 
 
 var active : bool = false
