@@ -39,6 +39,9 @@ func _input(event):
 				KEY_3:
 					print("CHANGE SCENE: World2")
 					main_parent._change_world_scene("World2")
+				KEY_4:
+					print("CHANGE SCENE: World3")
+					main_parent._change_world_scene("World3")
 				
 				KEY_0:
 					print("CHANGE SCENE: Test0")

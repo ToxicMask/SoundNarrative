@@ -1,3 +1,17 @@
+Vertical Slice:
+	- Terminar Cenas para se aproximar da Tela Final
+		Faltantes: 0, 1, 2, 3
+
+Montagem de Cenario 3D
+	- Blocagem de Cenarios e Props
+		Faltantes: 0, 1, 2, 3, 4, 5, 6
+	- Posicionamento das cameras de acordo com Layouts
+	- Modelagem de Objetos
+	- Textura de Objetos
+	- Posicionamento e Ajustes de
+	- Renederização de Cenarios de Mundo
+	- Renderização de Objetos
+
 
 Exploração de Cena
 	- Fazer layouts de cada cena
@@ -6,18 +20,11 @@ Exploração de Cena
 
 Montagem de Cenario Interativo
 	- Usar Roteiros e Layouts para montar Mundos e Submundos
-		Faltantes: 3, 4, 5, 6
+		Faltantes: 4, 5, 6
 	- Montar Elementos Interativos
 	
 
-Montagem de Cenario 3D
-	- Blocagem de Cenarios e Props
-		Faltantes: 0, 1, 2, 3, 4, 5, 6
-	- Posicionamento das cameras de acordo com Layouts
-	- Modelagem de Objetos
-	- Textura de Objetos
-	- Renederização de Cenarios de Mundo
-	- Renderização de Objetos
+
 	
 
 Sonoplastia
