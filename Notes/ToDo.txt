@@ -16,7 +16,7 @@ Montagem de Cenario 3D
 
 Sonoplastia
 	- Editar audio das fitas
-		Faltantes: 1, 2, 3, 4, 5, 6
+		Faltantes: 0, 1, 2, 3, 4, 5, 6
 	- Esperar arquivos de audio:
 		Faltantes: 5, 6
 
