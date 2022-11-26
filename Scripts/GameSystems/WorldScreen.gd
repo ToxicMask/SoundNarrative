@@ -1,6 +1,7 @@
 extends Node2D
 class_name WorldScreen
 
+onready var sound_control := $SoundController 
 
 func _enter_tree():
 	self.add_to_group("DeleteOnChangeScene")

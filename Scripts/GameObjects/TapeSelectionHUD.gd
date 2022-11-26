@@ -61,12 +61,13 @@ func _update_tape_data(data_node: Node):
 					#print("HIDE ", c)
 					c.hide()
 		
-		if data_node.has_custom_tape:
-			var custom = self.get_node("CustomTape") as SelectionTape
-			custom.show()
-			custom.tape_info = data_node.custom_tape_info
-			custom._update_display()
-		else:
-			var custom = self.get_node("CustomTape") as SelectionTape
-			custom.hide()
+		if get_node_or_null("CustomTape"):
+			if data_node.has_custom_tape:
+				var custom = self.get_node("CustomTape") as SelectionTape
+				custom.show()
+				custom.tape_info = data_node.custom_tape_info
+				custom._update_display()
+			else:
+				var custom = self.get_node("CustomTape") as SelectionTape
+				custom.hide()
 	pass

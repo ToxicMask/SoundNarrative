@@ -83,7 +83,7 @@ margin_top = -664.0
 margin_right = 136.0
 margin_bottom = 104.0
 mouse_filter = 2
-color = Color( 0, 0, 0, 0.392157 )
+color = Color( 0, 0, 0, 0.176471 )
 
 [node name="TimeStamp_Label" type="Label" parent="."]
 margin_left = -496.0
@@ -93,6 +93,7 @@ margin_bottom = -66.0
 text = "00:00"
 
 [node name="TapeAudioPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Tape"
 script = ExtResource( 4 )
 
 [node name="RevealButton" type="Button" parent="."]

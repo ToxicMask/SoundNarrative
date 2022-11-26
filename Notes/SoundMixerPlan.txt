@@ -14,8 +14,11 @@ Musica & Ambiencia:
 Canais:
 	- Plain SFX: Sons não Diegeticos ou sons proximos do Player
 	- Surround SFX: Sons do ambiente (Mundo / SubMundo) com Sound Scape
-	- Musica
-	- Ambiencia
+	- Musica: Melodias
+	- Ambiencia: Sons do Ambiente
+	- OutOfVision: SFX + Filtro de frequencias altas
+	- Tape: Voz Reproduzidas na Fita
+	- Anomaly: Sound Effect
 
 
 

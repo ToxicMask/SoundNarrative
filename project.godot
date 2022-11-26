@@ -199,6 +199,10 @@ nas Colinas dos Sussuros."
 run/main_scene="res://Nodes/Screens/Main.tscn"
 config/icon="res://Assets/Images/recorder_backdrop_temp0.png"
 
+[audio]
+
+default_bus_layout="res://Resources/AudioBus/default_bus_layout.tres"
+
 [debug]
 
 settings/fps/force_fps=60

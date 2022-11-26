@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/DummyScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/_Debug/_MainDebug.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Nodes/Screens/Worlds/World2/World2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Nodes/Screens/Worlds/World3/World3Screen.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scripts/GameSystems/SoundMixer.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Audio/VoiceFiles/RawAudio/Easter_Egg.mp3" type="AudioStream" id=16]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource( 6 )
@@ -41,3 +42,10 @@ script = ExtResource( 2 )
 
 [node name="SoundMixer" type="Node" parent="."]
 script = ExtResource( 15 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="SoundMixer"]
+bus = "Music"
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="SoundMixer"]
+stream = ExtResource( 16 )
+bus = "Ambience"
