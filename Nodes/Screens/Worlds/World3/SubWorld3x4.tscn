@@ -19,7 +19,8 @@ text = "Voltar"
 subworld_path = NodePath("..")
 
 [node name="PickUpTape" parent="." index="2" instance=ExtResource( 4 )]
-position = Vector2( 571, 472 )
+position = Vector2( 442, 524 )
+scale = Vector2( 0.64, 0.64 )
 tape_id = ""
 normal_color = Color( 0.419608, 0.278431, 0.439216, 1 )
 hover_color = Color( 0.709804, 0.164706, 0.772549, 1 )
