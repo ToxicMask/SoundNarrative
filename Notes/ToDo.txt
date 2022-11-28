@@ -4,15 +4,15 @@ Vertical Slice:
 		Faltantes: 0, 1, 2, 3
 
 Montagem de Cenario 3D
-	- Blocagem de Cenarios e Props
-		Faltantes: 0, 1, 2, 3, 4, 5, 6
-	- Posicionamento das cameras de acordo com Layouts
 	- Modelagem de Objetos
 	- Textura de Objetos
 	- Posicionamento e Ajustes de
 	- Renederização de Cenarios de Mundo
 	- Renderização de Objetos
-
+	- Blocagem de Cenarios e Props
+		Faltantes: 4, 5, 6
+	- Posicionamento das cameras de acordo com Layouts
+		Faltantes: 4, 5, 6
 
 Sonoplastia
 	- Editar audio das fitas
