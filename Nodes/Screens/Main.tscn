@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/DummyScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/_Debug/_MainDebug.gd" type="Script" id=2]
@@ -16,6 +16,13 @@
 [ext_resource path="res://Nodes/Screens/Worlds/World3/World3Screen.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scripts/GameSystems/SoundMixer.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Audio/VoiceFiles/RawAudio/Easter_Egg.mp3" type="AudioStream" id=16]
+[ext_resource path="res://Resources/Shaders/FilmGrainBasic.gdshader" type="Shader" id=17]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_name = "FilmGrain"
+shader = ExtResource( 17 )
+shader_param/active = true
+shader_param/amount = 0.006
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource( 6 )
@@ -49,3 +56,13 @@ bus = "Music"
 [node name="AmbiencePlayer" type="AudioStreamPlayer" parent="SoundMixer"]
 stream = ExtResource( 16 )
 bus = "Ambience"
+
+[node name="ScreenVisualEffects" type="CanvasLayer" parent="."]
+layer = 20
+follow_viewport_enable = true
+
+[node name="ColorRect" type="ColorRect" parent="ScreenVisualEffects"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
