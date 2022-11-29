@@ -37,7 +37,7 @@ var current_tapetime : float = 0.0
 enum {SHOW, HIDE}
 var current_hud_state = HIDE
 var show_position = Vector2(1024, 600)
-var hide_position = Vector2(1024, 810)
+var hide_position = Vector2(1024, 880)
 
 
 """
@@ -276,7 +276,7 @@ func _hide_selection():
 	pass
 
 func _update_timestamp_display():
-	$TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
+	$UI_Counter/TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
 	pass
 
 

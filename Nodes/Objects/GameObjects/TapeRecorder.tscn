@@ -1,78 +1,116 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Images/recorder_backdrop_temp0.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Textures/Tape_Pick_Up_Texture.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/Device_Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Screens/Menus/SelectionHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/GameObjects/TapeAudioPlayer.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/GameObjects/TapeRecorder.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Images/placeholder_playbuttons_32.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/BLACK_128x128.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Textures/Tape_Recorder_Texture.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_EJECT.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_PAUSE.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_GOBACK.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_GOFOWARD.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_STOP.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 8 )
 
 [node name="TapeRecorder" type="Node2D" groups=["MessageEmitter", "TapeRecorder"]]
 position = Vector2( 1024, 600 )
 z_index = 8
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_horizontal_guides_": [ 329.0 ],
+"_edit_vertical_guides_": [ 557.0 ]
 }
 
 [node name="PlayButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( -408, -168 )
+position = Vector2( -416, -256 )
 z_index = 1
 
-[node name="Sprite" parent="PlayButton" index="0"]
-frame = 1
-
 [node name="PauseButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( -344, -168 )
+position = Vector2( -376, -256 )
 z_index = 1
 
 [node name="Sprite" parent="PauseButton" index="0"]
-frame = 2
+texture = ExtResource( 10 )
 
 [node name="StopButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( -280, -168 )
+position = Vector2( -336, -256 )
 z_index = 1
 
 [node name="Sprite" parent="StopButton" index="0"]
-frame = 3
+texture = ExtResource( 13 )
 
 [node name="GoBackButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( -216, -168 )
+position = Vector2( -296, -256 )
 z_index = 1
 
 [node name="Sprite" parent="GoBackButton" index="0"]
-frame = 4
+texture = ExtResource( 11 )
 
 [node name="GoFowardButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( -152, -168 )
+position = Vector2( -256, -256 )
 z_index = 1
 
 [node name="Sprite" parent="GoFowardButton" index="0"]
-frame = 5
+texture = ExtResource( 12 )
 
 [node name="EjectButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( -88, -168 )
+position = Vector2( -416, -48 )
 z_index = 1
 
 [node name="Sprite" parent="EjectButton" index="0"]
-frame = 6
+texture = ExtResource( 9 )
+
+[node name="ClickArea" parent="EjectButton" index="1"]
+position = Vector2( 0, 0 )
+shape = SubResource( 1 )
 
 [node name="TapeSprite" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.843137 )
-position = Vector2( -296, -80 )
-scale = Vector2( 2, 0.375 )
-z_index = 2
-texture = ExtResource( 11 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -328, -152 )
+scale = Vector2( 0.22, 0.22 )
+texture = ExtResource( 1 )
+
+[node name="TapeBackdrop" type="Sprite" parent="."]
+position = Vector2( -328, -152 )
+scale = Vector2( 1.623, 1 )
+z_index = -1
+texture = ExtResource( 7 )
 
 [node name="Backdrop" type="Sprite" parent="."]
 show_behind_parent = true
 position = Vector2( 16, 16 )
-scale = Vector2( 1.52, 0.746667 )
+scale = Vector2( 0.5, 0.5 )
 z_index = 1
-texture = ExtResource( 1 )
-centered = false
-offset = Vector2( -400, -300 )
+texture = ExtResource( 8 )
+offset = Vector2( -480, -300 )
+
+[node name="UI_Counter" type="Node2D" parent="."]
+position = Vector2( -1090, -656 )
+z_index = 1
+
+[node name="TimeStamp_Label" type="Label" parent="UI_Counter"]
+modulate = Color( 1, 0.164706, 0.219608, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 658.0
+margin_top = 620.0
+margin_right = 702.0
+margin_bottom = 638.0
+text = "00:00"
+align = 1
+valign = 1
+
+[node name="TextureBackDrop" type="TextureRect" parent="UI_Counter/TimeStamp_Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
 
 [node name="BackgroundModulate" type="ColorRect" parent="."]
 show_behind_parent = true
@@ -85,35 +123,26 @@ margin_bottom = 104.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.176471 )
 
-[node name="TimeStamp_Label" type="Label" parent="."]
-margin_left = -496.0
-margin_top = -80.0
-margin_right = -456.0
-margin_bottom = -66.0
-text = "00:00"
-
 [node name="TapeAudioPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Tape"
 script = ExtResource( 4 )
 
 [node name="RevealButton" type="Button" parent="."]
-margin_left = -67.0
-margin_top = -259.0
-margin_right = -3.0
-margin_bottom = -227.0
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -78.0
+margin_top = -328.0
+margin_right = -14.0
+margin_bottom = -296.0
 focus_mode = 0
 enabled_focus_mode = 0
+expand_icon = true
 
 [node name="RevelSprite" type="Sprite" parent="RevealButton"]
 modulate = Color( 0.729412, 0.690196, 0.376471, 1 )
-scale = Vector2( 2, 1 )
-texture = ExtResource( 6 )
-centered = false
-offset = Vector2( -2, -2 )
+position = Vector2( 33, 15 )
+scale = Vector2( 0.647, 0.543 )
+texture = ExtResource( 9 )
 flip_v = true
-hframes = 4
-vframes = 2
-frame = 6
 
 [node name="SelectionHUD" parent="." instance=ExtResource( 3 )]
 visible = false
