@@ -1,5 +1,5 @@
 extends ClickableObject
-
+class_name DeviceButton
 
 signal button_pressed
 signal button_released

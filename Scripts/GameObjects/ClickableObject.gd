@@ -41,11 +41,14 @@ func _process_input(_viewport, event, _shape):
 
 func _process_mouse_inside():
 	mouse_hover = true
-	Input.set_default_cursor_shape(Input.CURSOR_DRAG)
 	pass
 
 func _process_mouse_out():
 	mouse_hover = false
 	mouse_pressed = false
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	pass
+
+func _update_shader(line_thick : float, line_color : Color = Color.white):
+	material.set_shader_param("mask_thickness", line_thick)
+	material.set_shader_param("line_color", line_color)
 	pass

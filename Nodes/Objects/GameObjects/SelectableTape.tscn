@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/GameObjects/SelectableTape.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/ClickableObject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/Textures/Tape_Pick_Up_Texture.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Shaders/SimpleOutline.gdshader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/line_color = Color( 1, 1, 1, 0 )
+shader_param/mask_thickness = 14.0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 30 )
@@ -17,6 +23,7 @@ __meta__ = {
 tape_info = null
 
 [node name="Sprite" parent="." index="0"]
+material = SubResource( 2 )
 scale = Vector2( 0.11, 0.11 )
 texture = ExtResource( 3 )
 

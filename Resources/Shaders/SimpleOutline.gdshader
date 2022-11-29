@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform vec4 line_color : hint_color = vec4(1);
-uniform float mask_thickness : hint_range(0, 10) = 1.0;
+uniform float mask_thickness : hint_range(0, 50) = 1.0;
 
 
 float outile_mask( sampler2D _texture , vec2 _uv, vec2 size){
