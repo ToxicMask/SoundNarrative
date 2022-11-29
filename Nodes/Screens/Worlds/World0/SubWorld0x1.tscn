@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Images/Render/Scene0/Render0x2PH.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x2.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/PickUpTape.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/GameObjects/MessageListener.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x2TapePickUp.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/GameSystems/TutorialStep.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 82.9163, 45.7529 )
 
 [node name="SubWorld0x2" instance=ExtResource( 1 )]
 __meta__ = {
@@ -17,14 +21,21 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="PickUpTape" parent="." index="1" instance=ExtResource( 4 )]
-visible = false
 modulate = Color( 0.584314, 0.584314, 0.584314, 1 )
 self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
-position = Vector2( 641, 307 )
-rotation = -0.673979
 tape_id = "Woldemort"
-normal_color = Color( 0.584314, 0.584314, 0.584314, 1 )
-hover_color = Color( 0.819608, 0.819608, 0.819608, 1 )
+normal_color = Color( 0.8, 0.8, 0.8, 1 )
+hover_color = Color( 1, 1, 1, 1 )
+
+[node name="Sprite" parent="PickUpTape" index="0"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ClickArea" parent="PickUpTape" index="1"]
+position = Vector2( 672.219, 297.23 )
+rotation = -0.604495
+shape = SubResource( 1 )
 
 [node name="MessageListener" type="Node" parent="." index="2"]
 script = ExtResource( 5 )
@@ -248,3 +259,5 @@ next_subworld_index = 2
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="PickUpTape" method="show" flags=6]
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/DarkVoidElements" method="hide" flags=6]
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/TutorialStep" method="_show_step" binds= [ 1 ]]
+
+[editable path="PickUpTape"]

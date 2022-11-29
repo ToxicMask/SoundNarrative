@@ -197,7 +197,7 @@ usando de seu Gravador de bolso para descobrir
 a verdade por trás de anomalias sonoras que ocorrem 
 nas Colinas dos Sussuros."
 run/main_scene="res://Nodes/Screens/Main.tscn"
-config/icon="res://Assets/Images/recorder_backdrop_temp0.png"
+config/icon="res://Assets/Images/Textures/128Icon.png"
 
 [audio]
 
