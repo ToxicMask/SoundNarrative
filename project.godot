@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameSystems/Main.gd"
 }, {
-"base": "CanvasLayer",
+"base": "Node",
 "class": "MainMenu",
 "language": "GDScript",
 "path": "res://Scripts/GameSystems/MainMenu.gd"

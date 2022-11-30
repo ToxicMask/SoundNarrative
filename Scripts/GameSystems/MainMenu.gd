@@ -1,8 +1,10 @@
-extends CanvasLayer
+extends Node
 class_name MainMenu
 
 
 func _enter_tree():
+	if self.is_in_group("DeleteOnChangeScene"):
+		self.add_to_group("DeleteOnChangeScene")
 	get_tree().call_group("Main", "_clear_game_data")
 	pass
 

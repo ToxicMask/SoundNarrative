@@ -5,6 +5,7 @@ Vertical Slice:
 
 Montagem de Cenario 3D
 	- Modelagem de Objetos
+		Faltantes: 0x1, 1x3
 	- Textura de Objetos
 	- Posicionamento e Ajustes de
 	- Renederização de Cenarios de Mundo
@@ -20,6 +21,9 @@ Sonoplastia
 	- Esperar arquivos de audio:
 		Faltantes: 5, 6
 
+Interface
+	- Design padrão
+	- Font padrão
 
 Exploração de Cena
 	- Fazer layouts de cada cena

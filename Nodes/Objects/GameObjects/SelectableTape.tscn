@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
 shader_param/line_color = Color( 1, 1, 1, 0 )
-shader_param/mask_thickness = 14.0
+shader_param/mask_thickness = 10.0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 30 )

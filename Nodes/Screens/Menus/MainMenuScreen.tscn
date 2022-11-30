@@ -1,23 +1,86 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Render/Scene1/Render1x1BLOCK.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Shaders/TelevisionShader.gdshader" type="Shader" id=3]
 
-[node name="MainMenu" type="CanvasLayer" groups=["DeleteOnChangeScene"]]
+[sub_resource type="OpenSimplexNoise" id=1]
+octaves = 4
+persistence = 1.0
+
+[sub_resource type="NoiseTexture" id=2]
+width = 256
+height = 1
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+shader_param/staticOffset = 0.0
+shader_param/grayscaleFactor = false
+shader_param/noiseFactor = 0.22
+shader_param/noiseBright = 0.011
+shader_param/tint = Color( 1, 0.902344, 0.902344, 1 )
+shader_param/noiseTexture = SubResource( 2 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AllEllements/TextureRect:material:shader_param/staticOffset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "StandardAnimation"
+length = 25.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AllEllements/TextureRect:material:shader_param/staticOffset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="MainMenu" type="Node" groups=["DeleteOnChangeScene"]]
 script = ExtResource( 1 )
 
 [node name="AllEllements" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="CenterElements" type="CenterContainer" parent="AllEllements"]
+[node name="TextureRect" type="TextureRect" parent="AllEllements"]
+material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="CenterElements" type="CenterContainer" parent="AllEllements"]
+anchor_left = 0.56
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.440002
+margin_right = -1.0
 
 [node name="ButtonContainer" type="VBoxContainer" parent="AllEllements/CenterElements"]
-margin_left = 352.0
-margin_top = 232.0
-margin_right = 672.0
-margin_bottom = 368.0
+margin_left = 65.0
+margin_top = 82.0
+margin_right = 385.0
+margin_bottom = 218.0
 rect_min_size = Vector2( 320, 0 )
 custom_constants/separation = 10
 alignment = 1
@@ -61,10 +124,25 @@ enabled_focus_mode = 0
 text = "SAIR"
 
 [node name="Panel" type="Panel" parent="AllEllements/CenterElements"]
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+margin_left = 225.0
+margin_top = 150.0
+margin_right = 225.0
+margin_bottom = 150.0
+
+[node name="Label" type="Label" parent="AllEllements"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 501.0
+margin_bottom = 322.0
+text = "COLINA DOS
+SUSSUROS"
+align = 1
+valign = 1
+
+[node name="MenuAnimation" type="AnimationPlayer" parent="."]
+autoplay = "StandardAnimation"
+anims/RESET = SubResource( 4 )
+anims/StandardAnimation = SubResource( 5 )
 
 [connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/PlayButton" to="." method="_start_new_game"]
 [connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/Credits Button" to="." method="_go_to_credits"]

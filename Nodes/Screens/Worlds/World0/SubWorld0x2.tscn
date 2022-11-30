@@ -39,10 +39,10 @@ custom_constants/margin_bottom = 80
 margin_right = 911.0
 margin_bottom = 242.0
 
-[node name="partALabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="0"]
+[node name="TitleLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="0"]
 margin_right = 911.0
 margin_bottom = 31.0
-text = "\"0112357\" - A sequencia fundamental
+text = "\"0112358\" - A sequencia fundamental
 por Arthur das Dores"
 align = 1
 
@@ -53,7 +53,7 @@ margin_right = 911.0
 margin_bottom = 71.0
 custom_constants/separation = 36
 
-[node name="partBLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="2"]
+[node name="SummaryLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="2"]
 margin_top = 75.0
 margin_right = 911.0
 margin_bottom = 242.0
