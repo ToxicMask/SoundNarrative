@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Images/Render/Scene0/Render0x3PH.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x3A.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=3]
 
 [node name="SubWorld0x2" instance=ExtResource( 1 )]
@@ -9,18 +9,20 @@
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 2 )
 
-[node name="KeyChangeScene" parent="." index="1" instance=ExtResource( 3 )]
-position = Vector2( 544, 323 )
+[node name="InvisibleKeyChangeScene" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( 676, 217 )
+scale = Vector2( 1.44, 1 )
 
 [node name="OpenBook" parent="." index="2" instance=ExtResource( 3 )]
-position = Vector2( 438, 87 )
-scale = Vector2( 1.708, 1.498 )
+position = Vector2( 576, 46 )
+scale = Vector2( 2.028, 0.978 )
 
 [node name="DarkVoidHUD" type="CanvasLayer" parent="." index="3"]
 layer = 5
 follow_viewport_enable = true
 
 [node name="DarkVoidElements" type="Control" parent="DarkVoidHUD" index="0"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -92,7 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="mouse_click" from="KeyChangeScene" to="." method="_go_to_next_scene" binds= [ "World1" ]]
+[connection signal="mouse_click" from="InvisibleKeyChangeScene" to="." method="_go_to_next_scene" binds= [ "World1" ]]
 [connection signal="mouse_click" from="OpenBook" to="DarkVoidHUD/DarkVoidElements" method="show"]
 [connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/DarkVoidElements" method="hide"]
 [connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/DarkVoidElements" method="hide"]
