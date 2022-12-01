@@ -3,7 +3,7 @@
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene0/Render0x1Letter.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/HoverClickableObject.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Images/Render/Scene0/Render0x1B.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x1C.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.3966, 23.5 )
