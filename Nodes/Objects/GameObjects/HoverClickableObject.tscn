@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nodes/Objects/GameObjects/ClickableObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/GameObjects/HoverClickableObject.gd" type="Script" id=2]
+
+[node name="HoverClickableObject" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+hover_color = Color( 0.196078, 0.843137, 0.156863, 1 )

@@ -1,28 +1,51 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Images/Render/Scene0/Render0x3A.png" type="Texture" id=2]
-[ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/Objects/GameObjects/PickUpTape.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/GameSystems/TutorialStep.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/GameObjects/MessageListener.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x2TapePickUp.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 82.9163, 45.7529 )
 
 [node name="SubWorld0x2" instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_horizontal_guides_": [ 330.0 ],
+"_edit_vertical_guides_": [ 555.0 ]
+}
 
 [node name="WorldRender" parent="." index="0"]
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 
-[node name="InvisibleKeyChangeScene" parent="." index="1" instance=ExtResource( 3 )]
-position = Vector2( 676, 217 )
-scale = Vector2( 1.44, 1 )
+[node name="PickUpTape" parent="." index="1" instance=ExtResource( 2 )]
+modulate = Color( 0.584314, 0.584314, 0.584314, 1 )
+self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
+tape_id = "Woldemort"
+normal_color = Color( 0.8, 0.8, 0.8, 1 )
+hover_color = Color( 1, 1, 1, 1 )
 
-[node name="OpenBook" parent="." index="2" instance=ExtResource( 3 )]
-position = Vector2( 576, 46 )
-scale = Vector2( 2.028, 0.978 )
+[node name="Sprite" parent="PickUpTape" index="0"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ClickArea" parent="PickUpTape" index="1"]
+position = Vector2( 672.219, 297.23 )
+rotation = -0.604495
+shape = SubResource( 1 )
+
+[node name="MessageListener" type="Node" parent="." index="2"]
+script = ExtResource( 5 )
+std_message = "WOLDEMORT!"
 
 [node name="DarkVoidHUD" type="CanvasLayer" parent="." index="3"]
 layer = 5
 follow_viewport_enable = true
 
 [node name="DarkVoidElements" type="Control" parent="DarkVoidHUD" index="0"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -32,43 +55,66 @@ anchor_bottom = 1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="DarkVoidHUD/DarkVoidElements/CenterContainer" index="0"]
 margin_left = 56.0
-margin_top = 139.0
-margin_right = 967.0
-margin_bottom = 461.0
+margin_top = 53.0
+margin_right = 968.0
+margin_bottom = 546.0
 custom_constants/margin_bottom = 80
 
 [node name="Letter Labels" type="VBoxContainer" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer" index="0"]
-margin_right = 911.0
-margin_bottom = 242.0
+margin_right = 912.0
+margin_bottom = 413.0
+custom_constants/separation = 24
 
-[node name="TitleLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="0"]
-margin_right = 911.0
-margin_bottom = 31.0
-text = "\"0112358\" - A sequencia fundamental
-por Arthur das Dores"
-align = 1
+[node name="partALabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="0"]
+margin_right = 912.0
+margin_bottom = 14.0
+text = "Caro Sr. Arthur Miller"
 
 [node name="InvisibleSeparator" type="HSeparator" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="1"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 35.0
-margin_right = 911.0
-margin_bottom = 71.0
-custom_constants/separation = 36
+margin_top = 38.0
+margin_right = 912.0
+margin_bottom = 50.0
+custom_constants/separation = 12
 
-[node name="SummaryLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="2"]
-margin_top = 75.0
-margin_right = 911.0
-margin_bottom = 242.0
-text = "Um livro de filosofia e matematica encontrado em um sebo qualquer. 
-Na contra capa, segue escrito:
+[node name="ContentLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="2"]
+margin_top = 74.0
+margin_right = 912.0
+margin_bottom = 224.0
+text = "Representando a Laboratórios OTTO, nós o convidamos para conhecer nossas novas instalações.
 
-\"Cunhada por Leonardo Fibonacci, essa sequencia de numeros se baseia na sequinte formula: 
-Começando pelo numero 0, sequido por 1, o proximo numero na sequencia sempre será a soma dos dois numeros anteriores na sequencia.
+Ficamos impressionados por suas divulgações aldaciosas no meio jornalistico. 
+Não é todo dia que um reporter com sua deficiencia vocal adguiri tanto prestigio.
 
-A formula Febonacci, também conhecidada como a \"formula da vida\", é um padrão que aparece em diversos aspectos da natureza e nas artes.
+Nos ultimos meses, nossa equipe tem pesquisado intensamente sobre estranhos fenomenos sonoros que ocorrem na \"Colina dos Sussuros\", 
+utilizando equipamento ultra tecnologicos.
 
-Tanto na formação de folhas, até na proporções de um corpo  ideal, os humanos parecem ser atraidos por esse padrão.
-Quem sabe que segredos essa sequencia pode revelar? \""
+Temos certeza que sua experiencia pessoal podera oferecer uma nova perspectiva para nossas pesquinas e para seus leitores."
+
+[node name="InvisibleSeparator2" type="HSeparator" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="3"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 248.0
+margin_right = 912.0
+margin_bottom = 252.0
+custom_constants/separation = 4
+
+[node name="AssingLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="4"]
+margin_top = 276.0
+margin_right = 912.0
+margin_bottom = 341.0
+text = "
+Obrigado pela atenção,
+Peter Rocha
+Laboratórios OTTO"
+align = 2
+
+[node name="ObsLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="5"]
+margin_top = 365.0
+margin_right = 912.0
+margin_bottom = 413.0
+text = "PS. O Dr. Otto não permitiu dar mais detalhes por questão de segurança, mas aqui está uma gravação.
+PSS. Sei que a reputação do Dr. Otto, pode não ser das melhores no meio cientifico. 
+Porém, eu REALMENTE acredito que ele fez uma grande descoberta."
 
 [node name="ColorBackground" type="ColorRect" parent="DarkVoidHUD/DarkVoidElements" index="1"]
 show_behind_parent = true
@@ -88,13 +134,130 @@ shortcut_in_tooltip = false
 action_mode = 0
 button_mask = 3
 enabled_focus_mode = 0
-text = "Voltar"
+text = "Fechar"
 icon_align = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="mouse_click" from="InvisibleKeyChangeScene" to="." method="_go_to_next_scene" binds= [ "World1" ]]
-[connection signal="mouse_click" from="OpenBook" to="DarkVoidHUD/DarkVoidElements" method="show"]
-[connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/DarkVoidElements" method="hide"]
-[connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/DarkVoidElements" method="hide"]
+[node name="TutorialStep" type="Control" parent="DarkVoidHUD" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+script = ExtResource( 4 )
+
+[node name="Step1" type="Control" parent="DarkVoidHUD/TutorialStep" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step1" index="0"]
+margin_left = 775.0
+margin_top = 260.0
+margin_right = 977.0
+margin_bottom = 291.0
+text = "Colete FITAS
+<--"
+
+[node name="Step2" type="Control" parent="DarkVoidHUD/TutorialStep" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step2" index="0"]
+margin_left = 693.0
+margin_top = 474.0
+margin_right = 1006.0
+margin_bottom = 539.0
+text = "Você pode escutar com seu TOCADOR DE FITAS  |
+|
+V
+"
+align = 2
+
+[node name="Step3" type="Control" parent="DarkVoidHUD/TutorialStep" index="2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step3" index="0"]
+margin_left = 362.0
+margin_top = 522.0
+margin_right = 580.0
+margin_bottom = 604.0
+text = "Use EJETAR para Trocar Fita
+-------> 
+"
+align = 2
+
+[node name="Step4" type="Control" parent="DarkVoidHUD/TutorialStep" index="3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step4" index="0"]
+margin_left = 381.0
+margin_top = 142.0
+margin_right = 599.0
+margin_bottom = 224.0
+rect_pivot_offset = Vector2( 119, 23 )
+text = "/\\                   
+|                   
+|                   
+Escolha uma FITA               
+"
+align = 2
+
+[node name="Step5" type="Control" parent="DarkVoidHUD/TutorialStep" index="4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step5" index="0"]
+margin_left = 470.0
+margin_top = 261.0
+margin_right = 688.0
+margin_bottom = 343.0
+rect_pivot_offset = Vector2( 119, 23 )
+text = "Use PLAY  para tocar a fita. 
+|                   
+|                   
+V                   "
+align = 2
+
+[node name="Step6" type="Control" parent="DarkVoidHUD/TutorialStep" index="5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Advice" type="Label" parent="DarkVoidHUD/TutorialStep/Step6" index="0"]
+margin_left = 26.0
+margin_top = 422.0
+margin_right = 346.0
+margin_bottom = 487.0
+text = "Cuidado com o que você toca. 
+Alguém ou algo pode estar ouvindo.
+"
+align = 1
+
+[node name="NavButton" parent="DarkVoidHUD/TutorialStep/Step6" index="1" instance=ExtResource( 3 )]
+margin_left = 58.0
+margin_top = 519.0
+margin_right = 160.0
+margin_bottom = 568.0
+text = "Próxima"
+subworld_path = NodePath("../../../..")
+next_subworld_index = 2
+
+[connection signal="mouse_click" from="PickUpTape" to="DarkVoidHUD/TutorialStep" method="_show_step" binds= [ 2 ]]
+[connection signal="message_received" from="MessageListener" to="DarkVoidHUD/TutorialStep" method="_show_step" flags=7 binds= [ 6 ]]
+[connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/DarkVoidElements" method="show"]
+[connection signal="ready" from="DarkVoidHUD" to="DarkVoidHUD/TutorialStep" method="show"]
+[connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="PickUpTape" method="show" flags=6]
+[connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/DarkVoidElements" method="hide" flags=6]
+[connection signal="pressed" from="DarkVoidHUD/DarkVoidElements/NavButton" to="DarkVoidHUD/TutorialStep" method="_show_step" binds= [ 1 ]]
+
+[editable path="PickUpTape"]
