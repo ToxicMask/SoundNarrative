@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GameObjects/NavButton.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Fonts/CourierNew/ButtonTextFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Resources/Themes/Styles/FlatDarkGrey.tres" type="StyleBox" id=3]
+[ext_resource path="res://Resources/Themes/Styles/FlatMidGrey.tres" type="StyleBox" id=4]
+
+[sub_resource type="Theme" id=1]
+Button/fonts/font = ExtResource( 2 )
+Button/styles/hover = ExtResource( 4 )
+Button/styles/normal = ExtResource( 3 )
 
 [node name="NavButton" type="Button"]
 margin_right = 84.0
 margin_bottom = 49.0
 focus_mode = 0
+theme = SubResource( 1 )
 shortcut_in_tooltip = false
 action_mode = 0
 button_mask = 3

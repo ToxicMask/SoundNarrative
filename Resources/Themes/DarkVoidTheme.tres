@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Fonts/CourierNew/cour.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Themes/Styles/FlatDarkGrey.tres" type="StyleBox" id=2]
+[ext_resource path="res://Resources/Themes/Styles/FlatMidGrey.tres" type="StyleBox" id=3]
+[ext_resource path="res://Resources/Fonts/CourierNew/ButtonTextFont.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 13
+use_filter = true
+extra_spacing_space = 6
+font_data = ExtResource( 1 )
+
+[resource]
+resource_name = "DarkVoidTheme"
+default_font = SubResource( 2 )
+Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+Button/fonts/font = ExtResource( 4 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 2 )

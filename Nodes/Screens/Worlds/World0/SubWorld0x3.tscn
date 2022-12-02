@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene0/Render0x3A.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/HoverClickableObject.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Images/Render/Scene0/Render0x3Key.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Themes/DarkVoidTheme.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 74.5, 49 )
@@ -38,53 +39,58 @@ layer = 5
 follow_viewport_enable = true
 
 [node name="DarkVoidElements" type="Control" parent="DarkVoidHUD" index="0"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 6 )
 
 [node name="CenterContainer" type="CenterContainer" parent="DarkVoidHUD/DarkVoidElements" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="DarkVoidHUD/DarkVoidElements/CenterContainer" index="0"]
-margin_left = 56.0
-margin_top = 139.0
-margin_right = 967.0
-margin_bottom = 461.0
+margin_left = 125.0
+margin_top = 97.0
+margin_right = 899.0
+margin_bottom = 503.0
 custom_constants/margin_bottom = 80
 
 [node name="Letter Labels" type="VBoxContainer" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer" index="0"]
-margin_right = 911.0
-margin_bottom = 242.0
+margin_right = 774.0
+margin_bottom = 326.0
 
 [node name="TitleLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="0"]
-margin_right = 911.0
-margin_bottom = 31.0
+margin_right = 774.0
+margin_bottom = 33.0
 text = "\"0112358\" - A sequencia fundamental
 por Arthur das Dores"
 align = 1
 
 [node name="InvisibleSeparator" type="HSeparator" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="1"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 35.0
-margin_right = 911.0
-margin_bottom = 71.0
+margin_top = 37.0
+margin_right = 774.0
+margin_bottom = 73.0
 custom_constants/separation = 36
 
 [node name="SummaryLabel" type="Label" parent="DarkVoidHUD/DarkVoidElements/CenterContainer/MarginContainer/Letter Labels" index="2"]
-margin_top = 75.0
-margin_right = 911.0
-margin_bottom = 242.0
+margin_top = 77.0
+margin_right = 774.0
+margin_bottom = 326.0
 text = "Um livro de filosofia e matematica encontrado em um sebo qualquer. 
 Na contra capa, segue escrito:
 
-\"Cunhada por Leonardo Fibonacci, essa sequencia de numeros se baseia na sequinte formula: 
-Começando pelo numero 0, sequido por 1, o proximo numero na sequencia sempre será a soma dos dois numeros anteriores na sequencia.
+\"Cunhada por Leonardo Fibonacci, a sequencia de numeros se baseia na sequinte formula: 
+Começando pelo numero 0, sequido por 1, 
+um numero sempre será a soma dos dois numeros anteriores na sequência.
 
-A formula Febonacci, também conhecidada como a \"formula da vida\", é um padrão que aparece em diversos aspectos da natureza e nas artes.
+A fórmula Febonacci, também conhecidada como a \"fórmula da vida\", 
+é um padrão que aparece em diversos aspectos da natureza e sas artes clássicas.
 
-Tanto na formação de folhas, até na proporções de um corpo  ideal, os humanos parecem ser atraidos por esse padrão.
-Quem sabe que segredos essa sequencia pode revelar? \""
+Tanto na formação de folhas, até na proporções de um corpo  ideal, 
+os humanos parecem ser atraidos por esse padrão.
+
+Quem sabe que segredos essa sequencia pode revelar?\""
+align = 1
 
 [node name="ColorBackground" type="ColorRect" parent="DarkVoidHUD/DarkVoidElements" index="1"]
 show_behind_parent = true
