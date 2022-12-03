@@ -1,11 +1,18 @@
 extends Node
 class_name MainMenu
 
+export (Array, Texture) var random_textures = []
 
 func _enter_tree():
 	if self.is_in_group("DeleteOnChangeScene"):
 		self.add_to_group("DeleteOnChangeScene")
 	get_tree().call_group("Main", "_clear_game_data")
+
+func _ready():
+	if not random_textures.empty():
+		randomize()
+		var index = int(rand_range(0, 1000)) % random_textures.size()
+		$AllEllements/TextureRect.texture = random_textures[index]
 	pass
 
 

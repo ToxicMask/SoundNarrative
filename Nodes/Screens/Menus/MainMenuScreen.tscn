@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/Render/Scene1/Render1x1BLOCK.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Render/Scene0/Render0x1.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Shaders/TelevisionShader.gdshader" type="Shader" id=3]
 [ext_resource path="res://Resources/Themes/MainMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://Resources/Fonts/Helvetica/Helvetica-Oblique.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Images/Render/Scene1/Render1x1A.png" type="Texture" id=6]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 octaves = 4
@@ -19,10 +20,10 @@ noise = SubResource( 1 )
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
 shader_param/staticOffset = 0.0
-shader_param/grayscaleFactor = false
-shader_param/noiseFactor = 0.22
+shader_param/grayscaleFactor = true
+shader_param/noiseFactor = 0.309
 shader_param/noiseBright = 0.011
-shader_param/tint = Color( 1, 0.902344, 0.902344, 1 )
+shader_param/tint = Color( 0.5271, 0.7, 0.518, 1 )
 shader_param/noiseTexture = SubResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -42,11 +43,24 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AllEllements/TextureRect:material:shader_param/tint")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.5271, 0.7, 0.518, 1 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "StandardAnimation"
-length = 25.0
+length = 30.0
 loop = true
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AllEllements/TextureRect:material:shader_param/staticOffset")
 tracks/0/interp = 1
@@ -54,14 +68,27 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 25 ),
+"times": PoolRealArray( 0, 29.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AllEllements/TextureRect:material:shader_param/tint")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5, 10, 15, 20, 25.1, 30 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.3765, 0.5, 0.37, 1 ), Color( 0.561, 0.75, 0.5475, 1 ), Color( 0.3765, 0.5, 0.37, 1 ), Color( 0.561, 0.75, 0.5475, 1 ), Color( 0.3765, 0.5, 0.37, 1 ), Color( 0.561, 0.75, 0.5475, 1 ), Color( 0.3765, 0.5, 0.37, 1 ) ]
+}
 
 [node name="MainMenu" type="Node" groups=["DeleteOnChangeScene"]]
 script = ExtResource( 1 )
+random_textures = [ ExtResource( 2 ), ExtResource( 6 ) ]
 
 [node name="AllEllements" type="Control" parent="."]
 anchor_right = 1.0
@@ -72,43 +99,42 @@ theme = ExtResource( 4 )
 material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 
 [node name="CenterElements" type="CenterContainer" parent="AllEllements"]
-anchor_left = 1.0
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -390.0
-margin_top = 150.0
+margin_left = 222.0
+margin_right = 462.0
 
 [node name="ButtonContainer" type="VBoxContainer" parent="AllEllements/CenterElements"]
-margin_left = 75.0
-margin_top = 129.0
-margin_right = 315.0
-margin_bottom = 321.0
+margin_top = 200.0
+margin_right = 240.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 240, 0 )
-custom_constants/separation = 24
+custom_constants/separation = 12
 alignment = 1
 
 [node name="PlayButton" type="Button" parent="AllEllements/CenterElements/ButtonContainer"]
 margin_right = 240.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 0, 32 )
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
 focus_mode = 0
 enabled_focus_mode = 0
 text = "COMEÇAR"
 
 [node name="HSeparator" type="HSeparator" parent="AllEllements/CenterElements/ButtonContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 56.0
+margin_top = 60.0
 margin_right = 240.0
-margin_bottom = 60.0
+margin_bottom = 64.0
 
 [node name="Credits Button" type="Button" parent="AllEllements/CenterElements/ButtonContainer"]
-margin_top = 84.0
+margin_top = 76.0
 margin_right = 240.0
-margin_bottom = 112.0
-rect_min_size = Vector2( 0, 28 )
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 48 )
 focus_mode = 0
 enabled_focus_mode = 0
 text = "CRÉDITOS"
@@ -120,19 +146,19 @@ margin_right = 240.0
 margin_bottom = 140.0
 
 [node name="QuitButton" type="Button" parent="AllEllements/CenterElements/ButtonContainer"]
-margin_top = 164.0
+margin_top = 152.0
 margin_right = 240.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 0, 28 )
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 48 )
 focus_mode = 0
 enabled_focus_mode = 0
 text = "SAIR"
 
 [node name="Panel" type="Panel" parent="AllEllements/CenterElements"]
-margin_left = 195.0
-margin_top = 225.0
-margin_right = 195.0
-margin_bottom = 225.0
+margin_left = 120.0
+margin_top = 300.0
+margin_right = 120.0
+margin_bottom = 300.0
 
 [node name="TitleLabel" type="Label" parent="AllEllements"]
 anchor_right = 0.654
@@ -154,7 +180,7 @@ margin_top = 529.0
 margin_right = -401.696
 margin_bottom = -12.0
 custom_fonts/font = SubResource( 6 )
-text = "Um jogo feito por Tomás Xavier"
+text = "Um jogo feito por Tomás Xavier & Pedro Prada"
 valign = 1
 
 [node name="MenuAnimation" type="AnimationPlayer" parent="."]
