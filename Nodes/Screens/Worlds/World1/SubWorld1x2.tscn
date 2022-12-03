@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Images/Render/Scene1/Render1x2PH.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Render/Scene1/Render1x2.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 
 [node name="SubWorld1x2" instance=ExtResource( 1 )]
@@ -10,19 +10,19 @@
 texture = ExtResource( 2 )
 
 [node name="TableNavButton" parent="." index="1" instance=ExtResource( 3 )]
-margin_left = 265.0
-margin_top = 439.0
-margin_right = 374.0
-margin_bottom = 513.0
+margin_left = 198.0
+margin_top = 387.0
+margin_right = 307.0
+margin_bottom = 461.0
 text = "Inspect Table"
 subworld_path = NodePath("..")
 next_subworld_index = 2
 
 [node name="DoorNavButton" parent="." index="2" instance=ExtResource( 3 )]
-margin_left = 727.0
-margin_top = 310.0
-margin_right = 836.0
-margin_bottom = 384.0
+margin_left = 700.0
+margin_top = 285.0
+margin_right = 809.0
+margin_bottom = 359.0
 text = "Inspect Door"
 subworld_path = NodePath("..")
 next_subworld_index = 3

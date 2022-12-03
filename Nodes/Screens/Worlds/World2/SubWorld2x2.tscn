@@ -7,7 +7,7 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 72.5, 300 )
+extents = Vector2( 172, 300 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "OpenDoor"
@@ -44,23 +44,23 @@ tracks/0/keys = {
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 2 )
 
-[node name="GoBackNavButton" parent="." index="1" instance=ExtResource( 3 )]
+[node name="SimpleVoiceLock" parent="." index="1" instance=ExtResource( 4 )]
+
+[node name="GoNextSceneInteractable" parent="." index="2" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( -1, 5 )
+
+[node name="ClickArea" parent="GoNextSceneInteractable" index="1"]
+position = Vector2( 172, 300 )
+shape = SubResource( 7 )
+
+[node name="GoBackNavButton" parent="." index="3" instance=ExtResource( 3 )]
 margin_left = 30.0
 margin_top = 492.0
 margin_right = 139.0
 margin_bottom = 566.0
 text = "Voltar"
 subworld_path = NodePath("..")
-
-[node name="SimpleVoiceLock" parent="." index="2" instance=ExtResource( 4 )]
-
-[node name="GoNextSceneInteractable" parent="." index="3" instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 202, 5 )
-
-[node name="ClickArea" parent="GoNextSceneInteractable" index="1"]
-position = Vector2( 72.5, 300 )
-shape = SubResource( 7 )
 
 [node name="ScreenActions" type="AnimationPlayer" parent="." index="4"]
 anims/OpenDoor = SubResource( 5 )

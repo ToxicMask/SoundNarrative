@@ -6,7 +6,7 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 286.5, 189 )
+extents = Vector2( 286.5, 299.5 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "OpenDoor"
@@ -52,11 +52,10 @@ text = "Voltar"
 subworld_path = NodePath("..")
 
 [node name="GoNextSceneInteractable" parent="." index="2" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 483, 5 )
 
 [node name="ClickArea" parent="GoNextSceneInteractable" index="1"]
-position = Vector2( 255.5, 186 )
+position = Vector2( 255.5, 296.5 )
 shape = SubResource( 7 )
 
 [node name="ScreenActions" type="AnimationPlayer" parent="." index="3"]
@@ -64,5 +63,6 @@ anims/OpenDoor = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "World4" ]]
+[connection signal="ready" from="GoNextSceneInteractable" to="GoNextSceneInteractable" method="hide" flags=6]
 
 [editable path="GoNextSceneInteractable"]

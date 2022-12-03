@@ -4,8 +4,8 @@
 bg_color = Color( 0.2, 0.198, 0.198, 1 )
 corner_radius_top_left = 16
 corner_radius_top_right = 16
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 shadow_color = Color( 0.1, 0.1, 0.1, 1 )
 shadow_size = 4
 shadow_offset = Vector2( 0, 8 )
