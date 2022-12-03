@@ -111,8 +111,8 @@ margin_right = 894.0
 margin_bottom = 426.0
 text = "PS. O Dr. Otto não permitiu dar mais detalhes por questão de segurança, mas aqui está uma gravação.
 
-PSS. Sei que a reputação do Dr. Otto, pode não ser das melhores no meio cientifico. 
-Porém, eu REALMENTE acredito que ele fez uma grande descoberta."
+PSS. Sei que a reputação do Dr. Otto pode não ser das melhores. 
+Porém, eu realmente acredito que ele fez uma grande descoberta. PELO DOUTOR, POR FAVOR VENHA."
 
 [node name="ColorBackground" type="ColorRect" parent="DarkVoidHUD/DarkVoidElements" index="1"]
 show_behind_parent = true
@@ -139,6 +139,7 @@ __meta__ = {
 }
 
 [node name="TutorialStep" type="Control" parent="DarkVoidHUD" index="1"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
