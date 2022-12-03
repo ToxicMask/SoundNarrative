@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Images/Render/Scene1/Render1x3bPH.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Render/Scene1/Render1x3B.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/PickUpTape.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Images/Render/Scene1/Render1x3aPH.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Render/Scene1/Render1x3_TapePickUp.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Render/Scene1/Render1x3A.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 54.0223, 23.4645 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 57.0761, 71.6036 )
+extents = Vector2( 145.603, 35.9182 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "OpenDrawer"
@@ -109,15 +113,22 @@ texture = ExtResource( 7 )
 
 [node name="DrawerContent" type="Node2D" parent="." index="1"]
 visible = false
-position = Vector2( 30, 492 )
 
 [node name="PickUpTape" parent="DrawerContent" index="0" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 222, -297 )
-rotation = -0.453189
 tape_id = "Evil Laugh"
 normal_color = Color( 0.639216, 0.156863, 0.156863, 1 )
 hover_color = Color( 0.941176, 0.0823529, 0.0823529, 1 )
+
+[node name="Sprite" parent="DrawerContent/PickUpTape" index="0"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ClickArea" parent="DrawerContent/PickUpTape" index="1"]
+position = Vector2( 352, 295 )
+rotation = -0.459774
+shape = SubResource( 4 )
 
 [node name="GoBackNavButton" parent="." index="2" instance=ExtResource( 3 )]
 margin_left = 30.0
@@ -129,12 +140,13 @@ subworld_path = NodePath("..")
 next_subworld_index = 1
 
 [node name="DrawerOpenInteractable" parent="." index="3" instance=ExtResource( 5 )]
-position = Vector2( 397, 253 )
+position = Vector2( 427, 319 )
 rotation = 0.448413
-scale = Vector2( 3.04346, 1 )
 
 [node name="ClickArea" parent="DrawerOpenInteractable" index="1"]
-position = Vector2( 4.30295, 5.39639 )
+position = Vector2( 26.4619, -3.45332 )
+rotation = 0.278525
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="ScreenActions" type="AnimationPlayer" parent="." index="4"]
@@ -144,4 +156,5 @@ anims/RESET = SubResource( 3 )
 [connection signal="mouse_click" from="DrawerOpenInteractable" to="DrawerOpenInteractable" method="queue_free"]
 [connection signal="mouse_click" from="DrawerOpenInteractable" to="ScreenActions" method="play" flags=6 binds= [ "OpenDrawer" ]]
 
+[editable path="DrawerContent/PickUpTape"]
 [editable path="DrawerOpenInteractable"]
