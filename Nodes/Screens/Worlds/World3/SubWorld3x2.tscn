@@ -52,7 +52,6 @@ text = "Voltar"
 subworld_path = NodePath("..")
 
 [node name="GoNextSceneInteractable" parent="." index="2" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 483, 5 )
 
 [node name="ClickArea" parent="GoNextSceneInteractable" index="1"]
@@ -63,7 +62,6 @@ shape = SubResource( 7 )
 anims/OpenDoor = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
-[connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "World4" ]]
-[connection signal="ready" from="GoNextSceneInteractable" to="GoNextSceneInteractable" method="hide" flags=6]
+[connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "EndGamePart1" ]]
 
 [editable path="GoNextSceneInteractable"]
