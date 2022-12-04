@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Images/Render/Scene3/Render3x2PH.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Render/Scene3/Render3x2BLOCK.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=7]
@@ -52,6 +52,7 @@ text = "Voltar"
 subworld_path = NodePath("..")
 
 [node name="GoNextSceneInteractable" parent="." index="2" instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 483, 5 )
 
 [node name="ClickArea" parent="GoNextSceneInteractable" index="1"]

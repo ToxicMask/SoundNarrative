@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=1]
+[ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=26]
+period = 20.8
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=27]
+seamless = true
+noise = SubResource( 26 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/gradientOffset = 0.0
+shader_param/waveSpeed = 1.0
+shader_param/waveScale = 20.0
+shader_param/waveStrength = 180.0
+shader_param/waveFactor = 1.0
+shader_param/line_color = Color( 1, 0, 0, 1 )
+shader_param/mask_thickness = 1.0
+shader_param/colorGradient = ExtResource( 2 )
+shader_param/noiseTexture = SubResource( 27 )

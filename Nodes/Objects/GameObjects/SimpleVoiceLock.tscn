@@ -1,40 +1,102 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/_Debug/_DebugMessageListener.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GameObjects/MessageListener.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/GameObjects/SimpleVoiceLock.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DeviceHearing"
+length = 1.4
 loop = true
 step = 0.02
 tracks/0/type = "value"
-tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/TEMP_ACCEPT:color")
+tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.82, 0.84, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Escutando..." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.196078, 0.843137, 0.156863, 0 ), Color( 0.196078, 0.843137, 0.156863, 1 ), Color( 0.196078, 0.843137, 0.156863, 1 ), Color( 0.196078, 0.843137, 0.156863, 0 ) ]
+"values": [ 0.0, 1.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "DeviceNotHearing"
 loop = true
 step = 0.02
-
-[sub_resource type="Animation" id=4]
-resource_name = "DeviceUnlocked"
 tracks/0/type = "value"
-tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/TEMP_ACCEPT:color")
+tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "DeviceUnlocked"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Liberado" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -44,7 +106,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/TEMP_ACCEPT:color")
+tracks/0/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -53,8 +115,36 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.196078, 0.843137, 0.156863, 0 ) ]
+"values": [ "Escutando..." ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SimpleVoiceLock/DeviceAnim/PanelLabel:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 4 )
 
 [node name="SimpleVoiceLock" type="Node2D"]
 script = ExtResource( 3 )
@@ -74,11 +164,14 @@ anims/DeviceNotHearing = SubResource( 3 )
 anims/DeviceUnlocked = SubResource( 4 )
 anims/RESET = SubResource( 2 )
 
-[node name="TEMP_ACCEPT" type="ColorRect" parent="DeviceAnim"]
-margin_left = 396.0
-margin_top = 171.0
-margin_right = 550.0
-margin_bottom = 229.0
-color = Color( 0.196078, 0.843137, 0.156863, 0 )
+[node name="PanelLabel" type="Label" parent="DeviceAnim"]
+margin_left = 429.0
+margin_top = 185.0
+margin_right = 660.0
+margin_bottom = 225.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Escutando..."
+align = 1
 
 [connection signal="message_received" from="MessageListener" to="." method="_unlock"]
