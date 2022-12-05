@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Images/Render/Scene3/Render3x3BLOCK.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Render/Scene3/Render3x3.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=7]
 
