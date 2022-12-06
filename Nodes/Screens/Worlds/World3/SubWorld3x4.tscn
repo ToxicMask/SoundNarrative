@@ -1,12 +1,42 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Objects/GameObjects/PickUpTape.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Images/Render/Scene3/Render3x4A.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Render/Scene3/Render3x4C.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x4B_PickUp.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Images/Render/Scene3/Render3x4B.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Render/Scene3/Render3x4D.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Render/Scene3/Render3x4_BACKGROUND.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=9]
+
+[sub_resource type="Gradient" id=24]
+offsets = PoolRealArray( 0, 0.867347, 1 )
+colors = PoolColorArray( 0.945313, 0.945313, 0.945313, 1, 0.998512, 0.0257228, 0.0257228, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=28]
+gradient = SubResource( 24 )
+
+[sub_resource type="OpenSimplexNoise" id=26]
+period = 20.8
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=27]
+seamless = true
+noise = SubResource( 26 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 9 )
+shader_param/gradientOffset = 0.0
+shader_param/waveSpeed = 1.0
+shader_param/waveScale = 4.0
+shader_param/waveStrength = 90.0
+shader_param/waveFactor = 0.2
+shader_param/line_color = Color( 1, 0, 0, 1 )
+shader_param/mask_thickness = 1.0
+shader_param/colorGradient = SubResource( 28 )
+shader_param/noiseTexture = SubResource( 27 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.5, 18.159 )
@@ -46,6 +76,14 @@ tracks/0/keys = {
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 5 )
 
+[node name="WorldRenderBackroom" type="Sprite" parent="WorldRender" index="0"]
+show_behind_parent = true
+material = SubResource( 29 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="BackgroundRender" type="AnimationPlayer" parent="WorldRender" index="1"]
+
 [node name="GoBackNavButton" parent="." index="1" instance=ExtResource( 3 )]
 margin_left = 30.0
 margin_top = 492.0
@@ -56,7 +94,7 @@ subworld_path = NodePath("..")
 
 [node name="PickUpTape" parent="." index="2" instance=ExtResource( 4 )]
 visible = false
-tape_id = ""
+tape_id = "029"
 normal_color = Color( 0.419608, 0.278431, 0.439216, 1 )
 hover_color = Color( 0.709804, 0.164706, 0.772549, 1 )
 

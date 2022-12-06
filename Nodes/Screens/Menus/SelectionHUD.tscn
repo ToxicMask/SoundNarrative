@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Resources/Objects/Tapes/EmptyTape.tres" type="Resource" id=1]
-[ext_resource path="res://Resources/Objects/Tapes/WoldemortTest2.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/Objects/Tapes/TapeTestLaugh0.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/Objects/Tapes/AlienTest1.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/Objects/Tape_Infos/EmptyTape.tres" type="Resource" id=1]
+[ext_resource path="res://Resources/Objects/Tape_Infos/WoldemortTest2.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/Objects/Tape_Infos/TapeTestLaugh0.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/Objects/Tape_Infos/AlienTest1.tres" type="Resource" id=4]
 [ext_resource path="res://Nodes/Objects/GameObjects/SelectableTape.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_EJECT.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/GameObjects/TapeSelectionHUD.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Images/Textures/LeatherTexture.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Objects/Tape_Infos/029Test.tres" type="Resource" id=10]
 
 [node name="SelectionHUD" type="CanvasLayer"]
 script = ExtResource( 7 )
@@ -50,7 +51,7 @@ tape_info = ExtResource( 2 )
 [node name="SelectableTape3" parent="." groups=["SelectionTape"] instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 704, 64 )
-tape_info = ExtResource( 1 )
+tape_info = ExtResource( 10 )
 
 [node name="SelectableTape4" parent="." groups=["SelectionTape"] instance=ExtResource( 5 )]
 visible = false

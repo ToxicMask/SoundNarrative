@@ -3,38 +3,29 @@ Vertical Slice:
 	- Terminar Cenas para se aproximar da Tela Final
 		Faltantes: 0, 1, 2, 3
 
+Sonoplastia
+	- Editar audio das fitas
+		Faltantes: 0, 1, 2, 3, 4, 5, 6
+
 Montagem de Cenario 3D
-	- Modelagem de Objetos
-		Faltantes: 0x1, 1x3
-	- Textura de Objetos
-	- Posicionamento e Ajustes de
-	- Renederização de Cenarios de Mundo
-	- Renderização de Objetos
 	- Blocagem de Cenarios e Props
 		Faltantes: 4, 5, 6
 	- Posicionamento das cameras de acordo com Layouts
 		Faltantes: 4, 5, 6
-
-Sonoplastia
-	- Editar audio das fitas
-		Faltantes: 0, 1, 2, 3, 4, 5, 6
-	- Esperar arquivos de audio:
-		Faltantes: 5, 6
-
-Interface
-	- Design padrão
-	- Font padrão
+	- Modelagem de Objetos
+	- Textura de Objetos
+	- Posicionamento e Ajustes de
+	- Renederização de Cenarios de Mundo
+	- Renderização de Objetos
 
 Exploração de Cena
 	- Fazer layouts de cada cena
 		Faltantes: Cenas 4, 5, 6
 
-
 Montagem de Cenario Interativo
 	- Usar Roteiros e Layouts para montar Mundos e Submundos
 		Faltantes: 4, 5, 6
 	- Montar Elementos Interativos
-	
 
 
 	
@@ -95,6 +86,10 @@ Efeitos Visuais
 Sonoplastia
 	- Encher o saco do Pedro
 	- Desenhar Sistemas Sonoros Globais - Efeitos Sonoros / OST / Ambiencia
+
+Interface
+	- Design padrão
+	- Font padrão
 
 
 ######### CANCELLED #######
