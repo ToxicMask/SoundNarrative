@@ -1,0 +1,35 @@
+# Cena 4: Porão do Laboratório
+
+@Cena4x1 - Escada descendo para o porão
+
+@ Cena4x2 - Sala de anomalias, com uma porta para aproxima sala.
+	@Cena4x2a - Maquina dos Numeros
+	@Cena4x2b - Maquina do Suma
+	@Cena4x2c - Maquina do Abrir
+	@Cena4x2b - Maquina do Destruir
+	@Cena4x2e - Maquina do Luzes
+		- Na frente da maquina de luzes ele vai encontrar a fita 4
+
+
+@ Cena4x3: Sala cheia de anomalias e efeitos visuais
+	- Porta trancada, com anomalia que diz destruir
+	- Animação da destruição da porta.
+	- Tem uma estante com uma caixa
+
+@ Cena 4x4: Foco na Caixa - Dark Void
+	- Dentro da caixa tem um papel escrito com as palavras: DESTRUIR e SUMA
+	- A fita 5 esta dentro da caixa.
+
+
+
+# Cena 5: Sala da Origem
+
+	@ Cena5x1 - Sala de contenção da Anomalia de Origem
+		- Foco principal: Maquina de contenção da Anomalia, Foco Secundario, botão de destruição.
+		- Highlight na Maleta
+
+	@ Cena5x2 - Dark Void - Maleta com Fita 6
+
+	@ Cena5x3 - Foco na Maquina de Contenção, pode abrir para falar os comandos.
+
+	@ Cena5x4 - Botão de destruição, pode abrir tampa do botão.
