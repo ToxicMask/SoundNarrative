@@ -95,6 +95,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/GameObjects/SimpleVoiceLock.gd"
 }, {
 "base": "Node",
+"class": "SoundController",
+"language": "GDScript",
+"path": "res://Scripts/GameSystems/SoundController.gd"
+}, {
+"base": "Node",
 "class": "SoundMixer",
 "language": "GDScript",
 "path": "res://Scripts/GameSystems/SoundMixer.gd"
@@ -192,6 +197,7 @@ _global_script_class_icons={
 "NewGameManager": "",
 "SelectionTape": "",
 "SimpleVoiceLock": "",
+"SoundController": "",
 "SoundMixer": "",
 "SoundMixerController": "",
 "StarGameScreen": "",

@@ -38,6 +38,7 @@ func _set_subworld( index : int):
 		var instance = subworld_instances[index] as SubWorld
 		instance.connect("sub_world_changed", self, "_set_subworld", [], CONNECT_ONESHOT)
 		add_child(instance)
+		instance._subworld_enter()
 		# Update counter
 		current_subworld = index
 	

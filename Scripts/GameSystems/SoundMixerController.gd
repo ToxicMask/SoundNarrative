@@ -41,5 +41,4 @@ func _update_master_volume(delta_volume : float):
 	var new_volume : float = clamp(old_volume + delta_volume, MIN_VOLUME, MAX_VOLUME)
 
 	sm_node._set_volume("Master", new_volume)
-	print(new_volume)
 	pass

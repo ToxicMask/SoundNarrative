@@ -6,6 +6,10 @@ var world_node : WorldScreen
 
 signal sub_world_changed(new_index)
 
+func _subworld_enter():
+	$SoundController._update_sound_mixer()
+	pass
+
 
 func _change_sub_world(new_index : int):
 	emit_signal("sub_world_changed", new_index)

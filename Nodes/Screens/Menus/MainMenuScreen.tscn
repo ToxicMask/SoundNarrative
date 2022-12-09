@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene0/Render0x1.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Resources/Fonts/Helvetica/Helvetica-Oblique.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x1A.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Render/Scene2/Render2x1.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/GameSystems/SoundController.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Audio/Ambience/main_menu_static.wav" type="AudioStream" id=9]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 octaves = 4
@@ -22,8 +24,8 @@ noise = SubResource( 1 )
 shader = ExtResource( 3 )
 shader_param/staticOffset = 0.0
 shader_param/grayscaleFactor = true
-shader_param/noiseFactor = 0.309
-shader_param/noiseBright = 0.011
+shader_param/noiseFactor = 0.65
+shader_param/noiseBright = 0.01
 shader_param/tint = Color( 0.5271, 0.7, 0.518, 1 )
 shader_param/noiseTexture = SubResource( 2 )
 
@@ -90,6 +92,11 @@ tracks/1/keys = {
 [node name="MainMenu" type="Node" groups=["DeleteOnChangeScene"]]
 script = ExtResource( 1 )
 random_textures = [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ) ]
+
+[node name="SoundController" type="Node" parent="."]
+script = ExtResource( 8 )
+ambience_stream = ExtResource( 9 )
+autoplay = true
 
 [node name="AllEllements" type="Control" parent="."]
 anchor_right = 1.0

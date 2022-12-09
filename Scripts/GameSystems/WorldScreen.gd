@@ -14,4 +14,4 @@ func _get_tape_recorder_controller():
 	return get_node_or_null("TapeRecorderController")
 
 func _get_sound_controller():
-	return get_node_or_null("SoundController ")
+	return get_node_or_null("SoundController")
