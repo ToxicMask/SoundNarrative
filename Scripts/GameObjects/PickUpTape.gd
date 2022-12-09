@@ -31,6 +31,9 @@ func _process_input(_viewport, event, _shape):
 
 func _pick_up(_event = null):
 	_try_update_data()
+	self.hide()
+	$PickUpSFX.play()
+	yield(get_tree().create_timer(1.1), "timeout")
 	queue_free()
 	pass
 

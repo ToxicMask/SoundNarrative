@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GameObjects/PickUpTape.gd" type="Script" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/ClickableObject.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/Textures/Tape_Pick_Up_Texture.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Audio/SFX/PickUpTape0.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 92, 54.999 )
@@ -24,3 +25,8 @@ shape = SubResource( 1 )
 
 [node name="KeepDataController" type="Node" parent="." index="2"]
 script = ExtResource( 1 )
+
+[node name="PickUpSFX" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 5 )
+volume_db = -12.0
+bus = "PlainSFX"
