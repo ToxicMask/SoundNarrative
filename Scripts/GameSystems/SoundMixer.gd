@@ -13,6 +13,15 @@ SFX should be played in individual Nodes
 
 
 """
+
+Control Variables
+
+"""
+var master_muted : bool = false
+var master_volume_db : float = 0.0
+
+
+"""
 STATICS AND CALLBACKS
 
 """
@@ -80,9 +89,22 @@ Volume
 
 """
 func _set_volume(bus_name: String, volume_db : float):
+
+	if bus_name == "Master":
+		master_volume_db = volume_db
+		pass
+
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume_db)
 	pass
 
 func _set_muted(bus_name: String, muted_bool: bool):
+
+	if bus_name == "Master":
+		master_muted = muted_bool
+
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), muted_bool)
+	pass
+
+func _toggle_master_mute():
+	self._set_muted("Master", !master_muted)
 	pass
