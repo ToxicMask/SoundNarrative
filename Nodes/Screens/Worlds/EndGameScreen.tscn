@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/WorldScreen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/BLACK_128x128.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Textures/BLACK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Themes/PlainText.tres" type="Theme" id=5]
+
 
 [node name="EndGameScreen" type="Node2D"]
 script = ExtResource( 1 )

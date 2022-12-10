@@ -1,7 +1,7 @@
 [gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Assets/Images/Render/_RenderDropzone/Render.000.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Images/WHITE_BLOCK_128x128.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Textures/WHITE_BLOCK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Shaders/TelevisionShader.gdshader" type="Shader" id=3]
 [ext_resource path="res://Resources/Shaders/DistortionGlass.gdshader" type="Shader" id=4]
 [ext_resource path="res://Resources/Shaders/RGBSlider.gdshader" type="Shader" id=5]
@@ -9,17 +9,18 @@
 [ext_resource path="res://Resources/Shaders/TextureSlideTransition.gdshader" type="Shader" id=7]
 [ext_resource path="res://Nodes/Objects/GameObjects/VisualEffects/FilmGrainOverlay.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Images/Textures/Anomaly1.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Images/WHITE_128x128.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/Textures/WHITE_128x128.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Shaders/AnomalyV0.gdshader" type="Shader" id=11]
 [ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=12]
-[ext_resource path="res://Assets/Images/icon128.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/Textures/icon128.png" type="Texture" id=13]
 [ext_resource path="res://Resources/Materials/Anomaly0.tres" type="Material" id=14]
 [ext_resource path="res://Resources/Shaders/NoiseDissolve.gdshader" type="Shader" id=15]
-[ext_resource path="res://Assets/Images/iconGrad128.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Images/Textures/iconGrad128.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Shaders/BrightnessGradient.gdshader" type="Shader" id=17]
 [ext_resource path="res://Scripts/_Debug/_DebugSchockScreen.gd" type="Script" id=18]
 [ext_resource path="res://Resources/Shaders/ScreenPulse.gdshader" type="Shader" id=19]
 [ext_resource path="res://Resources/Shaders/BlockBlur.gdshader" type="Shader" id=20]
+
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )

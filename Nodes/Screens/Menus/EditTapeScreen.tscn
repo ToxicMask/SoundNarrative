@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/GameObjects/TapeKeepData.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/GameSystems/EditTapeWorldScreen.gd" type="Script" id=4]
 [ext_resource path="res://Misc/ref0.jpg" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/WHITE_128x128.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Textures/WHITE_128x128.png" type="Texture" id=6]
 [ext_resource path="res://Nodes/Screens/Menus/SelectionHUD.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]

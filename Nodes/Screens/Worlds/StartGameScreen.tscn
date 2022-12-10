@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/StartGameScreen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/BLACK_128x128.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Textures/BLACK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/GameSystems/NewGameManager.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/GameObjects/KeepDataController.gd" type="Script" id=4]
 [ext_resource path="res://Resources/Themes/PlainText.tres" type="Theme" id=5]
