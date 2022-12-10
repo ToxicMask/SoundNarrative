@@ -6,6 +6,8 @@ Vertical Slice:
 Sonoplastia
 	- Editar audio das fitas
 		Faltantes: 0, 1, 2, 3, 4, 5, 6
+	- Editar audio da Ambience Sonora
+		Faltantes: 0, 1, 2, 3, 4, 5, 6
 
 Montagem de Cenario 3D
 	- Blocagem de Cenarios e Props
@@ -14,7 +16,7 @@ Montagem de Cenario 3D
 		Faltantes: 4, 5
 	- Modelagem de Objetos
 	- Textura de Objetos
-	- Posicionamento e Ajustes de
+	- Posicionamento e Ajustes de Angulo
 	- Renederização de Cenarios de Mundo
 	- Renderização de Objetos
 
