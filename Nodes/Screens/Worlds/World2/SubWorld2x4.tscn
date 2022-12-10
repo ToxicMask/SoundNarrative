@@ -126,7 +126,6 @@ centered = false
 [node name="ClickArea" parent="PickUpTape" index="1"]
 position = Vector2( 719.256, 386.772 )
 rotation = 0.190654
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
 [node name="GoBackNavButton" parent="." index="2" instance=ExtResource( 3 )]

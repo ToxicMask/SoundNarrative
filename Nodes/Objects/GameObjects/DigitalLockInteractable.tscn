@@ -29,6 +29,7 @@ Button/fonts/font = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
+Label/fonts/font = null
 
 [node name="D_Lock" type="Node2D"]
 script = ExtResource( 1 )
@@ -158,9 +159,10 @@ margin_top = 116.0
 margin_right = 64.0
 margin_bottom = 196.0
 rect_min_size = Vector2( 0, 80 )
+rect_pivot_offset = Vector2( 40, 32 )
 focus_mode = 0
 enabled_focus_mode = 0
-text = "E"
+text = "ENTER"
 
 [connection signal="button_up" from="AllButtons/CentralButtons/DigitalButton1" to="." method="_add_password_digit" binds= [ "1" ]]
 [connection signal="button_up" from="AllButtons/CentralButtons/DigitalButton2" to="." method="_add_password_digit" binds= [ "2" ]]
