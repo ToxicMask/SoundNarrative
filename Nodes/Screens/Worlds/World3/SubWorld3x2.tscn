@@ -83,7 +83,7 @@ anims/OpenDoor = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [node name="DigitalVoiceLock" parent="." index="4" instance=ExtResource( 9 )]
-key_password = "123"
+key_password = "0123"
 
 [node name="PanelLabel" parent="DigitalVoiceLock/DeviceAnim" index="0"]
 margin_left = 351.0

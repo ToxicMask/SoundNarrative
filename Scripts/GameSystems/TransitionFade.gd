@@ -33,5 +33,4 @@ func _start_transition_sequence(old_texture : Texture):
 
 	texture = null
 	emit_signal("transition_completed")
-	print('End')
 	pass

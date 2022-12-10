@@ -46,11 +46,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="NavButton1" parent="NavButtons" index="0" instance=ExtResource( 5 )]
-margin_left = 208.0
-margin_top = 311.0
-margin_right = 303.0
-margin_bottom = 360.0
-text = "Inspect Door"
+margin_left = 334.0
+margin_top = 389.0
+margin_right = 429.0
+margin_bottom = 438.0
+text = "Porta"
 subworld_path = NodePath("../..")
 next_subworld_index = 1
 
@@ -64,10 +64,10 @@ subworld_path = NodePath("../..")
 next_subworld_index = 2
 
 [node name="NavButton3" parent="NavButtons" index="2" instance=ExtResource( 5 )]
-margin_left = 585.0
-margin_top = 434.0
-margin_right = 680.0
-margin_bottom = 483.0
-text = "Inspect Table"
+margin_left = 599.0
+margin_top = 438.0
+margin_right = 694.0
+margin_bottom = 487.0
+text = "Bancada"
 subworld_path = NodePath("../..")
 next_subworld_index = 3

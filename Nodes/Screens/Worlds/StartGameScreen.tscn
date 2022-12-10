@@ -35,14 +35,12 @@ margin_bottom = 560.0
 
 [node name="IntoText" type="Label" parent="IntroScreen/FullRect/FullRectMargin/Center"]
 margin_left = 174.0
-margin_top = 184.0
+margin_top = 210.0
 margin_right = 850.0
-margin_bottom = 336.0
+margin_bottom = 310.0
 rect_min_size = Vector2( 300, 100 )
 text = "Este é um jogo point and Click
-Use o mouse para explorar e interagir com o ambiente
-
-Boa Sorte"
+Use o mouse para explorar e interagir com o ambiente"
 align = 1
 valign = 1
 uppercase = true

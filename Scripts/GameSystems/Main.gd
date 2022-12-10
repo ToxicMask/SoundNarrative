@@ -27,7 +27,7 @@ onready var fade_rect = $ScreenVisualEffects/TransitionFade as TransitionFade
 Callbacks
 """
 func _ready():
-	_change_world_scene("MainMenu")
+	_change_world_scene("MainMenu", false)
 	_add_keep_data()
 	pass
 
@@ -91,23 +91,34 @@ func _remove_main_child(name : String):
 Scene Managment
 """
 
-func _change_world_scene(world_key : String):
+func _change_world_scene(world_key : String, with_transition : bool = true):
 	if world_scene_dict.has(world_key):
-		# Screen Shoot
-		fade_rect.mouse_filter = Control.MOUSE_FILTER_STOP
-		var screen_shot = _create_screen_shot()
-		fade_rect._start_transition_sequence(screen_shot)		
-		get_tree().call_group("DeleteOnChangeScene","queue_free")
-		yield(fade_rect, "screen_filled")
+		if with_transition:
+			# Screen Shoot
+			fade_rect.mouse_filter = Control.MOUSE_FILTER_STOP
+			var screen_shot = _create_screen_shot()
+			fade_rect._start_transition_sequence(screen_shot)
+			get_tree().call_group("DeleteOnChangeScene","queue_free")
+			yield(fade_rect, "screen_filled")
 
-		# Change World
-		current_world_scene_key = world_key
-		var new_world = world_scene_dict[current_world_scene_key].instance() 
-		add_child(new_world)
-		yield(fade_rect, "transition_completed")
+			# Change World
+			current_world_scene_key = world_key
+			var new_world = world_scene_dict[current_world_scene_key].instance() 
+			add_child(new_world)
+			yield(fade_rect, "transition_completed")
 
-		# Return to Normal
-		fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			# Return to Normal
+			fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			
+		else:
+			# Delete Old World
+			get_tree().call_group("DeleteOnChangeScene","queue_free")
+			
+			# Change World
+			current_world_scene_key = world_key
+			var new_world = world_scene_dict[current_world_scene_key].instance() 
+			add_child(new_world)
+			
 
 	else:
 		print( "@%s::%s is not in Dictionary." % [get_path(), world_key] )
@@ -115,13 +126,8 @@ func _change_world_scene(world_key : String):
 
 
 func _create_screen_shot() -> Texture:
-	# Retrieve the captured Image using get_data().
 	var img = get_viewport().get_texture().get_data()
-	# Flip on the Y axis.
-	# You can also set "V Flip" to true if not on the root Viewport.
 	img.flip_y()
-	# Convert Image to ImageTexture.
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
 	return tex
-	pass

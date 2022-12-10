@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene0/Render0x1.png" type="Texture" id=2]
@@ -28,6 +28,49 @@ shader_param/noiseFactor = 0.65
 shader_param/noiseBright = 0.01
 shader_param/tint = Color( 0.5271, 0.7, 0.518, 1 )
 shader_param/noiseTexture = SubResource( 2 )
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+
+uniform bool grayscaleFactor = true;
+uniform float noiseFactor : hint_range(0, 1) = 0.3;
+uniform vec4 tint : hint_color;
+uniform vec4 noiseColor : hint_color;
+
+
+float random (vec2 uv) {
+    return fract(sin(dot(uv.xy,
+        vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+
+void fragment() {
+	vec4 texturePixel = texture(TEXTURE, UV);
+	vec4 mixColor = vec4(1);
+	
+	vec4 grayscale = vec4( vec3((texturePixel.r + texturePixel.g + texturePixel.b) / 3.0), 1);
+	grayscale.a = texturePixel.a;
+	mixColor = mix(mixColor, grayscale, float(grayscaleFactor));
+
+	// Noise Factor
+	vec4 whiteNoise = vec4((random(UV * TIME / 1.0)));
+	mixColor = mix(mixColor * tint, noiseColor, float(noiseFactor >= whiteNoise.r ));
+	mixColor.a = mix(0.0, mixColor.a, texturePixel.a);
+	
+	
+	// Set Color
+	COLOR = mixColor;
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 7 )
+shader_param/grayscaleFactor = true
+shader_param/noiseFactor = 0.35
+shader_param/tint = Color( 1, 1, 1, 1 )
+shader_param/noiseColor = Color( 0.419608, 1, 0.258824, 0.403922 )
 
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 5 )
@@ -169,6 +212,7 @@ margin_right = 120.0
 margin_bottom = 300.0
 
 [node name="TitleLabel" type="Label" parent="AllEllements"]
+material = SubResource( 10 )
 anchor_right = 0.654
 anchor_bottom = 1.0
 margin_left = 2.0

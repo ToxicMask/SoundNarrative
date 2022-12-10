@@ -20,50 +20,67 @@ anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 
-[node name="List" type="VBoxContainer" parent="CreditsLayer/FullRect"]
+[node name="TopDownList" type="VBoxContainer" parent="CreditsLayer/FullRect"]
 margin_top = 40.0
 margin_right = 1024.0
 margin_bottom = 560.0
-custom_constants/separation = 120
-alignment = 1
+custom_constants/separation = 32
 
-[node name="Center" type="CenterContainer" parent="CreditsLayer/FullRect/List"]
-margin_top = 58.0
+[node name="CreditsText0" type="Label" parent="CreditsLayer/FullRect/TopDownList"]
 margin_right = 1024.0
-margin_bottom = 294.0
-
-[node name="CreditsText" type="Label" parent="CreditsLayer/FullRect/List/Center"]
-margin_left = 154.0
-margin_right = 869.0
-margin_bottom = 236.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 300, 100 )
 text = "Tomás Xavier Carciofi 
-GAME DESIGN /  ROTEIRO /  DESENVOLVIMENTO / SONOPLASTIA
+GAME DESIGN /  ROTEIRO /  DESENVOLVIMENTO / SONOPLASTIA"
+align = 1
+valign = 1
+uppercase = true
 
-
-Pedro Prada Carciofi 
+[node name="CreditsText1" type="Label" parent="CreditsLayer/FullRect/TopDownList"]
+margin_top = 132.0
+margin_right = 1024.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 300, 100 )
+text = "Pedro Prada Carciofi 
 ATUAÇÂO DE VOZ"
 align = 1
 valign = 1
 uppercase = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CreditsLayer/FullRect/List"]
-margin_top = 414.0
+[node name="HSeparator" type="HSeparator" parent="CreditsLayer/FullRect/TopDownList"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 264.0
 margin_right = 1024.0
-margin_bottom = 461.0
+margin_bottom = 268.0
 
-[node name="CenterBottom" type="VBoxContainer" parent="CreditsLayer/FullRect/List/MarginContainer"]
+[node name="CreditsText2" type="Label" parent="CreditsLayer/FullRect/TopDownList"]
+margin_top = 300.0
 margin_right = 1024.0
-margin_bottom = 47.0
-alignment = 2
+margin_bottom = 400.0
+rect_min_size = Vector2( 300, 100 )
+text = "Agradecimentos
+GodotEngine, Blender, freesound.com"
+align = 1
+valign = 1
+uppercase = true
 
-[node name="BackButton" type="Button" parent="CreditsLayer/FullRect/List/MarginContainer/CenterBottom"]
+[node name="MarginContainer" type="MarginContainer" parent="CreditsLayer/FullRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -79.0
+custom_constants/margin_left = 64
+custom_constants/margin_bottom = 32
+
+[node name="BackButton" type="Button" parent="CreditsLayer/FullRect/MarginContainer"]
+margin_left = 64.0
 margin_right = 1024.0
 margin_bottom = 47.0
 focus_mode = 0
 enabled_focus_mode = 0
-text = " MENU"
+text = "VOLTAR"
 flat = true
+align = 0
 icon_align = 1
 
-[connection signal="pressed" from="CreditsLayer/FullRect/List/MarginContainer/CenterBottom/BackButton" to="." method="_next_scene"]
+[connection signal="pressed" from="CreditsLayer/FullRect/MarginContainer/BackButton" to="." method="_next_scene"]

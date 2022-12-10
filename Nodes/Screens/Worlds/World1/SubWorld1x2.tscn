@@ -14,7 +14,7 @@ margin_left = 198.0
 margin_top = 387.0
 margin_right = 307.0
 margin_bottom = 461.0
-text = "Inspect Table"
+text = "Mesa"
 subworld_path = NodePath("..")
 next_subworld_index = 2
 
@@ -23,6 +23,6 @@ margin_left = 700.0
 margin_top = 285.0
 margin_right = 809.0
 margin_bottom = 359.0
-text = "Inspect Door"
+text = "Porta"
 subworld_path = NodePath("..")
 next_subworld_index = 3
