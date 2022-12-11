@@ -13,6 +13,9 @@ func _ready():
 		randomize()
 		var index = int(rand_range(0, 1000)) % random_textures.size()
 		$AllEllements/TextureRect.texture = random_textures[index]
+	
+	if OS.has_feature('web'):
+		$AllEllements/CenterElements/ButtonContainer/QuitButton.hide()
 	pass
 
 
