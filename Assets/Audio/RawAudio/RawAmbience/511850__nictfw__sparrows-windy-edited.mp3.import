@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/511850__nictfw__sparrows-windy-edited.mp3-1fbe415f3d8247be6031ffe8757b4fa6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/RawAudio/RawAmbience/511850__nictfw__sparrows-windy-edited.mp3"
+dest_files=[ "res://.import/511850__nictfw__sparrows-windy-edited.mp3-1fbe415f3d8247be6031ffe8757b4fa6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

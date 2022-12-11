@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/GameObjects/DeviceButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_PLAY.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 13.5 )
@@ -23,3 +24,9 @@ texture = ExtResource( 2 )
 [node name="ClickArea" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
+
+[node name="PressedPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -4.0
+pitch_scale = 2.5
+bus = "PlainSFX"

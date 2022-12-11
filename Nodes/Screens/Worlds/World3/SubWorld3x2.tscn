@@ -102,6 +102,12 @@ custom_fonts/font = SubResource( 9 )
 align = 0
 valign = 0
 
+[node name="DigitalButtonC" parent="DigitalVoiceLock" index="4"]
+margin_left = 352.0
+margin_top = 217.0
+margin_right = 416.0
+margin_bottom = 265.0
+
 [connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "EndGamePart1" ]]
 [connection signal="ready" from="GoNextSceneInteractable" to="GoNextSceneInteractable" method="hide"]
 [connection signal="unlocked" from="DigitalVoiceLock" to="GoNextSceneInteractable" method="show"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x4D.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x4_BACKGROUND.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=9]
+[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
 
 [sub_resource type="Gradient" id=24]
 offsets = PoolRealArray( 0, 0.867347, 1 )
@@ -54,6 +55,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SceneActions/SFXPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -114,6 +129,12 @@ scale = Vector2( 1.64, 1.44 )
 [node name="SceneActions" type="AnimationPlayer" parent="." index="4"]
 anims/OpenBox = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="SceneActions" index="0"]
+stream = ExtResource( 10 )
+volume_db = -16.0
+pitch_scale = 0.6
+bus = "PlainSFX"
 
 [connection signal="mouse_click" from="OpenBox" to="PickUpTape" method="show" flags=6]
 [connection signal="mouse_click" from="OpenBox" to="OpenBox" method="queue_free" flags=7]

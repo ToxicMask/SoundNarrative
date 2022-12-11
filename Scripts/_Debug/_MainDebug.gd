@@ -32,21 +32,21 @@ func _input(event):
 			match(event.scancode):
 				KEY_1:
 					print("CHANGE SCENE: World0")
-					main_parent._change_world_scene("World0")
+					main_parent._change_world_scene("World0", false)
 				KEY_2:
 					print("CHANGE SCENE: World1")
-					main_parent._change_world_scene("World1")
+					main_parent._change_world_scene("World1", false)
 				KEY_3:
 					print("CHANGE SCENE: World2")
-					main_parent._change_world_scene("World2")
+					main_parent._change_world_scene("World2", false)
 				KEY_4:
 					print("CHANGE SCENE: World3")
-					main_parent._change_world_scene("World3")
+					main_parent._change_world_scene("World3", false)
 				
 				KEY_0:
 					print("CHANGE SCENE: Test0")
-					main_parent._change_world_scene("TEST0")
+					main_parent._change_world_scene("TEST0", false)
 				KEY_9:
 					print("CHANGE SCENE: Test1")
-					main_parent._change_world_scene("TEST1")
+					main_parent._change_world_scene("TEST1", false)
 	pass

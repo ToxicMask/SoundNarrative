@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/528777__mrwienerdog__static.wav-085f8872883e63acc793a830d9841fcc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/RawAudio/RawSFX/528777__mrwienerdog__static.wav"
+dest_files=[ "res://.import/528777__mrwienerdog__static.wav-085f8872883e63acc793a830d9841fcc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

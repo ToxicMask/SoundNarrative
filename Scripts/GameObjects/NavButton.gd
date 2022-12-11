@@ -1,4 +1,5 @@
 extends Button
+class_name NavButton
 
 export (NodePath) var subworld_path
 export (int) var next_subworld_index := 0

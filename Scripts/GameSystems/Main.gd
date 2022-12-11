@@ -37,11 +37,11 @@ Scene // OS Operations
 """
 
 func _start_new_game():
-	_change_world_scene("StartGame")
+	_change_world_scene("StartGame", false)
 	pass
 
 func _go_to_credits():
-	_change_world_scene("Credits")
+	_change_world_scene("Credits", false)
 	pass
 
 func _quit_app():

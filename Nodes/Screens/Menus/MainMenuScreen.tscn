@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene0/Render0x1.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Assets/Images/Render/Scene2/Render2x1.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/GameSystems/SoundController.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Audio/Ambience/main_menu_static.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/GameSystems/MainMenuPlayer.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Audio/SFX/Lock/Loud_Click.wav" type="AudioStream" id=12]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 octaves = 4
@@ -240,6 +243,19 @@ autoplay = "StandardAnimation"
 anims/RESET = SubResource( 4 )
 anims/StandardAnimation = SubResource( 5 )
 
+[node name="MainMenuPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = "PlainSFX"
+script = ExtResource( 11 )
+click_sample = ExtResource( 12 )
+hover_sample = ExtResource( 10 )
+
+[connection signal="button_down" from="AllEllements/CenterElements/ButtonContainer/PlayButton" to="MainMenuPlayer" method="_play_click"]
+[connection signal="mouse_entered" from="AllEllements/CenterElements/ButtonContainer/PlayButton" to="MainMenuPlayer" method="_play_hover"]
 [connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/PlayButton" to="." method="_start_new_game"]
+[connection signal="button_down" from="AllEllements/CenterElements/ButtonContainer/Credits Button" to="MainMenuPlayer" method="_play_click"]
+[connection signal="mouse_entered" from="AllEllements/CenterElements/ButtonContainer/Credits Button" to="MainMenuPlayer" method="_play_hover"]
 [connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/Credits Button" to="." method="_go_to_credits"]
+[connection signal="button_down" from="AllEllements/CenterElements/ButtonContainer/QuitButton" to="MainMenuPlayer" method="_play_click"]
+[connection signal="mouse_entered" from="AllEllements/CenterElements/ButtonContainer/QuitButton" to="MainMenuPlayer" method="_play_hover"]
 [connection signal="pressed" from="AllEllements/CenterElements/ButtonContainer/QuitButton" to="." method="_close_app"]

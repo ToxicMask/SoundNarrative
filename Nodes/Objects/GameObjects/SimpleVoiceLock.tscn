@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/_Debug/_DebugMessageListener.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GameObjects/MessageListener.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/GameObjects/SimpleVoiceLock.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Audio/SFX/Lock/Lock_Accept.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DeviceHearing"
@@ -46,6 +47,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 0, 0, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("SimpleVoiceLock/DeviceAnim/MessageLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "DeviceNotHearing"
@@ -62,6 +75,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SimpleVoiceLock/DeviceAnim/MessageLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -102,6 +127,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 0.196078, 0.843137, 0.156863, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("SimpleVoiceLock/DeviceAnim/MessageLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -141,6 +178,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 0, 0, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("SimpleVoiceLock/DeviceAnim/MessageLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
@@ -165,13 +217,28 @@ anims/DeviceUnlocked = SubResource( 4 )
 anims/RESET = SubResource( 2 )
 
 [node name="PanelLabel" type="Label" parent="DeviceAnim"]
-margin_left = 429.0
-margin_top = 185.0
-margin_right = 660.0
-margin_bottom = 225.0
+margin_left = 441.0
+margin_top = 150.0
+margin_right = 672.0
+margin_bottom = 190.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Escutando..."
+valign = 2
+
+[node name="MessageLabel" type="Label" parent="DeviceAnim"]
+visible = false
+margin_left = 429.0
+margin_top = 189.0
+margin_right = 660.0
+margin_bottom = 229.0
+custom_colors/font_color = Color( 0.196078, 0.843137, 0.156863, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "ABRIR"
 align = 1
 
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="unlocked" from="." to="SFXPlayer" method="play"]
 [connection signal="message_received" from="MessageListener" to="." method="_unlock"]

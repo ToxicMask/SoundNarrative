@@ -15,6 +15,7 @@ func _process_input(_viewport, event, _shape):
 func _press_button():
 	self.modulate = Color.darkgray
 	hold_pressed = true
+	$PressedPlayer.play()
 	emit_signal("button_pressed")
 
 func _realese_button():

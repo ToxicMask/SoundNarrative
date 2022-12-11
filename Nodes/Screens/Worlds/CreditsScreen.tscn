@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/CreditsScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Textures/BLACK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Themes/PlainText.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/SFX/Lock/Loud_Click.wav" type="AudioStream" id=5]
 
 [node name="CreditsScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,11 +26,13 @@ expand = true
 margin_top = 40.0
 margin_right = 1024.0
 margin_bottom = 560.0
-custom_constants/separation = 32
+custom_constants/separation = 16
+alignment = 1
 
 [node name="CreditsText0" type="Label" parent="CreditsLayer/FullRect/TopDownList"]
+margin_top = 86.0
 margin_right = 1024.0
-margin_bottom = 100.0
+margin_bottom = 186.0
 rect_min_size = Vector2( 300, 100 )
 text = "Tomás Xavier Carciofi 
 GAME DESIGN /  ROTEIRO /  DESENVOLVIMENTO / SONOPLASTIA"
@@ -37,9 +41,9 @@ valign = 1
 uppercase = true
 
 [node name="CreditsText1" type="Label" parent="CreditsLayer/FullRect/TopDownList"]
-margin_top = 132.0
+margin_top = 202.0
 margin_right = 1024.0
-margin_bottom = 232.0
+margin_bottom = 302.0
 rect_min_size = Vector2( 300, 100 )
 text = "Pedro Prada Carciofi 
 ATUAÇÂO DE VOZ"
@@ -49,17 +53,18 @@ uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="CreditsLayer/FullRect/TopDownList"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 264.0
+margin_top = 318.0
 margin_right = 1024.0
-margin_bottom = 268.0
+margin_bottom = 318.0
+custom_constants/separation = 0
 
 [node name="CreditsText2" type="Label" parent="CreditsLayer/FullRect/TopDownList"]
-margin_top = 300.0
+margin_top = 334.0
 margin_right = 1024.0
-margin_bottom = 400.0
+margin_bottom = 434.0
 rect_min_size = Vector2( 300, 100 )
 text = "Agradecimentos
-GodotEngine, Blender, freesound.com"
+GodotEngine, Blender, audacity, freesound.com"
 align = 1
 valign = 1
 uppercase = true
@@ -83,4 +88,16 @@ flat = true
 align = 0
 icon_align = 1
 
-[connection signal="pressed" from="CreditsLayer/FullRect/MarginContainer/BackButton" to="." method="_next_scene"]
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="CreditsLayer"]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "PlainSFX"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="CreditsLayer"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+bus = "PlainSFX"
+
+[connection signal="button_down" from="CreditsLayer/FullRect/MarginContainer/BackButton" to="CreditsLayer/ClickPlayer" method="play"]
+[connection signal="mouse_entered" from="CreditsLayer/FullRect/MarginContainer/BackButton" to="CreditsLayer/HoverPlayer" method="play"]
+[connection signal="pressed" from="CreditsLayer/FullRect/MarginContainer/BackButton" to="." method="_next_scene" flags=3]

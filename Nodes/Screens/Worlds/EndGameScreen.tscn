@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GameSystems/WorldScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Textures/BLACK_128x128.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/SFX/Lock/Loud_Click.wav" type="AudioStream" id=4]
 [ext_resource path="res://Resources/Themes/PlainText.tres" type="Theme" id=5]
-
 
 [node name="EndGameScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -62,4 +63,16 @@ text = "MENU"
 flat = true
 icon_align = 1
 
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+bus = "PlainSFX"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "PlainSFX"
+
+[connection signal="button_down" from="EndScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="ClickPlayer" method="play"]
+[connection signal="mouse_entered" from="EndScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="HoverPlayer" method="play"]
 [connection signal="pressed" from="EndScreen/FullRect/FullRectMargin/CenterBottom/NextButton" to="." method="_go_to_next_scene" binds= [ "MainMenu" ]]
