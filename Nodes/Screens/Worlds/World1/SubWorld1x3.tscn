@@ -143,9 +143,9 @@ visible = false
 
 [node name="PickUpTape" parent="DrawerContent" index="0" instance=ExtResource( 4 )]
 visible = false
-tape_id = "Evil Laugh"
-normal_color = Color( 0.639216, 0.156863, 0.156863, 1 )
-hover_color = Color( 0.941176, 0.0823529, 0.0823529, 1 )
+tape_id = "2"
+normal_color = Color( 0.819608, 0.211765, 0.211765, 1 )
+hover_color = Color( 0.92, 0.368, 0.368, 1 )
 
 [node name="Sprite" parent="DrawerContent/PickUpTape" index="0"]
 scale = Vector2( 1, 1 )

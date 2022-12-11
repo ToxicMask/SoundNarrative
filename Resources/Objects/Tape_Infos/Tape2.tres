@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/GameObjects/TapeInfo.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/SFX/BitScreenA.wav" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "3"
+description = "Descrição do mecanismo de segurança"
+content_array = [ ExtResource( 2 ) ]
+msg_array = [ "ABRIR" ]
+tape_color = Color( 0.528654, 0.808594, 0.511688, 1 )

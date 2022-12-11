@@ -31,6 +31,7 @@ onready var tape_node := $TapeAudioPlayer
 onready var selection_hud := $SelectionHUD
 
 enum {PLAYING, PAUSED, GOBACK, GOFOWARD, OFF, EJECTED}
+const FAST_SPEED : float = 1.25
 var current_tape_state = OFF
 var current_tapetime : float = 0.0
 
@@ -85,12 +86,12 @@ func _process(delta):
 			_update_timestamp_display()
 		
 		GOBACK:
-			current_tapetime -= delta *2
+			current_tapetime -= delta * FAST_SPEED
 			current_tapetime = clamp(current_tapetime, 0, tape_length)
 			_update_timestamp_display()
 		
 		GOFOWARD:
-			current_tapetime += delta *2
+			current_tapetime += delta * FAST_SPEED
 			current_tapetime = clamp(current_tapetime, 0, tape_length)
 			_update_timestamp_display()
 	pass

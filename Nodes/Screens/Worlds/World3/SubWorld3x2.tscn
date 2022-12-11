@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x2A.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x2G.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x2F.png" type="Texture" id=8]
 [ext_resource path="res://Nodes/Objects/GameObjects/DigitalVoiceLock.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Resources/Fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 144.25, 299.5 )
@@ -46,16 +45,6 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=8]
-size = 20
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 36
-use_filter = true
-extra_spacing_char = 24
-font_data = ExtResource( 10 )
-
 [node name="SubWorld3x2" instance=ExtResource( 6 )]
 
 [node name="WorldRender" parent="." index="0"]
@@ -83,30 +72,29 @@ anims/OpenDoor = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [node name="DigitalVoiceLock" parent="." index="4" instance=ExtResource( 9 )]
-key_password = "0123"
+key_password = "903"
 
-[node name="PanelLabel" parent="DigitalVoiceLock/DeviceAnim" index="0"]
+[node name="HearingLabel" parent="DigitalVoiceLock" index="2"]
+margin_left = 349.0
+margin_top = 136.0
+margin_right = 574.0
+margin_bottom = 175.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+
+[node name="DigitLabel" parent="DigitalVoiceLock" index="3"]
+margin_left = 332.0
+margin_top = 175.0
+margin_right = 601.0
+margin_bottom = 263.0
+rect_scale = Vector2( 0.56, 0.56 )
+text = ""
+
+[node name="DigitalButtonC" parent="DigitalVoiceLock" index="5"]
 margin_left = 351.0
-margin_top = 139.0
-margin_right = 582.0
-margin_bottom = 179.0
-custom_fonts/font = SubResource( 8 )
-align = 0
-
-[node name="DigitLabel" parent="DigitalVoiceLock" index="2"]
-margin_left = 352.0
-margin_top = 161.0
-margin_right = 608.0
-margin_bottom = 212.0
-custom_fonts/font = SubResource( 9 )
-align = 0
-valign = 0
-
-[node name="DigitalButtonC" parent="DigitalVoiceLock" index="4"]
-margin_left = 352.0
-margin_top = 217.0
-margin_right = 416.0
-margin_bottom = 265.0
+margin_top = 220.0
+margin_right = 415.0
+margin_bottom = 268.0
 
 [connection signal="mouse_click" from="GoNextSceneInteractable" to="." method="_go_to_next_scene" binds= [ "EndGamePart1" ]]
 [connection signal="ready" from="GoNextSceneInteractable" to="GoNextSceneInteractable" method="hide"]

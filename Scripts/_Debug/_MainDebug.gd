@@ -44,8 +44,8 @@ func _input(event):
 					main_parent._change_world_scene("World3", false)
 				
 				KEY_0:
-					print("CHANGE SCENE: Test0")
-					main_parent._change_world_scene("TEST0", false)
+					print("CHANGE SCENE: MainMenu")
+					main_parent._change_world_scene("MainMenu", false)
 				KEY_9:
 					print("CHANGE SCENE: Test1")
 					main_parent._change_world_scene("TEST1", false)

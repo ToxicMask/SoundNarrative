@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameObjects/SelectableTape.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Objects/GameObjects/ClickableObject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/Textures/Tape_Pick_Up_Texture.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Shaders/SimpleOutline.gdshader" type="Shader" id=4]
+[ext_resource path="res://Resources/Themes/TutorialTheme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=6]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -27,13 +29,28 @@ material = SubResource( 2 )
 scale = Vector2( 0.11, 0.11 )
 texture = ExtResource( 3 )
 
-[node name="ClickArea" parent="." index="1"]
+[node name="ShadowSprite" type="Sprite" parent="." index="1"]
+self_modulate = Color( 0, 0, 0, 0.368627 )
+show_behind_parent = true
+scale = Vector2( 0.115, 0.11 )
+texture = ExtResource( 3 )
+offset = Vector2( 32, 30 )
+
+[node name="ClickArea" parent="." index="2"]
+visible = false
 shape = SubResource( 1 )
 
-[node name="NameLabel" type="Label" parent="." index="2"]
+[node name="NameLabel" type="Label" parent="." index="3"]
 margin_left = -50.0
-margin_top = 35.0
+margin_top = 40.0
 margin_right = 50.0
-margin_bottom = 49.0
+margin_bottom = 54.0
+theme = ExtResource( 5 )
 text = "Current Name"
 align = 1
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource( 6 )
+volume_db = -6.0
+pitch_scale = 0.65
+bus = "PlainSFX"

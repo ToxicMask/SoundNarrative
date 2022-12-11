@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Audio/SFX/Lock/Lock_Accept.wav" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/GameObjects/DigitalVoiceLock.gd" type="Script" id=2]
@@ -13,7 +13,7 @@ length = 1.4
 loop = true
 step = 0.02
 tracks/0/type = "value"
-tracks/0/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:text")
+tracks/0/path = NodePath("DigitalVoiceLock/HearingLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ "Escutando..." ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/1/path = NodePath("DigitalVoiceLock/HearingLabel:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [ 0.0, 1.0, 1.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:custom_colors/font_color")
+tracks/2/path = NodePath("DigitalVoiceLock/HearingLabel:custom_colors/font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -54,7 +54,7 @@ resource_name = "DeviceNotHearing"
 loop = true
 step = 0.02
 tracks/0/type = "value"
-tracks/0/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/0/path = NodePath("DigitalVoiceLock/HearingLabel:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -69,7 +69,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "DeviceUnlocked"
 tracks/0/type = "value"
-tracks/0/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:text")
+tracks/0/path = NodePath("DigitalVoiceLock/HearingLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -81,7 +81,7 @@ tracks/0/keys = {
 "values": [ "Liberado" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/1/path = NodePath("DigitalVoiceLock/HearingLabel:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -93,7 +93,7 @@ tracks/1/keys = {
 "values": [ 1.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:custom_colors/font_color")
+tracks/2/path = NodePath("DigitalVoiceLock/HearingLabel:custom_colors/font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -105,10 +105,51 @@ tracks/2/keys = {
 "values": [ Color( 0.196078, 0.843137, 0.156863, 1 ) ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "DeviceWrongPass"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("DigitalVoiceLock/DigitLabel:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DigitalVoiceLock/HearingLabel:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DigitalVoiceLock/HearingLabel:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:text")
+tracks/0/path = NodePath("DigitalVoiceLock/HearingLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -120,7 +161,7 @@ tracks/0/keys = {
 "values": [ "Escutando..." ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:percent_visible")
+tracks/1/path = NodePath("DigitalVoiceLock/HearingLabel:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -132,12 +173,24 @@ tracks/1/keys = {
 "values": [ 1.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("DigitalVoiceLock/DeviceAnim/PanelLabel:custom_colors/font_color")
+tracks/2/path = NodePath("DigitalVoiceLock/HearingLabel:custom_colors/font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DigitalVoiceLock/DigitLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -154,6 +207,12 @@ use_filter = true
 extra_spacing_char = 24
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 72
+use_filter = true
+extra_spacing_char = 32
+font_data = ExtResource( 4 )
+
 [node name="DigitalVoiceLock" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -166,13 +225,15 @@ autoplay = "DeviceNotHearing"
 anims/DeviceHearing = SubResource( 1 )
 anims/DeviceNotHearing = SubResource( 3 )
 anims/DeviceUnlocked = SubResource( 4 )
+anims/DeviceWrongPass = SubResource( 8 )
 anims/RESET = SubResource( 2 )
 
-[node name="PanelLabel" type="Label" parent="DeviceAnim"]
-margin_left = 429.0
-margin_top = 185.0
-margin_right = 660.0
-margin_bottom = 225.0
+[node name="HearingLabel" type="Label" parent="."]
+margin_left = 348.0
+margin_top = 125.0
+margin_right = 579.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 73, -2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "Escutando..."
@@ -180,12 +241,23 @@ align = 1
 
 [node name="DigitLabel" type="Label" parent="."]
 modulate = Color( 1, 0, 0, 1 )
-margin_left = 440.0
-margin_top = 227.0
-margin_right = 709.0
-margin_bottom = 315.0
+margin_left = 359.0
+margin_top = 167.0
+margin_right = 628.0
+margin_bottom = 255.0
+rect_pivot_offset = Vector2( 62, -44 )
 custom_fonts/font = SubResource( 6 )
-align = 1
+text = "903"
+valign = 1
+clip_text = true
+uppercase = true
+
+[node name="EmptyDigitLabel" type="Label" parent="DigitLabel"]
+margin_right = 269.0
+margin_bottom = 88.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "___"
 valign = 1
 clip_text = true
 uppercase = true
@@ -201,6 +273,9 @@ margin_bottom = 289.0
 rect_min_size = Vector2( 0, 48 )
 focus_mode = 0
 theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.69, 0.69, 0.69, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.239216, 0.239216, 0.239216, 1 )
 enabled_focus_mode = 0
 text = "C"
 
@@ -208,9 +283,7 @@ text = "C"
 stream = ExtResource( 6 )
 bus = "PlainSFX"
 
-[connection signal="correct_password" from="." to="DigitLabel" method="set_modulate" binds= [ Color( 0.196078, 0.843137, 0.156863, 1 ) ]]
 [connection signal="password_display" from="." to="DigitLabel" method="set_text"]
-[connection signal="unlocked" from="." to="SFXPlayer" method="play"]
 [connection signal="message_received" from="DigitMessageListener" to="." method="_add_password_digit"]
 [connection signal="button_down" from="DigitalButtonC" to="DigitalButtonC/SFXPlayer" method="play"]
 [connection signal="pressed" from="DigitalButtonC" to="." method="_clear_password"]

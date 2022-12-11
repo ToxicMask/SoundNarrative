@@ -114,7 +114,7 @@ font_data = ExtResource( 10 )
 texture = ExtResource( 4 )
 
 [node name="PickUpTape" parent="." index="1" instance=ExtResource( 2 )]
-tape_id = "Alien Sound"
+tape_id = "3"
 normal_color = Color( 0.4416, 0.8, 0.416, 1 )
 hover_color = Color( 0.2305, 1, 0.19, 1 )
 

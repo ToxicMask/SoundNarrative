@@ -15,7 +15,7 @@ var max_password_length : int = 1 # Max size of the password
 var current_password : String = ""
 
 
-
+# Callbacks
 func _enter_tree():
 	_connect_tape_recorder()
 	pass
@@ -27,7 +27,7 @@ func _ready():
 	pass
 
 
-
+# Signals Connections
 func _connect_tape_recorder():
 	var recorder_group = get_tree().get_nodes_in_group("TapeRecorder")
 	if not recorder_group.empty():
@@ -40,9 +40,12 @@ func _connect_tape_recorder():
 	pass
 
 
-
+# Checking Functions
 func _check_tape_state(current_state: int):
 	if not self.locked:
+		return
+
+	if $DeviceAnim.is_playing() and $DeviceAnim.current_animation == "DeviceWrongPass":
 		return
 
 	if current_state == TapeRecorder.PLAYING:
@@ -53,6 +56,8 @@ func _check_tape_state(current_state: int):
 		emit_signal("stopped_hearing")
 	pass
 
+
+# Lock Functions
 func _unlock():
 	._unlock()
 	$DeviceAnim.play("DeviceUnlocked")
@@ -60,6 +65,9 @@ func _unlock():
 
 func _add_password_digit(new_digit):
 	if not locked:
+		return
+
+	if $DeviceAnim.is_playing() and $DeviceAnim.current_animation == "DeviceWrongPass":
 		return
 
 	if current_password.length() < max_password_length:
@@ -72,8 +80,13 @@ func _add_password_digit(new_digit):
 		_enter_password()
 	pass
 
+
+
 func _clear_password():
 	if not locked:
+		return
+
+	if $DeviceAnim.is_playing() and $DeviceAnim.current_animation == "DeviceWrongPass":
 		return
 
 	current_password = ""
@@ -81,16 +94,31 @@ func _clear_password():
 	emit_signal("password_display", current_password)
 	pass
 
+
+
 func _enter_password():
 	if not locked:
+		return
+	
+	if $DeviceAnim.is_playing() and $DeviceAnim.current_animation == "DeviceWrongPass":
 		return
 
 	var result = _check_password(current_password)
 	if result :
 		print("CORRECT")
+		$DigitLabel. modulate = Color("32d728")
+		$SFXPlayer.play()
 		emit_signal("correct_password")
 	else:
 		print("WRONG")
-		_clear_password()
 		emit_signal("wrong_password")
+		$DeviceAnim.play("DeviceWrongPass")
+		yield($DeviceAnim, "animation_finished")
+		var recorder_group = get_tree().get_nodes_in_group("TapeRecorder")
+		if not recorder_group.empty():
+			var tape_recorder : TapeRecorder = recorder_group[0]
+			if tape_recorder:
+				_check_tape_state(tape_recorder.current_tape_state)
+		current_password = ""
+		emit_signal("password_display", current_password)
 	pass

@@ -52,6 +52,7 @@ tracks/0/keys = {
 texture = ExtResource( 6 )
 
 [node name="SimpleVoiceLock" parent="." index="1" instance=ExtResource( 4 )]
+key_password = "ABRIR"
 
 [node name="GoNextSceneInteractable" parent="." index="2" instance=ExtResource( 7 )]
 visible = false

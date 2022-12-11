@@ -25,7 +25,7 @@ texture = ExtResource( 6 )
 [node name="PickUpTape" parent="." index="1" instance=ExtResource( 2 )]
 modulate = Color( 0.584314, 0.584314, 0.584314, 1 )
 self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
-tape_id = "Woldemort"
+tape_id = "1"
 normal_color = Color( 0.8, 0.8, 0.8, 1 )
 hover_color = Color( 1, 1, 1, 1 )
 
@@ -41,7 +41,7 @@ shape = SubResource( 1 )
 
 [node name="MessageListener" type="Node" parent="." index="2"]
 script = ExtResource( 5 )
-std_message = "WOLDEMORT!"
+std_message = "ANOMALY"
 
 [node name="DarkVoidHUD" type="CanvasLayer" parent="." index="3"]
 layer = 5
@@ -139,7 +139,6 @@ __meta__ = {
 }
 
 [node name="TutorialStep" type="Control" parent="DarkVoidHUD" index="1"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -201,17 +200,16 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="AdviceFITA" type="Label" parent="DarkVoidHUD/TutorialStep/Step4" index="0"]
-margin_left = 364.0
-margin_top = 128.0
-margin_right = 668.0
-margin_bottom = 285.0
+margin_left = 40.0
+margin_top = 136.0
+margin_right = 344.0
+margin_bottom = 293.0
 rect_pivot_offset = Vector2( 119, 23 )
-text = "/\\                   
-|                    
-|                    
+text = "               /\\                   
+                |                    
+                |                    
 Escolha uma FITA               
 "
-align = 2
 uppercase = true
 
 [node name="Step5" type="Control" parent="DarkVoidHUD/TutorialStep" index="4"]

@@ -217,9 +217,9 @@ anims/DeviceUnlocked = SubResource( 4 )
 anims/RESET = SubResource( 2 )
 
 [node name="PanelLabel" type="Label" parent="DeviceAnim"]
-margin_left = 441.0
+margin_left = 429.0
 margin_top = 150.0
-margin_right = 672.0
+margin_right = 660.0
 margin_bottom = 190.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )

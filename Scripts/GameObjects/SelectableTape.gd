@@ -16,6 +16,7 @@ func _ready():
 	pass
 
 func _emit_tape_selection():
+	$ClickPlayer.play()
 	emit_signal("insert_tape_selection", tape_info)
 	pass
 
