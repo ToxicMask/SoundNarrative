@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/GameSystems/CreditsScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Textures/BLACK_128x128.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Themes/PlainText.tres" type="Theme" id=3]
-[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/UI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Audio/SFX/Lock/Loud_Click.wav" type="AudioStream" id=5]
 
 [node name="CreditsScreen" type="Node2D"]

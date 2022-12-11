@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Easter_Egg.mp3-7d5f9987de7833c64fa2848c6180b802.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/RawAudio/RawVoiceLines/Easter_Egg.mp3"
+dest_files=[ "res://.import/Easter_Egg.mp3-7d5f9987de7833c64fa2848c6180b802.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

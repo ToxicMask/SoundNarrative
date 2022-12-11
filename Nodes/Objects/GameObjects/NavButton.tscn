@@ -4,7 +4,7 @@
 [ext_resource path="res://Resources/Fonts/CourierNew/ButtonTextFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Resources/Themes/Styles/FlatDarkGrey.tres" type="StyleBox" id=3]
 [ext_resource path="res://Resources/Themes/Styles/FlatMidGrey.tres" type="StyleBox" id=4]
-[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/UI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=5]
 
 [sub_resource type="Theme" id=1]
 Button/fonts/font = ExtResource( 2 )

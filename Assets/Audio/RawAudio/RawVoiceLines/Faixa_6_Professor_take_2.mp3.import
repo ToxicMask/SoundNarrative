@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Faixa_6_Professor_take_2.mp3-f40cbb89f50c316b00e94a2cf76ec357.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/RawAudio/RawVoiceLines/Faixa_6_Professor_take_2.mp3"
+dest_files=[ "res://.import/Faixa_6_Professor_take_2.mp3-f40cbb89f50c316b00e94a2cf76ec357.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -194,7 +194,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/_Debug/_DebugMessageListener.gd"
 }, {
-"base": "Node2D",
+"base": "Node",
 "class": "_MainDebug",
 "language": "GDScript",
 "path": "res://Scripts/_Debug/_MainDebug.gd"

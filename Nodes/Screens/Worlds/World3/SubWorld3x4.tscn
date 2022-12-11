@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x4D.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x4_BACKGROUND.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=9]
-[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/UI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
 
 [sub_resource type="Gradient" id=24]
 offsets = PoolRealArray( 0, 0.867347, 1 )

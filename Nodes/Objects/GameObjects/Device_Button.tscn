@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/GameObjects/DeviceButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Textures/Buttons/TR_Button_PLAY.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/UI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 13.5 )

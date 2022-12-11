@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Images/Render/Scene2/Render2x1.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/GameSystems/SoundController.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Audio/Ambience/main_menu_static.wav" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Audio/RawAudio/RawUI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/UI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
 [ext_resource path="res://Scripts/GameSystems/MainMenuPlayer.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Audio/SFX/Lock/Loud_Click.wav" type="AudioStream" id=12]
 

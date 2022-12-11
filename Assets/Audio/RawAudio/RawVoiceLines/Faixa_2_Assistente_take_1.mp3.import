@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Faixa_2_Assistente_take_1.mp3-62d7bb28bb13a9f1479f9b69662ac9c0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/RawAudio/RawVoiceLines/Faixa_2_Assistente_take_1.mp3"
+dest_files=[ "res://.import/Faixa_2_Assistente_take_1.mp3-62d7bb28bb13a9f1479f9b69662ac9c0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

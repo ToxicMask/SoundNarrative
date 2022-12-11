@@ -57,7 +57,12 @@ world_scene_dict = {
 "World3": ExtResource( 14 )
 }
 
-[node name="_MainDebug" type="Node2D" parent="."]
+[node name="CustomCursor" type="Node" parent="."]
+script = ExtResource( 23 )
+mouse_texture = ExtResource( 20 )
+click_texture = ExtResource( 22 )
+
+[node name="_MainDebug" type="Node" parent="."]
 script = ExtResource( 2 )
 
 [node name="SoundMixer" type="Node" parent="."]
@@ -90,8 +95,3 @@ mouse_filter = 2
 script = ExtResource( 21 )
 
 [node name="Tween" type="Tween" parent="ScreenVisualEffects/TransitionFade"]
-
-[node name="CustomCursor" type="Node" parent="."]
-script = ExtResource( 23 )
-mouse_texture = ExtResource( 20 )
-click_texture = ExtResource( 22 )
