@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Audio/SFX/Lock/Lock_Accept.wav" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/GameObjects/DigitalVoiceLock.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/GameObjects/DigitMessageListener.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Resources/Themes/DPadTheme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Audio/SFX/Lock/Lock_Click.wav" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DeviceHearing"
@@ -203,8 +204,13 @@ theme = ExtResource( 5 )
 enabled_focus_mode = 0
 text = "C"
 
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="DigitalButtonC"]
+stream = ExtResource( 6 )
+bus = "PlainSFX"
+
 [connection signal="correct_password" from="." to="DigitLabel" method="set_modulate" binds= [ Color( 0.196078, 0.843137, 0.156863, 1 ) ]]
 [connection signal="password_display" from="." to="DigitLabel" method="set_text"]
 [connection signal="unlocked" from="." to="SFXPlayer" method="play"]
 [connection signal="message_received" from="DigitMessageListener" to="." method="_add_password_digit"]
+[connection signal="button_down" from="DigitalButtonC" to="DigitalButtonC/SFXPlayer" method="play"]
 [connection signal="pressed" from="DigitalButtonC" to="." method="_clear_password"]
