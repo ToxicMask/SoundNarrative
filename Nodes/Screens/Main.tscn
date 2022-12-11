@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/DummyScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/_Debug/_MainDebug.gd" type="Script" id=2]
@@ -19,7 +19,10 @@
 [ext_resource path="res://Resources/Shaders/FilmGrainBasic.gdshader" type="Shader" id=17]
 [ext_resource path="res://Nodes/Screens/Worlds/EndGameScreen.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scripts/GameSystems/SoundMixerController.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Images/Textures/Mouse/MousePointA.png" type="Texture" id=20]
 [ext_resource path="res://Scripts/GameSystems/TransitionFade.gd" type="Script" id=21]
+[ext_resource path="res://Assets/Images/Textures/Mouse/MouseClickA.png" type="Texture" id=22]
+[ext_resource path="res://Scripts/GameSystems/CustomCursor.gd" type="Script" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_name = "FilmGrain"
@@ -87,3 +90,8 @@ mouse_filter = 2
 script = ExtResource( 21 )
 
 [node name="Tween" type="Tween" parent="ScreenVisualEffects/TransitionFade"]
+
+[node name="CustomCursor" type="Node" parent="."]
+script = ExtResource( 23 )
+mouse_texture = ExtResource( 20 )
+click_texture = ExtResource( 22 )
