@@ -12,5 +12,3 @@ world_path = NodePath("..")
 
 [node name="TapeRecorderController" type="Node" parent="." index="1"]
 script = ExtResource( 3 )
-
-[connection signal="subworld_changed" from="WorldNavigation" to="TapeRecorderController" method="_hide_hud_tape_recorder"]

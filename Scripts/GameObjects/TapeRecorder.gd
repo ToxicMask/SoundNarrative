@@ -31,7 +31,7 @@ onready var tape_node := $TapeAudioPlayer
 onready var selection_hud := $SelectionHUD
 
 enum {PLAYING, PAUSED, GOBACK, GOFOWARD, OFF, EJECTED}
-const FAST_SPEED : float = 1.25
+const FAST_SPEED : float = 1.5
 var current_tape_state = OFF
 var current_tapetime : float = 0.0
 

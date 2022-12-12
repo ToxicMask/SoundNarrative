@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Audio/SFX/BitScreen.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/VoiceFiles/Tape0/TapeSample.0.0.wav" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/GameObjects/TapeInfo.gd" type="Script" id=2]
 
 [resource]

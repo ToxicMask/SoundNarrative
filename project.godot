@@ -298,6 +298,10 @@ ui_audio_down={
  ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_render/layer_1="WORLDSPACE"
@@ -306,6 +310,10 @@ ui_audio_down={
 2d_physics/layer_1="WORLDSPACE"
 2d_physics/layer_2="HUD"
 2d_physics/layer_3="IN_HAND"
+
+[locale]
+
+fallback="pt_BR"
 
 [physics]
 

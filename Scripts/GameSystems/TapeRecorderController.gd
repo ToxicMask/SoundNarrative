@@ -15,3 +15,9 @@ func _hide_hud_tape_recorder():
 	if tape_recorder:
 		tape_recorder._hide_hud()
 	pass
+
+func _show_hud_tape_recorder():
+	var tape_recorder = _get_tape_recorder() as TapeRecorder
+	if tape_recorder:
+		tape_recorder._show_hud()
+	pass

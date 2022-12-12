@@ -43,11 +43,13 @@ func _play_content(start_pos : float):
 	else:
 		var time_left = start_pos
 		for c in content_array:
+			c = c as AudioStreamSample
 			var sample_length = c.get_length()
 			if time_left < sample_length:
 				audio_player.stream = c
 				audio_player.play(time_left)
 				is_playing = true
+				break
 			else:
 				time_left = time_left - sample_length
 				if time_left <= 0:

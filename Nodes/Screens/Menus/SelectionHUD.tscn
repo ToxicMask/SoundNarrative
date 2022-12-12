@@ -34,17 +34,14 @@ texture = ExtResource( 9 )
 expand = true
 
 [node name="SelectableTape0" parent="." groups=["SelectionTape"] instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 128, 64 )
 tape_info = ExtResource( 3 )
 
 [node name="SelectableTape1" parent="." groups=["SelectionTape"] instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 320, 64 )
 tape_info = ExtResource( 4 )
 
 [node name="SelectableTape2" parent="." groups=["SelectionTape"] instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 512, 64 )
 tape_info = ExtResource( 2 )
 

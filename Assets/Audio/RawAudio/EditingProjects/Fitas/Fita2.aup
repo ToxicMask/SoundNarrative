@@ -1,0 +1,77 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Fita2_data" version="1.3.0" audacityversion="2.2.2" sel0="42.8109446098" sel1="52.1048526077" vpos="0" h="8.8513324486" zoom="33.8932021525" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="Faixa_2_Professor_take_1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2297824">
+				<waveblock start="0">
+					<simpleblockfile filename="e08086bd.au" len="258049" min="-0.336188" max="0.395589" rms="0.026906"/>
+				</waveblock>
+				<waveblock start="258049">
+					<simpleblockfile filename="e080805a.au" len="262144" min="-0.42936" max="0.52784" rms="0.044754"/>
+				</waveblock>
+				<waveblock start="520193">
+					<simpleblockfile filename="e0808849.au" len="262144" min="-0.301212" max="0.305312" rms="0.03149"/>
+				</waveblock>
+				<waveblock start="782337">
+					<simpleblockfile filename="e0808770.au" len="262144" min="-0.217268" max="0.218776" rms="0.027665"/>
+				</waveblock>
+				<waveblock start="1044481">
+					<simpleblockfile filename="e0808092.au" len="262144" min="-0.394239" max="0.40442" rms="0.04148"/>
+				</waveblock>
+				<waveblock start="1306625">
+					<simpleblockfile filename="e0808700.au" len="262144" min="-0.515259" max="0.560643" rms="0.046464"/>
+				</waveblock>
+				<waveblock start="1568769">
+					<simpleblockfile filename="e0808562.au" len="262144" min="-0.478643" max="0.567511" rms="0.04207"/>
+				</waveblock>
+				<waveblock start="1830913">
+					<simpleblockfile filename="e08087c9.au" len="262144" min="-0.442195" max="0.471519" rms="0.036527"/>
+				</waveblock>
+				<waveblock start="2093057">
+					<simpleblockfile filename="e0808fe6.au" len="204767" min="-0.364445" max="0.344676" rms="0.033593"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Faixa_2_Professor_take_1" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2297824">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808d5d.au" len="258049" min="-0.336154" max="0.395587" rms="0.026906"/>
+				</waveblock>
+				<waveblock start="258049">
+					<simpleblockfile filename="e0808fd2.au" len="262144" min="-0.429349" max="0.527872" rms="0.044754"/>
+				</waveblock>
+				<waveblock start="520193">
+					<simpleblockfile filename="e08086ae.au" len="262144" min="-0.301215" max="0.305319" rms="0.03149"/>
+				</waveblock>
+				<waveblock start="782337">
+					<simpleblockfile filename="e0808065.au" len="262144" min="-0.217249" max="0.218785" rms="0.027665"/>
+				</waveblock>
+				<waveblock start="1044481">
+					<simpleblockfile filename="e08081b0.au" len="262144" min="-0.394253" max="0.404434" rms="0.04148"/>
+				</waveblock>
+				<waveblock start="1306625">
+					<simpleblockfile filename="e0808e95.au" len="262144" min="-0.515268" max="0.56066" rms="0.046464"/>
+				</waveblock>
+				<waveblock start="1568769">
+					<simpleblockfile filename="e0808952.au" len="262144" min="-0.478632" max="0.56751" rms="0.04207"/>
+				</waveblock>
+				<waveblock start="1830913">
+					<simpleblockfile filename="e0808199.au" len="262144" min="-0.442174" max="0.471518" rms="0.036527"/>
+				</waveblock>
+				<waveblock start="2093057">
+					<simpleblockfile filename="e08086c6.au" len="204767" min="-0.364441" max="0.344681" rms="0.03361"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<labeltrack name="Label Track" numlabels="2" height="73" minimized="0" isSelected="0">
+		<label t="42.1913513384" t1="42.1913513384" title="Start Message"/>
+		<label t="42.8109446098" t1="42.8109446098" title="End Of Message"/>
+	</labeltrack>
+</project>
