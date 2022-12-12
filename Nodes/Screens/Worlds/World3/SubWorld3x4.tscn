@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Nodes/Objects/GameObjects/InvisibleClickableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Images/Render/Scene3/Render3x4_BACKGROUND.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=9]
 [ext_resource path="res://Assets/Audio/UI/333434__brandondelehoy__ui-series-a-hollow-click.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Ambience/Soundscape/interior_terror_b.wav" type="AudioStream" id=11]
 
 [sub_resource type="Gradient" id=24]
 offsets = PoolRealArray( 0, 0.867347, 1 )
@@ -135,6 +136,9 @@ stream = ExtResource( 10 )
 volume_db = -16.0
 pitch_scale = 0.6
 bus = "PlainSFX"
+
+[node name="SoundController" parent="." index="5"]
+ambience_stream = ExtResource( 11 )
 
 [connection signal="mouse_click" from="OpenBox" to="PickUpTape" method="show" flags=6]
 [connection signal="mouse_click" from="OpenBox" to="OpenBox" method="queue_free" flags=7]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Shaders/AnomalyObjectShader.gdshader" type="Shader" id=2]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/Render/Scene2/Render2x3.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Gradients/AnomV1Gradient.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/Audio/Ambience/Soundscape/interior_c.wav" type="AudioStream" id=6]
 
 [sub_resource type="OpenSimplexNoise" id=26]
 period = 20.8
@@ -85,7 +86,10 @@ tracks/1/keys = {
 material = SubResource( 28 )
 texture = ExtResource( 4 )
 
-[node name="GoBackNavButton" parent="." index="1" instance=ExtResource( 3 )]
+[node name="SoundController" parent="." index="1"]
+ambience_stream = ExtResource( 6 )
+
+[node name="GoBackNavButton" parent="." index="2" instance=ExtResource( 3 )]
 margin_left = 30.0
 margin_top = 492.0
 margin_right = 139.0
@@ -93,7 +97,7 @@ margin_bottom = 566.0
 text = "Voltar"
 subworld_path = NodePath("..")
 
-[node name="ScreenActions" type="AnimationPlayer" parent="." index="2"]
+[node name="ScreenActions" type="AnimationPlayer" parent="." index="3"]
 autoplay = "Auto"
 anims/Auto = SubResource( 6 )
 anims/RESET = SubResource( 7 )

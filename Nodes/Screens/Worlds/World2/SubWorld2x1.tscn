@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Images/Textures/Anomaly1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene2/Render2x1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Objects/GameObjects/NavButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Shaders/AnomalyV0.gdshader" type="Shader" id=6]
+[ext_resource path="res://Assets/Audio/Ambience/Soundscape/interior_a.wav" type="AudioStream" id=7]
 
 [sub_resource type="Gradient" id=22]
 interpolation_mode = 2
@@ -33,7 +34,10 @@ shader_param/tintGradient = ExtResource( 3 )
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 2 )
 
-[node name="Anomaly" type="ColorRect" parent="." index="1"]
+[node name="SoundController" parent="." index="1"]
+ambience_stream = ExtResource( 7 )
+
+[node name="Anomaly" type="ColorRect" parent="." index="2"]
 material = SubResource( 19 )
 margin_left = 659.0
 margin_top = 144.0
@@ -41,15 +45,15 @@ margin_right = 754.0
 margin_bottom = 193.0
 rect_rotation = -8.24539
 
-[node name="NavButtons" type="Control" parent="." index="2"]
+[node name="NavButtons" type="Control" parent="." index="3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="NavButton1" parent="NavButtons" index="0" instance=ExtResource( 5 )]
-margin_left = 334.0
+margin_left = 377.0
 margin_top = 389.0
-margin_right = 429.0
-margin_bottom = 438.0
+margin_right = 447.0
+margin_bottom = 426.0
 text = "Porta"
 subworld_path = NodePath("../..")
 next_subworld_index = 1
@@ -64,10 +68,10 @@ subworld_path = NodePath("../..")
 next_subworld_index = 2
 
 [node name="NavButton3" parent="NavButtons" index="2" instance=ExtResource( 5 )]
-margin_left = 599.0
-margin_top = 438.0
-margin_right = 694.0
-margin_bottom = 487.0
+margin_left = 597.0
+margin_top = 428.0
+margin_right = 677.0
+margin_bottom = 467.0
 text = "Bancada"
 subworld_path = NodePath("../..")
 next_subworld_index = 3

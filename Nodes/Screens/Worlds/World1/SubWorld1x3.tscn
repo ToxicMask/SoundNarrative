@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/SubWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x3B.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x3_TapePickUp.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Render/Scene1/Render1x3A.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Audio/SFX/GavetaAbre.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Ambience/inside_quiet.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 54.0223, 23.4645 )
@@ -138,7 +139,10 @@ tracks/4/keys = {
 [node name="WorldRender" parent="." index="0"]
 texture = ExtResource( 7 )
 
-[node name="DrawerContent" type="Node2D" parent="." index="1"]
+[node name="SoundController" parent="." index="1"]
+ambience_stream = ExtResource( 9 )
+
+[node name="DrawerContent" type="Node2D" parent="." index="2"]
 visible = false
 
 [node name="PickUpTape" parent="DrawerContent" index="0" instance=ExtResource( 4 )]
@@ -157,7 +161,7 @@ position = Vector2( 352, 295 )
 rotation = -0.459774
 shape = SubResource( 4 )
 
-[node name="GoBackNavButton" parent="." index="2" instance=ExtResource( 3 )]
+[node name="GoBackNavButton" parent="." index="3" instance=ExtResource( 3 )]
 margin_left = 30.0
 margin_top = 492.0
 margin_right = 139.0
@@ -166,7 +170,7 @@ text = "Voltar"
 subworld_path = NodePath("..")
 next_subworld_index = 1
 
-[node name="DrawerOpenInteractable" parent="." index="3" instance=ExtResource( 5 )]
+[node name="DrawerOpenInteractable" parent="." index="4" instance=ExtResource( 5 )]
 position = Vector2( 427, 319 )
 rotation = 0.448413
 
@@ -175,7 +179,7 @@ position = Vector2( 26.4619, -3.45332 )
 rotation = 0.278525
 shape = SubResource( 1 )
 
-[node name="ScreenActions" type="AnimationPlayer" parent="." index="4"]
+[node name="ScreenActions" type="AnimationPlayer" parent="." index="5"]
 anims/OpenDrawer = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
