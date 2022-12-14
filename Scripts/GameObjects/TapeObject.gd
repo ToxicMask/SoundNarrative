@@ -38,17 +38,25 @@ func _play_content(start_pos : float):
 		return
 	elif content_array.size() == 1:
 		audio_player.stream = content_array[0]
-		audio_player.play(start_pos)
+		audio_player.seek(start_pos)
 		is_playing = true
+		yield(audio_player.get_tree(), "idle_frame")
+		audio_player.call_deferred("play")
+		print("ONETAPE: ", start_pos)
+		
 	else:
-		var time_left = start_pos
+		var time_left : float = start_pos
 		for c in content_array:
 			c = c as AudioStreamSample
-			var sample_length = c.get_length()
+			var sample_length = c.get_length() # Found a bug
 			if time_left < sample_length:
 				audio_player.stream = c
-				audio_player.play(time_left)
+				print("MULTITAPE: ", start_pos)
+				audio_player.seek(time_left)
 				is_playing = true
+				yield(audio_player.get_tree(), "idle_frame")
+				print(audio_player.get_playback_position ( ))
+				audio_player.call_deferred("play")
 				break
 			else:
 				time_left = time_left - sample_length

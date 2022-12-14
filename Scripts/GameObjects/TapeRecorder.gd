@@ -36,9 +36,10 @@ var current_tape_state = OFF
 var current_tapetime : float = 0.0
 
 enum {SHOW, HIDE}
+const SHOW_POSITION = Vector2(1024, 600)
+const HIDE_POSITION = Vector2(1024, 880)
 var current_hud_state = HIDE
-var show_position = Vector2(1024, 600)
-var hide_position = Vector2(1024, 880)
+
 
 
 """
@@ -87,12 +88,12 @@ func _process(delta):
 		
 		GOBACK:
 			current_tapetime -= delta * FAST_SPEED
-			current_tapetime = clamp(current_tapetime, 0, tape_length-0.01)
+			current_tapetime = clamp(current_tapetime, 0, tape_length)
 			_update_timestamp_display()
 		
 		GOFOWARD:
 			current_tapetime += delta * FAST_SPEED
-			current_tapetime = clamp(current_tapetime, 0, tape_length-0.01)
+			current_tapetime = clamp(current_tapetime, 0, tape_length)
 			_update_timestamp_display()
 	pass
 		
@@ -242,7 +243,7 @@ func _toggle_hud():
 func _show_hud():
 	emit_signal("hud_showed")
 	current_hud_state = SHOW
-	self.position = show_position
+	self.position = SHOW_POSITION
 	$RevealButton/RevelSprite.flip_v = true
 	$BackgroundModulate.show()
 	pass
@@ -250,7 +251,7 @@ func _show_hud():
 func _hide_hud():
 	emit_signal("hud_hid")
 	current_hud_state = HIDE
-	self.position = hide_position
+	self.position = HIDE_POSITION
 	$RevealButton/RevelSprite.flip_v = false
 	$BackgroundModulate.hide()
 	self._hide_selection()
@@ -277,7 +278,7 @@ func _hide_selection():
 	pass
 
 func _update_timestamp_display():
-	$UI_Counter/TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)]
+	$UI_Counter/TimeStamp_Label.text = "%02d:%02d" %[int(current_tapetime/60), int(current_tapetime)%60]
 	pass
 
 
