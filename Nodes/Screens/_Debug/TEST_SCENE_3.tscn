@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Audio/VoiceFiles/Tape2/TapeSample2.0.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/_Debug/_DebugPlayAudio.gd" type="Script" id=2]
+
+[node name="TEST_SCENE_3" type="Node2D"]
+
+[node name="PlayAudio" type="Node" parent="."]
+script = ExtResource( 2 )
+new_sample = ExtResource( 1 )
+delay = 33.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PlayAudio"]
+stream = ExtResource( 1 )
+bus = "Tape"

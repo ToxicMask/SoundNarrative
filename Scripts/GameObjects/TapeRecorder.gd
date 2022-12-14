@@ -127,6 +127,11 @@ func _play_tape():
 	pause_button._realese_button()
 	goback_button._realese_button()
 	gofoward_button._realese_button()
+
+	# Normalize Tape time
+	current_tapetime = floor(current_tapetime)
+	if current_tapetime != 0.0:
+		current_tapetime += 0.05
 	
 	# Play Audio in time
 	tape_node._play_audio(current_tapetime)
