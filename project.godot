@@ -269,6 +269,7 @@ settings/fps/force_fps=60
 
 [display]
 
+window/size/fullscreen=true
 mouse_cursor/custom_image="res://Assets/Images/Textures/Mouse/MousePointA.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
