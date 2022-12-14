@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Nodes/Screens/Worlds/DummyScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/_Debug/_MainDebug.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Scripts/GameSystems/TransitionFade.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Images/Textures/Mouse/MouseClickA.png" type="Texture" id=22]
 [ext_resource path="res://Scripts/GameSystems/CustomCursor.gd" type="Script" id=23]
+[ext_resource path="res://Scripts/GameSystems/ScreenControl.gd" type="Script" id=24]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_name = "FilmGrain"
@@ -56,6 +57,9 @@ world_scene_dict = {
 "World2": ExtResource( 13 ),
 "World3": ExtResource( 14 )
 }
+
+[node name="ScreenControl" type="Node" parent="."]
+script = ExtResource( 24 )
 
 [node name="CustomCursor" type="Node" parent="."]
 script = ExtResource( 23 )
